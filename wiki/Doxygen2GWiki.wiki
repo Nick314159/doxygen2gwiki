@@ -3,11 +3,4 @@
 
 = Introduction =
 
-Add your content here.
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+As an example, the complete Doxygen user manual can be found [Doxygen here].
