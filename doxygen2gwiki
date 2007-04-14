@@ -1,0 +1,12 @@
+#!/usr/bin/python
+
+import os
+import sys
+
+if os.path.exists("src/"):
+    sys.path = ["src/"] + sys.path
+
+from doxygen2gwiki.main import main
+
+if __name__ == "__main__":
+    main()
