@@ -3,7 +3,7 @@
 == Known problems: ==
 
 
- * If you have problems building doxygen from sources, please read [install_1unix_problems] first.
+ * If you have problems building doxygen from sources, please read [Doxygen_install_1unix_problems] first.
 
  * Doxygen is'not'a real compiler, it is only a lexical scanner. This means that it can and will not detect errors in your source code.
 

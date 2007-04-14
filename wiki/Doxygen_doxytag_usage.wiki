@@ -4,7 +4,7 @@ Doxytag is a small command line based utility. It can generate'tag files'. These
 
 A tag file contains information about files, classes and members documented in external documentation. Doxytag extracts this information directly from the HTML files. This has the advantage that you do not need to have the sources from which the documentation was extracted.
 
-If you'do'have the sources it is better to let{{{doxygen}}}generate the tag file by putting the name of the tag file after [config_1cfg_generate_tagfile] in the configuration file.
+If you'do'have the sources it is better to let{{{doxygen}}}generate the tag file by putting the name of the tag file after [Doxygen_config_1cfg_generate_tagfile] in the configuration file.
 
 The input of doxytag consists of a set of HTML files.
 

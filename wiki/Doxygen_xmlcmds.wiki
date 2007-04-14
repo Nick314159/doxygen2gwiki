@@ -23,21 +23,21 @@ Here is the list of tags supported by doxygen:
 
  * {{{<para>}}}Identifies a paragraph of text.
 
- * {{{<param name="paramName">}}}Marks a piece of text as the documentation for parameter "paramName". Similar to using [commands_1cmdparam] .
+ * {{{<param name="paramName">}}}Marks a piece of text as the documentation for parameter "paramName". Similar to using [Doxygen_commands_1cmdparam] .
 
- * {{{<paramref name="paramName">}}}Refers to a parameter with name "paramName". Similar to using [commands_1cmda] .
+ * {{{<paramref name="paramName">}}}Refers to a parameter with name "paramName". Similar to using [Doxygen_commands_1cmda] .
 
  * {{{<permission>}}}Identifies the security accessibility of a member. Ignored by doygen.
 
  * {{{<remarks>}}}Identifies the detailed description.
 
- * {{{<returns>}}}Marks a piece of text as the return value of a function or method. Similar to using [commands_1cmdreturn] .
+ * {{{<returns>}}}Marks a piece of text as the return value of a function or method. Similar to using [Doxygen_commands_1cmdreturn] .
 
- * {{{<see cref="member">}}}Refers to a member. Similar to [commands_1cmdref] .
+ * {{{<see cref="member">}}}Refers to a member. Similar to [Doxygen_commands_1cmdref] .
 
- * {{{<seealso cref="member">}}}Starts a "See also" section referring to "member". Similar to using [commands_1cmdsa] member.
+ * {{{<seealso cref="member">}}}Starts a "See also" section referring to "member". Similar to using [Doxygen_commands_1cmdsa] member.
 
- * {{{<summary>}}}Identifies the brief description. Similar to using [commands_1cmdbrief] .
+ * {{{<summary>}}}Identifies the brief description. Similar to using [Doxygen_commands_1cmdbrief] .
 
  * {{{<value>}}}Identifies a property. Ignored by doxygen.
 

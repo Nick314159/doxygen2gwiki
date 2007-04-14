@@ -20,7 +20,7 @@ This typically boils down to the following settings in the config file:
 
  *Parsing error* 
 
-Please read the [preprocessing] section of the manual for more information.
+Please read the [Doxygen_preprocessing] section of the manual for more information.
 
 
 
@@ -36,7 +36,7 @@ For member functions or functions that are part of a namespace you should docume
 
  # *How can I make doxygen ignore some code fragment?*
 
-The new and easiest way is to add one comment block with a [commands_1cmdcond] command at the start and one comment block with a [commands_1cmdendcond] command at the end of the piece of code that should be ignored. This should be within the same file of course.
+The new and easiest way is to add one comment block with a [Doxygen_commands_1cmdcond] command at the start and one comment block with a [Doxygen_commands_1cmdendcond] command at the end of the piece of code that should be ignored. This should be within the same file of course.
 
 But you can also use Doxygen's preprocessor for this: If you put *Parsing error* around the blocks that should be hidden and put: *Parsing error* in the config file then all blocks should be skipped by Doxygen as long as{{{PREPROCESSING = YES}}}.
 

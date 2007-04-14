@@ -33,7 +33,7 @@ The Expert dialog has a number of tab fields, one for each section in the config
 The kind of input widget depends on the type of the configuration option.
  * For each boolean option (those options that are answered with YES or NO in the configuration file) there is a check-box.
 
- * For items taking one of a fixed set of values (like [config_1cfg_output_language] ) a combo box is used.
+ * For items taking one of a fixed set of values (like [Doxygen_config_1cfg_output_language] ) a combo box is used.
 
  * For items taking an integer value from a range, a spinbox is used.
 

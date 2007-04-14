@@ -24,7 +24,7 @@ More info about the click event.
 
 More text here.
 
-If you use tabs for indentation within lists, please make sure that [config_1cfg_tab_size] in the configuration file is set to the correct tab size.
+If you use tabs for indentation within lists, please make sure that [Doxygen_config_1cfg_tab_size] in the configuration file is set to the correct tab size.
 
 You can end a list by starting a new paragraph or by putting a dot (.) on an empty line at the same indent level as the list you would like to end.
 
@@ -42,7 +42,7 @@ Here is the above example with HTML commands: *Parsing error*
 
 For compatibility with the Troll Tech's internal documentation tool and with KDoc, doxygen has two commands that can be used to create simple unnested lists.
 
-See [commands_1cmdarg] and [commands_1cmdli] for more info.
+See [Doxygen_commands_1cmdarg] and [Doxygen_commands_1cmdli] for more info.
 
 
 

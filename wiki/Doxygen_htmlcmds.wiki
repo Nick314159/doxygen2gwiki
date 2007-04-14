@@ -27,9 +27,9 @@ Here is a list of all HTML commands that may be used inside the documentation. N
 
  * {{{</CAPTION>}}}Ends a caption. Use within a table only.
 
- * {{{<CODE>}}}Starts a piece of text displayed in a typewriter font. Note that for C# code, this command is equivalent to [commands_1cmdcode] .
+ * {{{<CODE>}}}Starts a piece of text displayed in a typewriter font. Note that for C# code, this command is equivalent to [Doxygen_commands_1cmdcode] .
 
- * {{{</CODE>}}}End a{{{<CODE>}}}section. Note that for C# code, this command is equivalent to [commands_1cmdendcode] .
+ * {{{</CODE>}}}End a{{{<CODE>}}}section. Note that for C# code, this command is equivalent to [Doxygen_commands_1cmdendcode] .
 
  * {{{<DD>}}}Starts an item description.
 
