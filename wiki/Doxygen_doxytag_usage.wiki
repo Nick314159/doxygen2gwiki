@@ -1,18 +1,23 @@
 = Doxytag usage =
 
-Doxytag is a small command line based utility. It can generate'tag files'. These tag files can be used with [doxygen_usage.html doxygen] to generate references to external documentation (i.e. documentation not contained in the input files that are used by doxygen).
+
+Doxytag is a small command line based utility. It can generate 'tag files'. These tag files can be used with  [doxygen_usage.html doxygen]  to generate references to external documentation (i.e. documentation not contained in the input files that are used by doxygen).
 
 A tag file contains information about files, classes and members documented in external documentation. Doxytag extracts this information directly from the HTML files. This has the advantage that you do not need to have the sources from which the documentation was extracted.
 
-If you'do'have the sources it is better to let{{{doxygen}}}generate the tag file by putting the name of the tag file after [Doxygen_config_1cfg_generate_tagfile] in the configuration file.
+If you 'do' have the sources it is better to let `doxygen` generate the tag file by putting the name of the tag file after  [Doxygen_config_1cfg_generate_tagfile GENERATE_TAGFILE]   in the configuration file.
 
 The input of doxytag consists of a set of HTML files.
 
- *Parsing error*  *Parsing error* Doxytag expects a list of all HTML files that form the documentation or a directory that contains all HTML files. If neither is present doxytag will read all files with a{{{.html}}}extension from the current directory. If doxytag is used with the{{{-t}}}flag it generates a tag file.
+ *Parsing error* 
+ *Parsing error* 
+Doxytag expects a list of all HTML files that form the documentation or a directory that contains all HTML files. If neither is present doxytag will read all files with a `.html` extension from the current directory. If doxytag is used with the `-t` flag it generates a tag file.
 
- *Parsing error* Note that this is actually a feature because if you (or someone else) moves the external documentation to a different directory or URL you can simply run the script again and all links in the HTML files will be updated.
+ *Parsing error* 
+Note that this is actually a feature because if you (or someone else) moves the external documentation to a different directory or URL you can simply run the script again and all links in the HTML files will be updated.
 
 
 
  *Parsing error* 
 
+    

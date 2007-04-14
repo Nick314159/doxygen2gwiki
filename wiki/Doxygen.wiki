@@ -1,135 +1,189 @@
 =  =
 
 
+  
 
 == Introduction ==
 
 Doxygen is a documentation system for C++, C, Java, Objective-C, Python, IDL (Corba and Microsoft flavors) and to some extent PHP, C#, and D.
 
-It can help you in three ways:
- # It can generate an on-line documentation browser (in HTML) and/or an off-line reference manual (in`$\mbox{\LaTeX}$`) from a set of documented source files. There is also support for generating output in RTF (MS-Word), PostScript, hyperlinked PDF, compressed HTML, and Unix man pages. The documentation is extracted directly from the sources, which makes it much easier to keep the documentation consistent with the source code.
+It can help you in three ways: 
+ # 
+It can generate an on-line documentation browser (in HTML) and/or an off-line reference manual (in `$\mbox{\LaTeX}$`) from a set of documented source files. There is also support for generating output in RTF (MS-Word), PostScript, hyperlinked PDF, compressed HTML, and Unix man pages. The documentation is extracted directly from the sources, which makes it much easier to keep the documentation consistent with the source code. 
 
- # You can [Doxygen_starting_1extract_all] doxygen to extract the code structure from undocumented source files. This is very useful to quickly find your way in large source distributions. You can also visualize the relations between the various elements by means of include dependency graphs, inheritance diagrams, and collaboration diagrams, which are all generated automatically.
+ # 
+You can  [Doxygen_starting_1extract_all configure]   doxygen to extract the code structure from undocumented source files. This is very useful to quickly find your way in large source distributions. You can also visualize the relations between the various elements by means of include dependency graphs, inheritance diagrams, and collaboration diagrams, which are all generated automatically. 
 
- # You can even `abuse' doxygen for creating normal documentation (as I did for this manual).
+ # 
+You can even `abuse' doxygen for creating normal documentation (as I did for this manual). 
 
-Doxygen is developed under [http://www.linux.org Linux] and Mac OS X, but is set-up to be highly portable. As a result, it runs on most other Unix flavors as well. Furthermore, executables for Windows are available.
+
+Doxygen is developed under  [http://www.linux.org Linux]  and Mac OS X, but is set-up to be highly portable. As a result, it runs on most other Unix flavors as well. Furthermore, executables for Windows are available.
 
 
-This manual is divided into three parts, each of which is divided into several sections.
 
-The first part forms a user manual:
- * Section [Doxygen_install] discusses how to [http://www.doxygen.org/download.html download] , compile and install doxygen for your platform.
+ This manual is divided into three parts, each of which is divided into several sections.
 
- * Section [Doxygen_starting] tells you how to generate your first piece of documentation quickly.
+The first part forms a user manual: 
+ * 
+Section  [Doxygen_install Installation]   discusses how to  [http://www.doxygen.org/download.html download] , compile and install doxygen for your platform. 
 
- * Section [Doxygen_docblocks] demonstrates the various ways that code can be documented.
+ * 
+Section  [Doxygen_starting Getting started]   tells you how to generate your first piece of documentation quickly. 
 
- * Section [Doxygen_lists] show various ways to create lists.
+ * 
+Section  [Doxygen_docblocks Documenting the code]   demonstrates the various ways that code can be documented. 
 
- * Section [Doxygen_grouping] shows how to group things together.
+ * 
+Section  [Doxygen_lists Lists]   show various ways to create lists. 
 
- * Section [Doxygen_formulas] shows how to insert formulas in the documentation.
+ * 
+Section  [Doxygen_grouping Grouping]   shows how to group things together. 
 
- * Section [Doxygen_diagrams] describes the diagrams and graphs that doxygen can generate.
+ * 
+Section  [Doxygen_formulas Including formulas]   shows how to insert formulas in the documentation. 
 
- * Section [Doxygen_preprocessing] explains how doxygen deals with macro definitions.
+ * 
+Section  [Doxygen_diagrams Graphs and diagrams]   describes the diagrams and graphs that doxygen can generate. 
 
- * Section [Doxygen_autolink] shows how to put links to files, classes, and members in the documentation.
+ * 
+Section  [Doxygen_preprocessing Preprocessing]   explains how doxygen deals with macro definitions. 
 
- * Section [Doxygen_output] shows how to generate the various output formats supported by doxygen.
+ * 
+Section  [Doxygen_autolink Automatic link generation]   shows how to put links to files, classes, and members in the documentation. 
 
- * Section [Doxygen_external] explains how to let doxygen create links to externally generated documentation.
+ * 
+Section  [Doxygen_output Output Formats]   shows how to generate the various output formats supported by doxygen. 
 
- * Section [Doxygen_faq] gives answers to frequently asked questions.
+ * 
+Section  [Doxygen_external Linking to external documentation]   explains how to let doxygen create links to externally generated documentation. 
 
- * Section [Doxygen_trouble] tells you what to do when you have problems.
+ * 
+Section  [Doxygen_faq Frequently Asked Questions]   gives answers to frequently asked questions. 
+
+ * 
+Section  [Doxygen_trouble Troubleshooting]   tells you what to do when you have problems. 
+
 
 The second part forms a reference manual:
 
 
- * Section [Doxygen_features] presents an overview of what doxygen can do.
+ * 
+Section  [Doxygen_features Features]   presents an overview of what doxygen can do. 
 
- * Section [Doxygen_history] shows what has changed during the development of doxygen and what still has to be done.
+ * 
+Section  [Doxygen_history Doxygen History]   shows what has changed during the development of doxygen and what still has to be done. 
 
- * Section [Doxygen_doxygen_usage] shows how to use the{{{doxygen}}}program.
+ * 
+Section  [Doxygen_doxygen_usage Doxygen usage]   shows how to use the `doxygen` program. 
 
- * Section [Doxygen_doxytag_usage] shows how to use the{{{doxytag}}}program.
+ * 
+Section  [Doxygen_doxytag_usage Doxytag usage]   shows how to use the `doxytag` program. 
 
- * Section [Doxygen_doxywizard_usage] shows how to use the{{{doxywizard}}}program.
+ * 
+Section  [Doxygen_doxywizard_usage Doxywizard usage]   shows how to use the `doxywizard` program. 
 
- * Section [Doxygen_installdox_usage] shows how to use the{{{installdox}}}script that is generated by doxygen if you use tag files.
+ * 
+Section  [Doxygen_installdox_usage Installdox usage]   shows how to use the `installdox` script that is generated by doxygen if you use tag files. 
 
- * Section [Doxygen_config] shows how to fine-tune doxygen, so it generates the documentation you want.
+ * 
+Section  [Doxygen_config Configuration]   shows how to fine-tune doxygen, so it generates the documentation you want. 
 
- * Section [Doxygen_commands] shows an overview of the special commands that can be used within the documentation.
+ * 
+Section  [Doxygen_commands Special Commands]   shows an overview of the special commands that can be used within the documentation. 
 
- * Section [Doxygen_htmlcmds] shows an overview of the HTML commands that can be used within the documentation.
+ * 
+Section  [Doxygen_htmlcmds HTML Commands]   shows an overview of the HTML commands that can be used within the documentation. 
 
- * Section [Doxygen_xmlcmds] shows an overview of the C# style XML commands that can be used within the documentation.
+ * 
+Section  [Doxygen_xmlcmds XML Commands]   shows an overview of the C# style XML commands that can be used within the documentation. 
+
 
 The third part provides information for developers:
 
 
- * Section [Doxygen_arch] gives a global overview of how doxygen is internally structured.
+ * 
+Section  [Doxygen_arch Doxygen's Internals]   gives a global overview of how doxygen is internally structured. 
 
- * Section [Doxygen_perlmod] shows how to use the PerlMod output.
+ * 
+Section  [Doxygen_perlmod Perl Module output format documentation]   shows how to use the PerlMod output. 
 
- * Section [Doxygen_langhowto] explains how to add support for new output languages.
+ * 
+Section  [Doxygen_langhowto Internationalization]   explains how to add support for new output languages. 
+
+
 
 
 == Doxygen license ==
 
+ 
 
+Copyright &copy; 1997-2007 by  [mailto:dimitri@stack.nl Dimitri van Heesch] .
 
-Copyright&copy;1997-2007 by [mailto:dimitri@stack.nl Dimitri van Heesch] .
-
-Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the [http://www.gnu.org/copyleft/gpl.html GNU General Public License] for more details.
+Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the  [http://www.gnu.org/copyleft/gpl.html GNU General Public License]  for more details. 
 
 Documents produced by doxygen are derivative works derived from the input used in their production; they are not affected by this license.
 
 == User examples ==
 
-Doxygen supports a number of [Doxygen_output] where HTML is the most popular one. I've gatheredof real-life projects using doxygen.
+Doxygen supports a number of  [Doxygen_output output formats]   where HTML is the most popular one. I've gathered   of real-life projects using doxygen.
 
-These are part of a largerIf you know other projects, let me know and I'll add them.
+These are part of a larger   If you know other projects, let me know and I'll add them.
 
 == Future work ==
 
-Although doxygen is used successfully by a lot of people already, there is always room for improvement. Therefore, I have compiled aof possible and/or requested enhancements.
+Although doxygen is used successfully by a lot of people already, there is always room for improvement. Therefore, I have compiled a   of possible and/or requested enhancements.
 
 == Acknowledgements ==
 
-Thanks go to:
- * Malte Z&ouml;ckler and Roland Wunderling, authors of DOC++. The first version of doxygen borrowed some code of an old version of DOC++. Although I have rewritten practically all code since then, DOC++ has still given me a good start in writing doxygen.
+ Thanks go to: 
+ * 
+ Malte Z&ouml;ckler and Roland Wunderling, authors of DOC++. The first version of doxygen borrowed some code of an old version of DOC++. Although I have rewritten practically all code since then, DOC++ has still given me a good start in writing doxygen. 
 
- * All people at Troll Tech, for creating a beautiful GUI Toolkit (which is very useful as a Windows/Unix platform abstraction layer :-)
+ * 
+All people at Troll Tech, for creating a beautiful GUI Toolkit (which is very useful as a Windows/Unix platform abstraction layer :-) 
 
- * My brother Frank for rendering the logos.
+ * 
+My brother Frank for rendering the logos. 
 
- * Harm van der Heijden for adding HTML help support.
+ * 
+Harm van der Heijden for adding HTML help support. 
 
- * Wouter Slegers of [http://www.yourcreativesolutions.nl Your Creative Solutions] for registering the www.doxygen.org domain.
+ * 
+Wouter Slegers of  [http://www.yourcreativesolutions.nl Your Creative Solutions]  for registering the www.doxygen.org domain. 
 
- * Parker Waechter for adding the RTF output generator.
+ * 
+Parker Waechter for adding the RTF output generator. 
 
- * Joerg Baumann, for adding conditional documentation blocks, PDF links, and the configuration generator.
+ * 
+Joerg Baumann, for adding conditional documentation blocks, PDF links, and the configuration generator. 
 
- * Matthias Andree for providing a .spec script for building rpms from the sources.
+ * 
+Matthias Andree for providing a .spec script for building rpms from the sources. 
 
- * Tim Mensch for adding the todo command.
+ * 
+Tim Mensch for adding the todo command. 
 
- * Christian Hammond for redesigning the web-site.
+ * 
+Christian Hammond for redesigning the web-site. 
 
- * Ken Wong for providing the HTML tree view code.
+ * 
+Ken Wong for providing the HTML tree view code. 
 
- * Talin for adding support for C# style comments with XML markup.
+ * 
+Talin for adding support for C# style comments with XML markup. 
 
- * Petr Prikryl for coordinating the internationalisation support. All language maintainers for providing translations into many languages.
+ * 
+Petr Prikryl for coordinating the internationalisation support. All language maintainers for providing translations into many languages. 
 
- * Gerald Steffens of [http://www.e-trend.de E-trend] for financial support.
+ * 
+Gerald Steffens of  [http://www.e-trend.de E-trend]  for financial support. 
 
- * The band [http://www.porcupinetree.com Porcupine Tree] for providing hours of great music to listen to while coding.
+ * 
+The band  [http://www.porcupinetree.com Porcupine Tree]  for providing hours of great music to listen to while coding. 
 
- * many, many others for suggestions, patches and bug reports.
+ * 
+many, many others for suggestions, patches and bug reports. 
 
+
+    

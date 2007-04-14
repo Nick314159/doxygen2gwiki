@@ -1,312 +1,583 @@
 = Nodes in the documentation tree of the Perl Module output format =
 
+
 == Nodes in the documentation tree of the Perl Module output format. ==
 
-This is a description of the structure of the documentation tree in*DoxyDocs.pm*. Each item in the list below describes a node in the tree, and the format of the description is as follows:
+This is a description of the structure of the documentation tree in *DoxyDocs.pm*. Each item in the list below describes a node in the tree, and the format of the description is as follows:
 
 
- * [ key => ]*Name*'(type)'. Explanation of the content.
+ * 
+[ key => ] *Name* '(type)'. Explanation of the content. 
+
 
 Where
 
 
- * The "key =&gt;" part only appears if the parent node is a hash. "key" is the key for this node.
+ * 
+The "key =&gt;" part only appears if the parent node is a hash. "key" is the key for this node.
 
 
 
- * *"Name"*is a unique name for the node, defined in DoxyModel.pm.
+ * 
+*"Name"* is a unique name for the node, defined in DoxyModel.pm.
 
 
 
- * '"(type)"'is the type of the node: "string" for string nodes, "hash" for hash nodes, "list" for list nodes, and "doc" for documentation subtrees. The structure of documentation subtrees is not described anywhere yet, but you can look for example at*doxylatex.pl*to see how to process it.
+ * 
+'"(type)"' is the type of the node: "string" for string nodes, "hash" for hash nodes, "list" for list nodes, and "doc" for documentation subtrees. The structure of documentation subtrees is not described anywhere yet, but you can look for example at *doxylatex.pl* to see how to process it.
 
 
 
-The meaning of each node in the documentation tree is as follows:
- * *Root*'(hash)'. Root node.
- * classes =>*Classes*'(list)'. Documented classes.
- * *Class*'(hash)'. A documented class.
- * protected_members =>*ClassProtectedMembers*'(hash)'. Information about the protected members in the class.
- * members =>*ClassProtectedMemberList*'(list)'. protected member list.
- * *ClassProtectedMember*'(hash)'. A protected member.
- * protection =>*ClassProtectedMemberProtection*'(string)'. Protection of the protected member.
 
- * detailed =>*ClassProtectedMemberDetailed*'(hash)'. Detailed information about the protected member.
- * doc =>*ClassProtectedMemberDetailedDoc*'(doc)'. Detailed documentation for the protected member.
+The meaning of each node in the documentation tree is as follows: 
+ * 
+*Root* '(hash)'. Root node. 
+ * 
+classes => *Classes* '(list)'. Documented classes. 
+ * 
+*Class* '(hash)'. A documented class. 
+ * 
+protected_members => *ClassProtectedMembers* '(hash)'. Information about the protected members in the class. 
+ * 
+members => *ClassProtectedMemberList* '(list)'. protected member list. 
+ * 
+*ClassProtectedMember* '(hash)'. A protected member. 
+ * 
+protection => *ClassProtectedMemberProtection* '(string)'. Protection of the protected member. 
 
- * see =>*ClassProtectedMemberSee*'(doc)'. "See also" documentation for the protected member.
+ * 
+detailed => *ClassProtectedMemberDetailed* '(hash)'. Detailed information about the protected member. 
+ * 
+doc => *ClassProtectedMemberDetailedDoc* '(doc)'. Detailed documentation for the protected member. 
 
- * kind =>*ClassProtectedMemberKind*'(string)'. Kind of protected member (usually "variable").
+ * 
+see => *ClassProtectedMemberSee* '(doc)'. "See also" documentation for the protected member. 
 
- * name =>*ClassProtectedMemberName*'(string)'. Name of the protected member.
 
- * type =>*ClassProtectedMemberType*'(string)'. Data type of the protected member.
+ * 
+kind => *ClassProtectedMemberKind* '(string)'. Kind of protected member (usually "variable"). 
 
- * detailed =>*ClassDetailed*'(hash)'. Detailed information about the class.
- * doc =>*ClassDetailedDoc*'(doc)'. Detailed documentation block for the class.
+ * 
+name => *ClassProtectedMemberName* '(string)'. Name of the protected member. 
 
- * protected_typedefs =>*ClassProtectedTypedefs*'(hash)'. Information about the protected typedefs in the class.
- * members =>*ClassProtectedTypedefList*'(list)'. protected typedef list.
- * *ClassProtectedTypedef*'(hash)'. A protected typedef.
- * protection =>*ClassProtectedTypedefProtection*'(string)'. Protection of the protected typedef.
+ * 
+type => *ClassProtectedMemberType* '(string)'. Data type of the protected member. 
 
- * detailed =>*ClassProtectedTypedefDetailed*'(hash)'. Detailed information about the protected typedef.
- * doc =>*ClassProtectedTypedefDetailedDoc*'(doc)'. Detailed documentation for the protected typedef.
 
- * see =>*ClassProtectedTypedefSee*'(doc)'. "See also" documentation for the protected typedef.
 
- * kind =>*ClassProtectedTypedefKind*'(string)'. Kind of protected typedef (usually "typedef").
 
- * name =>*ClassProtectedTypedefName*'(string)'. Name of the protected typedef.
+ * 
+detailed => *ClassDetailed* '(hash)'. Detailed information about the class. 
+ * 
+doc => *ClassDetailedDoc* '(doc)'. Detailed documentation block for the class. 
 
- * type =>*ClassProtectedTypedefType*'(string)'. Data type of the protected typedef.
 
- * name =>*ClassName*'(string)'. Name of the class.
+ * 
+protected_typedefs => *ClassProtectedTypedefs* '(hash)'. Information about the protected typedefs in the class. 
+ * 
+members => *ClassProtectedTypedefList* '(list)'. protected typedef list. 
+ * 
+*ClassProtectedTypedef* '(hash)'. A protected typedef. 
+ * 
+protection => *ClassProtectedTypedefProtection* '(string)'. Protection of the protected typedef. 
 
- * private_members =>*ClassPrivateMembers*'(hash)'. Information about the private members in the class.
- * members =>*ClassPrivateMemberList*'(list)'. private member list.
- * *ClassPrivateMember*'(hash)'. A private member.
- * protection =>*ClassPrivateMemberProtection*'(string)'. Protection of the private member.
+ * 
+detailed => *ClassProtectedTypedefDetailed* '(hash)'. Detailed information about the protected typedef. 
+ * 
+doc => *ClassProtectedTypedefDetailedDoc* '(doc)'. Detailed documentation for the protected typedef. 
 
- * detailed =>*ClassPrivateMemberDetailed*'(hash)'. Detailed information about the private member.
- * doc =>*ClassPrivateMemberDetailedDoc*'(doc)'. Detailed documentation for the private member.
+ * 
+see => *ClassProtectedTypedefSee* '(doc)'. "See also" documentation for the protected typedef. 
 
- * see =>*ClassPrivateMemberSee*'(doc)'. "See also" documentation for the private member.
 
- * kind =>*ClassPrivateMemberKind*'(string)'. Kind of private member (usually "variable").
+ * 
+kind => *ClassProtectedTypedefKind* '(string)'. Kind of protected typedef (usually "typedef"). 
 
- * name =>*ClassPrivateMemberName*'(string)'. Name of the private member.
+ * 
+name => *ClassProtectedTypedefName* '(string)'. Name of the protected typedef. 
 
- * type =>*ClassPrivateMemberType*'(string)'. Data type of the private member.
+ * 
+type => *ClassProtectedTypedefType* '(string)'. Data type of the protected typedef. 
 
- * private_typedefs =>*ClassPrivateTypedefs*'(hash)'. Information about the private typedefs in the class.
- * members =>*ClassPrivateTypedefList*'(list)'. private typedef list.
- * *ClassPrivateTypedef*'(hash)'. A private typedef.
- * protection =>*ClassPrivateTypedefProtection*'(string)'. Protection of the private typedef.
 
- * detailed =>*ClassPrivateTypedefDetailed*'(hash)'. Detailed information about the private typedef.
- * doc =>*ClassPrivateTypedefDetailedDoc*'(doc)'. Detailed documentation for the private typedef.
 
- * see =>*ClassPrivateTypedefSee*'(doc)'. "See also" documentation for the private typedef.
 
- * kind =>*ClassPrivateTypedefKind*'(string)'. Kind of private typedef (usually "typedef").
+ * 
+name => *ClassName* '(string)'. Name of the class. 
 
- * name =>*ClassPrivateTypedefName*'(string)'. Name of the private typedef.
+ * 
+private_members => *ClassPrivateMembers* '(hash)'. Information about the private members in the class. 
+ * 
+members => *ClassPrivateMemberList* '(list)'. private member list. 
+ * 
+*ClassPrivateMember* '(hash)'. A private member. 
+ * 
+protection => *ClassPrivateMemberProtection* '(string)'. Protection of the private member. 
 
- * type =>*ClassPrivateTypedefType*'(string)'. Data type of the private typedef.
+ * 
+detailed => *ClassPrivateMemberDetailed* '(hash)'. Detailed information about the private member. 
+ * 
+doc => *ClassPrivateMemberDetailedDoc* '(doc)'. Detailed documentation for the private member. 
 
- * protected_methods =>*ClassProtectedMethods*'(hash)'. Information about the protected methods in the class.
- * members =>*ClassProtectedMethodList*'(list)'. protected method list.
- * *ClassProtectedMethod*'(hash)'. A protected method.
- * parameters =>*ClassProtectedMethodParams*'(list)'. List of the parameters of the protected method.
- * *ClassProtectedMethodParam*'(hash)'. A parameter of the protected method.
- * declaration_name =>*ClassProtectedMethodParamName*'(string)'. The name of the parameter.
+ * 
+see => *ClassPrivateMemberSee* '(doc)'. "See also" documentation for the private member. 
 
- * type =>*ClassProtectedMethodParamType*'(string)'. The data type of the parameter.
 
- * protection =>*ClassProtectedMethodProtection*'(string)'. Protection of the protected method.
+ * 
+kind => *ClassPrivateMemberKind* '(string)'. Kind of private member (usually "variable"). 
 
- * virtualness =>*ClassProtectedMethodVirtualness*'(string)'. Virtualness of the protected method.
+ * 
+name => *ClassPrivateMemberName* '(string)'. Name of the private member. 
 
- * detailed =>*ClassProtectedMethodDetailed*'(hash)'. Detailed information about the protected method.
- * params =>*ClassProtectedMethodPDBlocks*'(list)'. List of parameter documentation blocks for the protected method.
- * *ClassProtectedMethodPDBlock*'(hash)'. A parameter documentation block for the protected method.
- * parameters =>*ClassProtectedMethodPDParams*'(list)'. Parameter list for this parameter documentation block.
- * *ClassProtectedMethodPDParam*'(hash)'. A parameter documented by this documentation block.
- * name =>*ClassProtectedMethodPDParamName*'(string)'. Name of the parameter.
+ * 
+type => *ClassPrivateMemberType* '(string)'. Data type of the private member. 
 
- * doc =>*ClassProtectedMethodPDDoc*'(doc)'. Documentation for this parameter documentation block.
 
- * doc =>*ClassProtectedMethodDetailedDoc*'(doc)'. Detailed documentation for the protected method.
 
- * see =>*ClassProtectedMethodSee*'(doc)'. "See also" documentation for the protected method.
 
- * return =>*ClassProtectedMethodReturn*'(doc)'. Documentation about the return value of the protected method.
+ * 
+private_typedefs => *ClassPrivateTypedefs* '(hash)'. Information about the private typedefs in the class. 
+ * 
+members => *ClassPrivateTypedefList* '(list)'. private typedef list. 
+ * 
+*ClassPrivateTypedef* '(hash)'. A private typedef. 
+ * 
+protection => *ClassPrivateTypedefProtection* '(string)'. Protection of the private typedef. 
 
- * kind =>*ClassProtectedMethodKind*'(string)'. Kind of protected method (usually "function").
+ * 
+detailed => *ClassPrivateTypedefDetailed* '(hash)'. Detailed information about the private typedef. 
+ * 
+doc => *ClassPrivateTypedefDetailedDoc* '(doc)'. Detailed documentation for the private typedef. 
 
- * name =>*ClassProtectedMethodName*'(string)'. Name of the protected method.
+ * 
+see => *ClassPrivateTypedefSee* '(doc)'. "See also" documentation for the private typedef. 
 
- * type =>*ClassProtectedMethodType*'(string)'. Data type returned by the protected method.
 
- * static =>*ClassProtectedMethodStatic*'(string)'. Whether the protected method is static.
+ * 
+kind => *ClassPrivateTypedefKind* '(string)'. Kind of private typedef (usually "typedef"). 
 
- * public_typedefs =>*ClassPublicTypedefs*'(hash)'. Information about the public typedefs in the class.
- * members =>*ClassPublicTypedefList*'(list)'. public typedef list.
- * *ClassPublicTypedef*'(hash)'. A public typedef.
- * protection =>*ClassPublicTypedefProtection*'(string)'. Protection of the public typedef.
+ * 
+name => *ClassPrivateTypedefName* '(string)'. Name of the private typedef. 
 
- * detailed =>*ClassPublicTypedefDetailed*'(hash)'. Detailed information about the public typedef.
- * doc =>*ClassPublicTypedefDetailedDoc*'(doc)'. Detailed documentation for the public typedef.
+ * 
+type => *ClassPrivateTypedefType* '(string)'. Data type of the private typedef. 
 
- * see =>*ClassPublicTypedefSee*'(doc)'. "See also" documentation for the public typedef.
 
- * kind =>*ClassPublicTypedefKind*'(string)'. Kind of public typedef (usually "typedef").
 
- * name =>*ClassPublicTypedefName*'(string)'. Name of the public typedef.
 
- * type =>*ClassPublicTypedefType*'(string)'. Data type of the public typedef.
+ * 
+protected_methods => *ClassProtectedMethods* '(hash)'. Information about the protected methods in the class. 
+ * 
+members => *ClassProtectedMethodList* '(list)'. protected method list. 
+ * 
+*ClassProtectedMethod* '(hash)'. A protected method. 
+ * 
+parameters => *ClassProtectedMethodParams* '(list)'. List of the parameters of the protected method. 
+ * 
+*ClassProtectedMethodParam* '(hash)'. A parameter of the protected method. 
+ * 
+declaration_name => *ClassProtectedMethodParamName* '(string)'. The name of the parameter. 
 
- * public_members =>*ClassPublicMembers*'(hash)'. Information about the public members in the class.
- * members =>*ClassPublicMemberList*'(list)'. public member list.
- * *ClassPublicMember*'(hash)'. A public member.
- * protection =>*ClassPublicMemberProtection*'(string)'. Protection of the public member.
+ * 
+type => *ClassProtectedMethodParamType* '(string)'. The data type of the parameter. 
 
- * detailed =>*ClassPublicMemberDetailed*'(hash)'. Detailed information about the public member.
- * doc =>*ClassPublicMemberDetailedDoc*'(doc)'. Detailed documentation for the public member.
 
- * see =>*ClassPublicMemberSee*'(doc)'. "See also" documentation for the public member.
 
- * kind =>*ClassPublicMemberKind*'(string)'. Kind of public member (usually "variable").
+ * 
+protection => *ClassProtectedMethodProtection* '(string)'. Protection of the protected method. 
 
- * name =>*ClassPublicMemberName*'(string)'. Name of the public member.
+ * 
+virtualness => *ClassProtectedMethodVirtualness* '(string)'. Virtualness of the protected method. 
 
- * type =>*ClassPublicMemberType*'(string)'. Data type of the public member.
+ * 
+detailed => *ClassProtectedMethodDetailed* '(hash)'. Detailed information about the protected method. 
+ * 
+params => *ClassProtectedMethodPDBlocks* '(list)'. List of parameter documentation blocks for the protected method. 
+ * 
+*ClassProtectedMethodPDBlock* '(hash)'. A parameter documentation block for the protected method. 
+ * 
+parameters => *ClassProtectedMethodPDParams* '(list)'. Parameter list for this parameter documentation block. 
+ * 
+*ClassProtectedMethodPDParam* '(hash)'. A parameter documented by this documentation block. 
+ * 
+name => *ClassProtectedMethodPDParamName* '(string)'. Name of the parameter. 
 
- * private_methods =>*ClassPrivateMethods*'(hash)'. Information about the private methods in the class.
- * members =>*ClassPrivateMethodList*'(list)'. private method list.
- * *ClassPrivateMethod*'(hash)'. A private method.
- * parameters =>*ClassPrivateMethodParams*'(list)'. List of the parameters of the private method.
- * *ClassPrivateMethodParam*'(hash)'. A parameter of the private method.
- * declaration_name =>*ClassPrivateMethodParamName*'(string)'. The name of the parameter.
 
- * type =>*ClassPrivateMethodParamType*'(string)'. The data type of the parameter.
 
- * protection =>*ClassPrivateMethodProtection*'(string)'. Protection of the private method.
+ * 
+doc => *ClassProtectedMethodPDDoc* '(doc)'. Documentation for this parameter documentation block. 
 
- * virtualness =>*ClassPrivateMethodVirtualness*'(string)'. Virtualness of the private method.
 
- * detailed =>*ClassPrivateMethodDetailed*'(hash)'. Detailed information about the private method.
- * params =>*ClassPrivateMethodPDBlocks*'(list)'. List of parameter documentation blocks for the private method.
- * *ClassPrivateMethodPDBlock*'(hash)'. A parameter documentation block for the private method.
- * parameters =>*ClassPrivateMethodPDParams*'(list)'. Parameter list for this parameter documentation block.
- * *ClassPrivateMethodPDParam*'(hash)'. A parameter documented by this documentation block.
- * name =>*ClassPrivateMethodPDParamName*'(string)'. Name of the parameter.
 
- * doc =>*ClassPrivateMethodPDDoc*'(doc)'. Documentation for this parameter documentation block.
+ * 
+doc => *ClassProtectedMethodDetailedDoc* '(doc)'. Detailed documentation for the protected method. 
 
- * doc =>*ClassPrivateMethodDetailedDoc*'(doc)'. Detailed documentation for the private method.
+ * 
+see => *ClassProtectedMethodSee* '(doc)'. "See also" documentation for the protected method. 
 
- * see =>*ClassPrivateMethodSee*'(doc)'. "See also" documentation for the private method.
+ * 
+return => *ClassProtectedMethodReturn* '(doc)'. Documentation about the return value of the protected method. 
 
- * return =>*ClassPrivateMethodReturn*'(doc)'. Documentation about the return value of the private method.
 
- * kind =>*ClassPrivateMethodKind*'(string)'. Kind of private method (usually "function").
+ * 
+kind => *ClassProtectedMethodKind* '(string)'. Kind of protected method (usually "function"). 
 
- * name =>*ClassPrivateMethodName*'(string)'. Name of the private method.
+ * 
+name => *ClassProtectedMethodName* '(string)'. Name of the protected method. 
 
- * type =>*ClassPrivateMethodType*'(string)'. Data type returned by the private method.
+ * 
+type => *ClassProtectedMethodType* '(string)'. Data type returned by the protected method. 
 
- * static =>*ClassPrivateMethodStatic*'(string)'. Whether the private method is static.
+ * 
+static => *ClassProtectedMethodStatic* '(string)'. Whether the protected method is static. 
 
- * public_methods =>*ClassPublicMethods*'(hash)'. Information about the public methods in the class.
- * members =>*ClassPublicMethodList*'(list)'. public method list.
- * *ClassPublicMethod*'(hash)'. A public method.
- * parameters =>*ClassPublicMethodParams*'(list)'. List of the parameters of the public method.
- * *ClassPublicMethodParam*'(hash)'. A parameter of the public method.
- * declaration_name =>*ClassPublicMethodParamName*'(string)'. The name of the parameter.
 
- * type =>*ClassPublicMethodParamType*'(string)'. The data type of the parameter.
 
- * protection =>*ClassPublicMethodProtection*'(string)'. Protection of the public method.
 
- * virtualness =>*ClassPublicMethodVirtualness*'(string)'. Virtualness of the public method.
+ * 
+public_typedefs => *ClassPublicTypedefs* '(hash)'. Information about the public typedefs in the class. 
+ * 
+members => *ClassPublicTypedefList* '(list)'. public typedef list. 
+ * 
+*ClassPublicTypedef* '(hash)'. A public typedef. 
+ * 
+protection => *ClassPublicTypedefProtection* '(string)'. Protection of the public typedef. 
 
- * detailed =>*ClassPublicMethodDetailed*'(hash)'. Detailed information about the public method.
- * params =>*ClassPublicMethodPDBlocks*'(list)'. List of parameter documentation blocks for the public method.
- * *ClassPublicMethodPDBlock*'(hash)'. A parameter documentation block for the public method.
- * parameters =>*ClassPublicMethodPDParams*'(list)'. Parameter list for this parameter documentation block.
- * *ClassPublicMethodPDParam*'(hash)'. A parameter documented by this documentation block.
- * name =>*ClassPublicMethodPDParamName*'(string)'. Name of the parameter.
+ * 
+detailed => *ClassPublicTypedefDetailed* '(hash)'. Detailed information about the public typedef. 
+ * 
+doc => *ClassPublicTypedefDetailedDoc* '(doc)'. Detailed documentation for the public typedef. 
 
- * doc =>*ClassPublicMethodPDDoc*'(doc)'. Documentation for this parameter documentation block.
+ * 
+see => *ClassPublicTypedefSee* '(doc)'. "See also" documentation for the public typedef. 
 
- * doc =>*ClassPublicMethodDetailedDoc*'(doc)'. Detailed documentation for the public method.
 
- * see =>*ClassPublicMethodSee*'(doc)'. "See also" documentation for the public method.
+ * 
+kind => *ClassPublicTypedefKind* '(string)'. Kind of public typedef (usually "typedef"). 
 
- * return =>*ClassPublicMethodReturn*'(doc)'. Documentation about the return value of the public method.
+ * 
+name => *ClassPublicTypedefName* '(string)'. Name of the public typedef. 
 
- * kind =>*ClassPublicMethodKind*'(string)'. Kind of public method (usually "function").
+ * 
+type => *ClassPublicTypedefType* '(string)'. Data type of the public typedef. 
 
- * name =>*ClassPublicMethodName*'(string)'. Name of the public method.
 
- * type =>*ClassPublicMethodType*'(string)'. Data type returned by the public method.
 
- * static =>*ClassPublicMethodStatic*'(string)'. Whether the public method is static.
 
- * files =>*Files*'(list)'. Documented files.
- * *File*'(hash)'. A documented file.
- * detailed =>*FileDetailed*'(hash)'. Detailed information about the file.
- * doc =>*FileDetailedDoc*'(doc)'. Detailed documentation block for the file.
+ * 
+public_members => *ClassPublicMembers* '(hash)'. Information about the public members in the class. 
+ * 
+members => *ClassPublicMemberList* '(list)'. public member list. 
+ * 
+*ClassPublicMember* '(hash)'. A public member. 
+ * 
+protection => *ClassPublicMemberProtection* '(string)'. Protection of the public member. 
 
- * functions =>*FileFunctions*'(hash)'. Information about the functions in the file.
- * members =>*FileFunctionList*'(list)'. function list.
- * *FileFunction*'(hash)'. A function.
- * parameters =>*FileFunctionParams*'(list)'. List of the parameters of the function.
- * *FileFunctionParam*'(hash)'. A parameter of the function.
- * declaration_name =>*FileFunctionParamName*'(string)'. The name of the parameter.
+ * 
+detailed => *ClassPublicMemberDetailed* '(hash)'. Detailed information about the public member. 
+ * 
+doc => *ClassPublicMemberDetailedDoc* '(doc)'. Detailed documentation for the public member. 
 
- * type =>*FileFunctionParamType*'(string)'. The data type of the parameter.
+ * 
+see => *ClassPublicMemberSee* '(doc)'. "See also" documentation for the public member. 
 
- * protection =>*FileFunctionProtection*'(string)'. Protection of the function.
 
- * virtualness =>*FileFunctionVirtualness*'(string)'. Virtualness of the function.
+ * 
+kind => *ClassPublicMemberKind* '(string)'. Kind of public member (usually "variable"). 
 
- * detailed =>*FileFunctionDetailed*'(hash)'. Detailed information about the function.
- * params =>*FileFunctionPDBlocks*'(list)'. List of parameter documentation blocks for the function.
- * *FileFunctionPDBlock*'(hash)'. A parameter documentation block for the function.
- * parameters =>*FileFunctionPDParams*'(list)'. Parameter list for this parameter documentation block.
- * *FileFunctionPDParam*'(hash)'. A parameter documented by this documentation block.
- * name =>*FileFunctionPDParamName*'(string)'. Name of the parameter.
+ * 
+name => *ClassPublicMemberName* '(string)'. Name of the public member. 
 
- * doc =>*FileFunctionPDDoc*'(doc)'. Documentation for this parameter documentation block.
+ * 
+type => *ClassPublicMemberType* '(string)'. Data type of the public member. 
 
- * doc =>*FileFunctionDetailedDoc*'(doc)'. Detailed documentation for the function.
 
- * see =>*FileFunctionSee*'(doc)'. "See also" documentation for the function.
 
- * return =>*FileFunctionReturn*'(doc)'. Documentation about the return value of the function.
 
- * kind =>*FileFunctionKind*'(string)'. Kind of function (usually "function").
+ * 
+private_methods => *ClassPrivateMethods* '(hash)'. Information about the private methods in the class. 
+ * 
+members => *ClassPrivateMethodList* '(list)'. private method list. 
+ * 
+*ClassPrivateMethod* '(hash)'. A private method. 
+ * 
+parameters => *ClassPrivateMethodParams* '(list)'. List of the parameters of the private method. 
+ * 
+*ClassPrivateMethodParam* '(hash)'. A parameter of the private method. 
+ * 
+declaration_name => *ClassPrivateMethodParamName* '(string)'. The name of the parameter. 
 
- * name =>*FileFunctionName*'(string)'. Name of the function.
+ * 
+type => *ClassPrivateMethodParamType* '(string)'. The data type of the parameter. 
 
- * type =>*FileFunctionType*'(string)'. Data type returned by the function.
 
- * static =>*FileFunctionStatic*'(string)'. Whether the function is static.
 
- * name =>*FileName*'(string)'. Name of the file.
+ * 
+protection => *ClassPrivateMethodProtection* '(string)'. Protection of the private method. 
 
- * variables =>*FileVariables*'(hash)'. Information about the variables in the file.
- * members =>*FileVariableList*'(list)'. variable list.
- * *FileVariable*'(hash)'. A variable.
- * protection =>*FileVariableProtection*'(string)'. Protection of the variable.
+ * 
+virtualness => *ClassPrivateMethodVirtualness* '(string)'. Virtualness of the private method. 
 
- * detailed =>*FileVariableDetailed*'(hash)'. Detailed information about the variable.
- * doc =>*FileVariableDetailedDoc*'(doc)'. Detailed documentation for the variable.
+ * 
+detailed => *ClassPrivateMethodDetailed* '(hash)'. Detailed information about the private method. 
+ * 
+params => *ClassPrivateMethodPDBlocks* '(list)'. List of parameter documentation blocks for the private method. 
+ * 
+*ClassPrivateMethodPDBlock* '(hash)'. A parameter documentation block for the private method. 
+ * 
+parameters => *ClassPrivateMethodPDParams* '(list)'. Parameter list for this parameter documentation block. 
+ * 
+*ClassPrivateMethodPDParam* '(hash)'. A parameter documented by this documentation block. 
+ * 
+name => *ClassPrivateMethodPDParamName* '(string)'. Name of the parameter. 
 
- * see =>*FileVariableSee*'(doc)'. "See also" documentation for the variable.
 
- * kind =>*FileVariableKind*'(string)'. Kind of variable (usually "variable").
 
- * name =>*FileVariableName*'(string)'. Name of the variable.
+ * 
+doc => *ClassPrivateMethodPDDoc* '(doc)'. Documentation for this parameter documentation block. 
 
- * type =>*FileVariableType*'(string)'. Data type of the variable.
 
- * typedefs =>*FileTypedefs*'(hash)'. Information about the typedefs in the file.
- * members =>*FileTypedefList*'(list)'. typedef list.
- * *FileTypedef*'(hash)'. A typedef.
- * protection =>*FileTypedefProtection*'(string)'. Protection of the typedef.
 
- * detailed =>*FileTypedefDetailed*'(hash)'. Detailed information about the typedef.
- * doc =>*FileTypedefDetailedDoc*'(doc)'. Detailed documentation for the typedef.
+ * 
+doc => *ClassPrivateMethodDetailedDoc* '(doc)'. Detailed documentation for the private method. 
 
- * see =>*FileTypedefSee*'(doc)'. "See also" documentation for the typedef.
+ * 
+see => *ClassPrivateMethodSee* '(doc)'. "See also" documentation for the private method. 
 
- * kind =>*FileTypedefKind*'(string)'. Kind of typedef (usually "typedef").
+ * 
+return => *ClassPrivateMethodReturn* '(doc)'. Documentation about the return value of the private method. 
 
- * name =>*FileTypedefName*'(string)'. Name of the typedef.
 
- * type =>*FileTypedefType*'(string)'. Data type of the typedef.
+ * 
+kind => *ClassPrivateMethodKind* '(string)'. Kind of private method (usually "function"). 
 
+ * 
+name => *ClassPrivateMethodName* '(string)'. Name of the private method. 
+
+ * 
+type => *ClassPrivateMethodType* '(string)'. Data type returned by the private method. 
+
+ * 
+static => *ClassPrivateMethodStatic* '(string)'. Whether the private method is static. 
+
+
+
+
+ * 
+public_methods => *ClassPublicMethods* '(hash)'. Information about the public methods in the class. 
+ * 
+members => *ClassPublicMethodList* '(list)'. public method list. 
+ * 
+*ClassPublicMethod* '(hash)'. A public method. 
+ * 
+parameters => *ClassPublicMethodParams* '(list)'. List of the parameters of the public method. 
+ * 
+*ClassPublicMethodParam* '(hash)'. A parameter of the public method. 
+ * 
+declaration_name => *ClassPublicMethodParamName* '(string)'. The name of the parameter. 
+
+ * 
+type => *ClassPublicMethodParamType* '(string)'. The data type of the parameter. 
+
+
+
+ * 
+protection => *ClassPublicMethodProtection* '(string)'. Protection of the public method. 
+
+ * 
+virtualness => *ClassPublicMethodVirtualness* '(string)'. Virtualness of the public method. 
+
+ * 
+detailed => *ClassPublicMethodDetailed* '(hash)'. Detailed information about the public method. 
+ * 
+params => *ClassPublicMethodPDBlocks* '(list)'. List of parameter documentation blocks for the public method. 
+ * 
+*ClassPublicMethodPDBlock* '(hash)'. A parameter documentation block for the public method. 
+ * 
+parameters => *ClassPublicMethodPDParams* '(list)'. Parameter list for this parameter documentation block. 
+ * 
+*ClassPublicMethodPDParam* '(hash)'. A parameter documented by this documentation block. 
+ * 
+name => *ClassPublicMethodPDParamName* '(string)'. Name of the parameter. 
+
+
+
+ * 
+doc => *ClassPublicMethodPDDoc* '(doc)'. Documentation for this parameter documentation block. 
+
+
+
+ * 
+doc => *ClassPublicMethodDetailedDoc* '(doc)'. Detailed documentation for the public method. 
+
+ * 
+see => *ClassPublicMethodSee* '(doc)'. "See also" documentation for the public method. 
+
+ * 
+return => *ClassPublicMethodReturn* '(doc)'. Documentation about the return value of the public method. 
+
+
+ * 
+kind => *ClassPublicMethodKind* '(string)'. Kind of public method (usually "function"). 
+
+ * 
+name => *ClassPublicMethodName* '(string)'. Name of the public method. 
+
+ * 
+type => *ClassPublicMethodType* '(string)'. Data type returned by the public method. 
+
+ * 
+static => *ClassPublicMethodStatic* '(string)'. Whether the public method is static. 
+
+
+
+
+
+
+ * 
+files => *Files* '(list)'. Documented files. 
+ * 
+*File* '(hash)'. A documented file. 
+ * 
+detailed => *FileDetailed* '(hash)'. Detailed information about the file. 
+ * 
+doc => *FileDetailedDoc* '(doc)'. Detailed documentation block for the file. 
+
+
+ * 
+functions => *FileFunctions* '(hash)'. Information about the functions in the file. 
+ * 
+members => *FileFunctionList* '(list)'. function list. 
+ * 
+*FileFunction* '(hash)'. A function. 
+ * 
+parameters => *FileFunctionParams* '(list)'. List of the parameters of the function. 
+ * 
+*FileFunctionParam* '(hash)'. A parameter of the function. 
+ * 
+declaration_name => *FileFunctionParamName* '(string)'. The name of the parameter. 
+
+ * 
+type => *FileFunctionParamType* '(string)'. The data type of the parameter. 
+
+
+
+ * 
+protection => *FileFunctionProtection* '(string)'. Protection of the function. 
+
+ * 
+virtualness => *FileFunctionVirtualness* '(string)'. Virtualness of the function. 
+
+ * 
+detailed => *FileFunctionDetailed* '(hash)'. Detailed information about the function. 
+ * 
+params => *FileFunctionPDBlocks* '(list)'. List of parameter documentation blocks for the function. 
+ * 
+*FileFunctionPDBlock* '(hash)'. A parameter documentation block for the function. 
+ * 
+parameters => *FileFunctionPDParams* '(list)'. Parameter list for this parameter documentation block. 
+ * 
+*FileFunctionPDParam* '(hash)'. A parameter documented by this documentation block. 
+ * 
+name => *FileFunctionPDParamName* '(string)'. Name of the parameter. 
+
+
+
+ * 
+doc => *FileFunctionPDDoc* '(doc)'. Documentation for this parameter documentation block. 
+
+
+
+ * 
+doc => *FileFunctionDetailedDoc* '(doc)'. Detailed documentation for the function. 
+
+ * 
+see => *FileFunctionSee* '(doc)'. "See also" documentation for the function. 
+
+ * 
+return => *FileFunctionReturn* '(doc)'. Documentation about the return value of the function. 
+
+
+ * 
+kind => *FileFunctionKind* '(string)'. Kind of function (usually "function"). 
+
+ * 
+name => *FileFunctionName* '(string)'. Name of the function. 
+
+ * 
+type => *FileFunctionType* '(string)'. Data type returned by the function. 
+
+ * 
+static => *FileFunctionStatic* '(string)'. Whether the function is static. 
+
+
+
+
+ * 
+name => *FileName* '(string)'. Name of the file. 
+
+ * 
+variables => *FileVariables* '(hash)'. Information about the variables in the file. 
+ * 
+members => *FileVariableList* '(list)'. variable list. 
+ * 
+*FileVariable* '(hash)'. A variable. 
+ * 
+protection => *FileVariableProtection* '(string)'. Protection of the variable. 
+
+ * 
+detailed => *FileVariableDetailed* '(hash)'. Detailed information about the variable. 
+ * 
+doc => *FileVariableDetailedDoc* '(doc)'. Detailed documentation for the variable. 
+
+ * 
+see => *FileVariableSee* '(doc)'. "See also" documentation for the variable. 
+
+
+ * 
+kind => *FileVariableKind* '(string)'. Kind of variable (usually "variable"). 
+
+ * 
+name => *FileVariableName* '(string)'. Name of the variable. 
+
+ * 
+type => *FileVariableType* '(string)'. Data type of the variable. 
+
+
+
+
+ * 
+typedefs => *FileTypedefs* '(hash)'. Information about the typedefs in the file. 
+ * 
+members => *FileTypedefList* '(list)'. typedef list. 
+ * 
+*FileTypedef* '(hash)'. A typedef. 
+ * 
+protection => *FileTypedefProtection* '(string)'. Protection of the typedef. 
+
+ * 
+detailed => *FileTypedefDetailed* '(hash)'. Detailed information about the typedef. 
+ * 
+doc => *FileTypedefDetailedDoc* '(doc)'. Detailed documentation for the typedef. 
+
+ * 
+see => *FileTypedefSee* '(doc)'. "See also" documentation for the typedef. 
+
+
+ * 
+kind => *FileTypedefKind* '(string)'. Kind of typedef (usually "typedef"). 
+
+ * 
+name => *FileTypedefName* '(string)'. Name of the typedef. 
+
+ * 
+type => *FileTypedefType* '(string)'. Data type of the typedef. 
+
+
+
+
+
+
+
+
+    
