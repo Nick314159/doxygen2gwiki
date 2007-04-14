@@ -1,0 +1,4 @@
+= Grouping =
+
+Doxygen has three mechanisms to group things together. One mechanism works at a global level, creating a new page for each group. These groups are called [grouping_1modules] in the documentation. The second mechanism works within a member list of some compound entity, and is refered to as a [grouping_1memgroup] . For [commands_1cmdpage] there is a third grouping mechanism referred to as [grouping_1subpaging] .
+

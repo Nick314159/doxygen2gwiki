@@ -1,0 +1,6 @@
+= Automatic link generation =
+
+Most documentation systems have special `see also' sections where links to other pieces of documentation can be inserted. Although doxygen also has a command to start such a section (See section [commands_1cmdsa] ), it does allow you to put these kind of links anywhere in the documentation. For`$\mbox{\LaTeX}$`documentation a reference to the page number is written instead of a link. Furthermore, the index at the end of the document can be used to quickly find the documentation of a member, class, namespace or file. For man pages no reference information is generated.
+
+The next sections show how to generate links to the various documented entities in a source file.
+

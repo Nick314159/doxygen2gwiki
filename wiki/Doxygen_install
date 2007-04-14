@@ -1,0 +1,17 @@
+= Installation =
+
+First go to the [http://www.doxygen.org/download.html download] pageto get the latest distribution, if you did not have it already.
+
+This section is divided into the following sections:
+ *  [install_1install_src_unix] 
+
+ *  [install_1install_bin_unix] 
+
+ *  [install_1unix_problems] 
+
+ *  [install_1install_src_windows] 
+
+ *  [install_1install_bin_windows] 
+
+ *  [install_1build_tools] 
+
