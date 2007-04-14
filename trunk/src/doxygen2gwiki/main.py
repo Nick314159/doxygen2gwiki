@@ -18,8 +18,8 @@ def addRemovePages(oldfiles, newfiles):
         open("%s%s.status" % (options.output, options.prefix), "w").write("\n".join(newfiles))
         if not options.skip_svn:
             for f in newfiles:
-                os.system("svn add %s" % (f, ))
-            os.system("svn add %s%s.status")
+                os.system("svn add %s%s" % (options.output, f))
+            os.system("svn add %s%s.status" % (options.output, options.prefix))
         return
     for f in newfiles:
         try:
@@ -27,7 +27,7 @@ def addRemovePages(oldfiles, newfiles):
         except ValueError:
             # New file
             if not options.skip_svn:
-                os.system("svn add %s" % (f, ))
+                os.system("svn add %s%s" % (options.output, f))
         else:
             del oldfiles[index]
     if options.skip_svn:
@@ -35,7 +35,7 @@ def addRemovePages(oldfiles, newfiles):
             os.unlink(options.output + f)
     else:
         for f in oldfiles:
-            os.system("svn del %s" % (f, ))
+            os.system("svn del %s%s" % (options.output, f))
     open("%s%s.status" % (options.output, options.prefix), "w").write("\n".join(newfiles))
 
 def main():
@@ -45,6 +45,7 @@ def main():
     files = []
 
     for file, code in d.createFiles():
+        file = file + ".wiki"
         files.append(file)
 
         open(options.output + file, "w").write(code)

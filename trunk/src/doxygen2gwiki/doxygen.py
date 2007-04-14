@@ -1,10 +1,11 @@
-from xml.dom.minidom import parse
+from xml.dom.minidom import parseString
 
 from options import options
 from member_function import DoxygenMemberFunction
 from file import DoxygenFile
 from page import DoxygenPage
 from utils import getText
+from fix_xml import fixXML
 
 class Doxygen:
     def __init__(self, xml):
@@ -16,11 +17,11 @@ class Doxygen:
             pages = [node.attributes["refid"].value for node in xml.documentElement.getElementsByTagName("compound") if node.attributes["kind"].value == "page"]
             for f in pages:
                 print "Processing", f + ".xml"
-                self.processFile(parse(options.docs + f + ".xml"))
+                self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
             files = [node.attributes["refid"].value for node in xml.documentElement.getElementsByTagName("compound") if node.attributes["kind"].value == "file"]
             for f in files:
                 print "Processing", f + ".xml"
-                self.processFile(parse(options.docs + f + ".xml"))
+                self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
         elif xml.documentElement.tagName == "doxygen":
             compounds = xml.documentElement.getElementsByTagName("compounddef")
             for c in compounds:
