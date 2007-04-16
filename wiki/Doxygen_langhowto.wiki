@@ -24,10 +24,20 @@ This short HOWTO explains how to add support for the new language to Doxygen:
 Just follow these steps: 
  # Tell me for which language you want to add support. If no one else is already working on support for that language, you will be assigned as the maintainer for the language.
  # Create a copy of translator_en.h and name it translator_<your_2_letter_country_code>.h I'll use xx in the rest of this document.
- # Add definition of the symbol for your language into lang_cfg.h:  *Parsing error*  Use capital letters for your `xx` (to be consistent). The `lang_cfg.h` defines which language translators will be compiled into doxygen executable. It is a kind of configuration file. If you are sure that you do not need some of the languages, you can remove (comment out) definitions of symbols for the languages, or you can say `#undef` instead of `#define` for them.
- # Edit language.cpp: Add a  *Parsing error*  Remember to use the same symbol LANG_xx that you added to `lang_cfg.h`. I.e., the `xx` should be capital letters that identify your language. On the other hand, the `xx` inside your `translator_xx.h` should use lower case. 
+ # Add definition of the symbol for your language into lang_cfg.h: {{{ #define LANG_xx
+ }}} Use capital letters for your `xx` (to be consistent). The `lang_cfg.h` defines which language translators will be compiled into doxygen executable. It is a kind of configuration file. If you are sure that you do not need some of the languages, you can remove (comment out) definitions of symbols for the languages, or you can say `#undef` instead of `#define` for them.
+ # Edit language.cpp: Add a {{{ #ifdef LANG_xx
+#include<translator_xx.h>
+#endif
+ }}} Remember to use the same symbol LANG_xx that you added to `lang_cfg.h`. I.e., the `xx` should be capital letters that identify your language. On the other hand, the `xx` inside your `translator_xx.h` should use lower case. 
 
-Now, in `setTranslator()` add  *Parsing error*  after the `if { ... }`. I.e., it must be placed after the code for creating the English translator at the beginning, and before the `else { ... }` part that creates the translator for the default language (English again).
+Now, in `setTranslator()` add {{{ #ifdef LANG_xx
+    else if (L_EQUAL("your_language_name"))
+    {
+      theTranslator = new TranslatorYourLanguage;
+    }
+#endif    
+ }}} after the `if { ... }`. I.e., it must be placed after the code for creating the English translator at the beginning, and before the `else { ... }` part that creates the translator for the default language (English again).
  # Edit libdoxygen.pro.in and add `translator_xx.h` to the `HEADERS` line.
  # Edit `translator_xx.h`: 
  * Rename `TRANSLATOR_EN_H` to `TRANSLATOR_XX_H` twice (i.e. in the `#ifndef` and `#define` preprocessor commands at the beginning of the file).
@@ -50,11 +60,29 @@ The `TranslatorAdapter_x_y_z` class implements the new, required methods. If the
 
 *For example,* when the new `trFile()` method with parameters (to determine the capitalization of the first letter and the singular/plural form) was introduced to replace the older method `trFiles()` without arguments, the following code appeared in one of the translator adapter classes:
 
- *Parsing error* 
+{{{     /*! This is the default implementation of the obsolete method
+     * used in the documentation of a group before the list of
+     * links to documented files.  This is possibly localized.
+     */
+    virtual QCString trFiles()
+    { return "Files"; }
+
+    /*! This is the localized implementation of newer equivalent
+     * using the obsolete method trFiles().
+     */
+    virtual QCString trFile(bool first_capital, bool singular)
+    {
+      if (first_capital && !singular)
+        return trFiles();  // possibly localized, obsolete method
+      else
+        return english.trFile(first_capital, singular);
+    }
+ }}}
 
 The `trFiles()` is not present in the `TranslatorEnglish` class, because it was removed as obsolete. However, it was used until now and its call was replaced by
 
- *Parsing error* 
+{{{     trFile(true, false)
+ }}}
 
 in the doxygen source files. Probably, many language translators implemented the obsolete method, so it perfectly makes sense to use the same language dependent result in those cases. The `TranslatorEnglish` does not implement the old method. It derives from the abstract `Translator` class. On the other hand, the old translator for a different language does not implement the new `trFile()` method. Because of that it is derived from another base class -- `TranslatorAdapter_x_y_z`. The `TranslatorAdapter_x_y_z` class have to implement the new, required `trFile()` method. However, the translator adapter would not be compiled if the `trFiles()` method was not implemented. This is the reason for implementing the old method in the translator adapter class (using the same code, that was removed from the TranslatorEnglish).
 

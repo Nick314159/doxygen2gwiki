@@ -2,4 +2,12 @@
 
 
 
+= Output Formats =
+
+
+The following output formats are 'directly' supported by doxygen:  *Parsing error* 
+
+The following output formats are 'indirectly' supported by doxygen:  *Parsing error* 
+
+
     

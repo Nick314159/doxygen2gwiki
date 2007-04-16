@@ -7,16 +7,22 @@ All options consist of a leading character `-`, followed by one character and on
 
 To generate a manual for your project you typically need to follow these steps: 
  # You document your source code with special documentation blocks (see section  [Doxygen_docblocks_1specialblock Special documentation blocks]  ).
- # You generate a configuration file (see section  [Doxygen_config Configuration]  ) by calling doxygen with the `-g` option:  *Parsing error*
+ # You generate a configuration file (see section  [Doxygen_config Configuration]  ) by calling doxygen with the `-g` option: {{{ doxygen -g <config_file>
+ }}}
  # You edit the configuration file so it matches your project. In the configuration file you can specify the input files and a lot of optional information.
- # You let doxygen generate the documentation, based on the settings in the configuration file:  *Parsing error*
+ # You let doxygen generate the documentation, based on the settings in the configuration file: {{{ doxygen <config_file>
+ }}}
 
-If you have a configuration file generated with an older version of doxygen, you can upgrade it to the current version by running doxygen with the -u option.  *Parsing error*  All configuration settings in the orginal configuration file will be copied to the new configuration file. Any new options will have their default value. Note that comments that you may have added in the original configuration file will be lost.
+If you have a configuration file generated with an older version of doxygen, you can upgrade it to the current version by running doxygen with the -u option. {{{ doxygen -u <config_file>
+ }}} All configuration settings in the orginal configuration file will be copied to the new configuration file. Any new options will have their default value. Note that comments that you may have added in the original configuration file will be lost.
 
 If you want to fine-tune the way the output looks, doxygen allows you generate default style sheet, header, and footer files that you can edit afterwards: 
- * For HTML output, you can generate the default header file (see  [Doxygen_config_1cfg_html_header HTML_HEADER]  ), the default footer (see  [Doxygen_config_1cfg_html_footer HTML_FOOTER]  ), and the default style sheet (see  [Doxygen_config_1cfg_html_stylesheet HTML_STYLESHEET]  ), using the following command:  *Parsing error*
- * For LaTeX output, you can generate the first part of `refman.tex` (see  [Doxygen_config_1cfg_latex_header LATEX_HEADER]  ) and the style sheet included by that header (normally `doxygen.sty`), using:  *Parsing error*  If you need non-default options (for instance to use pdflatex) you need to make a config file with those options set correctly and then specify that config file as the forth argument.
- * For RTF output, you can generate the default style sheet file (see  [Doxygen_config_1cfg_rtf_stylesheet_file RTF_STYLESHEET_FILE]  ) using:  *Parsing error*
+ * For HTML output, you can generate the default header file (see  [Doxygen_config_1cfg_html_header HTML_HEADER]  ), the default footer (see  [Doxygen_config_1cfg_html_footer HTML_FOOTER]  ), and the default style sheet (see  [Doxygen_config_1cfg_html_stylesheet HTML_STYLESHEET]  ), using the following command: {{{ doxygen -w html header.html footer.html stylesheet.css
+ }}}
+ * For LaTeX output, you can generate the first part of `refman.tex` (see  [Doxygen_config_1cfg_latex_header LATEX_HEADER]  ) and the style sheet included by that header (normally `doxygen.sty`), using: {{{ doxygen -w latex header.tex doxygen.sty
+ }}} If you need non-default options (for instance to use pdflatex) you need to make a config file with those options set correctly and then specify that config file as the forth argument.
+ * For RTF output, you can generate the default style sheet file (see  [Doxygen_config_1cfg_rtf_stylesheet_file RTF_STYLESHEET_FILE]  ) using: {{{ doxygen -w rtf rtfstyle.cfg
+ }}}
 
 *Note:*
 

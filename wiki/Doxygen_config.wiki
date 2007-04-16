@@ -2,21 +2,192 @@
 
 
 
+= Format =
+A configuration file is a free-form ASCII text file with a structure that is similar to that of a Makefile, with the default name `Doxyfile`. It is parsed by `doxygen`. The file may contain tabs and newlines for formatting purposes. The statements in the file are case-sensitive. Comments may be placed anywhere within the file (except within quotes). Comments begin with the # character and end at the end of the line.
+
+The file essentially consists of a list of assignment statements. Each statement consists of a `TAG_NAME` written in capitals, followed by the `=` character and one or more values. If the same tag is assigned more than once, the last assignment overwrites any earlier assignment. For options that take a list as their argument, the `+=` operator can be used instead of `=` to append new values to the list. Values are sequences of non-blanks. If the value should contain one or more blanks it must be surrounded by quotes ("..."). Multiple lines can be concatenated by inserting a backslash (\) as the last character of a line. Environment variables can be expanded using the pattern `$(ENV_VARIABLE_NAME)`.
+
+You can also include part of a configuration file from another configuration file using a `@INCLUDE` tag as follows: {{{ @INCLUDE = config_file_name
+ }}} The include file is searched in the current working directory. You can also specify a list of directories that should be searched before looking in the current working directory. Do this by putting a `@INCLUDE_PATH` tag with these paths before the `@INCLUDE` tag, e.g: {{{ @INCLUDE_PATH = my_config_dir
+ }}}
+
+The configuration options can be divided into several categories. Below is an alphabetical index of the tags that are recognized followed by the descriptions of the tags grouped by category.
+
+ *Parsing error* 
 
 
 
+= Project related options =
+ *Parsing error*   *Parsing error* 
 
 
 
+= Build related options =
+ *Parsing error*   *Parsing error* 
 
 
 
+= Options related to warning and progress messages =
+ *Parsing error*   *Parsing error* 
 
 
 
+= Input related options =
+ *Parsing error*   *Parsing error* 
 
 
 
+= Source browsing related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= Alphabetical index options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= HTML related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= LaTeX related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= RTF related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= Man page related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= XML related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= AUTOGEN_DEF related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= PERLMOD related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= Preprocessor related options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= External reference options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= Dot options =
+ *Parsing error*   *Parsing error* 
+
+
+
+= Search engine options =
+ *Parsing error*   *Parsing error* 
+== Examples ==
+
+Suppose you have a simple project consisting of two files: a source file `example.cc` and a header file `example.h`. Then a minimal configuration file is as simple as: {{{ INPUT            = example.cc example.h
+ }}}
+
+Assuming the example makes use of Qt classes and perl is located in `/usr/bin`, a more realistic configuration file would be: {{{ PROJECT_NAME     = Example
+INPUT            = example.cc example.h
+WARNINGS         = YES
+TAGFILES         = qt.tag
+PERL_PATH        = /usr/bin/perl
+SEARCHENGINE     = NO
+ }}}
+
+To generate the documentation for the  [http://www.stack.nl/~dimitri/qdbttabular/index.html QdbtTabular]  package I have used the following configuration file: {{{ PROJECT_NAME     = QdbtTabular
+OUTPUT_DIRECTORY = html
+WARNINGS         = YES
+INPUT            = examples/examples.doc src
+FILE_PATTERNS    = *.cc *.h
+INCLUDE_PATH     = examples
+TAGFILES         = qt.tag
+PERL_PATH        = /usr/local/bin/perl
+SEARCHENGINE     = YES
+ }}}
+
+To regenerate the Qt-1.44 documentation from the sources, you could use the following config file: {{{ PROJECT_NAME         = Qt
+OUTPUT_DIRECTORY     = qt_docs
+HIDE_UNDOC_MEMBERS   = YES
+HIDE_UNDOC_CLASSES   = YES
+ENABLE_PREPROCESSING = YES
+MACRO_EXPANSION      = YES
+EXPAND_ONLY_PREDEF   = YES
+SEARCH_INCLUDES      = YES
+FULL_PATH_NAMES      = YES
+STRIP_FROM_PATH      = $(QTDIR)/
+PREDEFINED           = USE_TEMPLATECLASS Q_EXPORT= \
+                       QArrayT:=QArray \
+                       QListT:=QList \
+                       QDictT:=QDict \
+                       QQueueT:=QQueue \
+                       QVectorT:=QVector \
+                       QPtrDictT:=QPtrDict \
+                       QIntDictT:=QIntDict \
+                       QStackT:=QStack \
+                       QDictIteratorT:=QDictIterator \
+                       QListIteratorT:=QListIterator \
+                       QCacheT:=QCache \
+                       QCacheIteratorT:=QCacheIterator \
+                       QIntCacheT:=QIntCache \
+                       QIntCacheIteratorT:=QIntCacheIterator \
+                       QIntDictIteratorT:=QIntDictIterator \
+                       QPtrDictIteratorT:=QPtrDictIterator
+INPUT                = $(QTDIR)/doc \
+                       $(QTDIR)/src/widgets \
+                       $(QTDIR)/src/kernel \
+                       $(QTDIR)/src/dialogs \
+                       $(QTDIR)/src/tools
+FILE_PATTERNS        = *.cpp *.h q*.doc
+INCLUDE_PATH         = $(QTDIR)/include 
+RECURSIVE            = YES
+ }}}
+
+For the Qt-2.1 sources I recommend to use the following settings: {{{ PROJECT_NAME          = Qt
+PROJECT_NUMBER        = 2.1
+HIDE_UNDOC_MEMBERS    = YES
+HIDE_UNDOC_CLASSES    = YES
+SOURCE_BROWSER        = YES
+INPUT                 = $(QTDIR)/src
+FILE_PATTERNS         = *.cpp *.h q*.doc
+RECURSIVE             = YES
+EXCLUDE_PATTERNS      = *codec.cpp moc_* */compat/* */3rdparty/*
+ALPHABETICAL_INDEX    = YES
+COLS_IN_ALPHA_INDEX   = 3
+IGNORE_PREFIX         = Q
+ENABLE_PREPROCESSING  = YES
+MACRO_EXPANSION       = YES
+INCLUDE_PATH          = $(QTDIR)/include
+PREDEFINED            = Q_PROPERTY(x)= \
+                        Q_OVERRIDE(x)= \
+                        Q_EXPORT= \
+                        Q_ENUMS(x)= \
+                        "QT_STATIC_CONST=static const " \
+                        _WS_X11_ \
+                        INCLUDE_MENUITEM_DEF
+EXPAND_ONLY_PREDEF    = YES
+EXPAND_AS_DEFINED     = Q_OBJECT_FAKE Q_OBJECT ACTIVATE_SIGNAL_WITH_PARAM \
+                        Q_VARIANT_AS
+ }}}
+
+Here doxygen's preprocessor is used to substitute some macro names that are normally substituted by the C preprocessor, but without doing full macro expansion. 
 
 
     

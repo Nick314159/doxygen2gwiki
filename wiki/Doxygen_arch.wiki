@@ -32,7 +32,12 @@ The preprocessor is written using `flex` and can be found in `src/pre.l`. For co
 
 The preprocessor is invoked for each file using the `preprocessFile()` function declared in `src/pre.h`, and will append the preprocessed result to a character buffer. The format of the character buffer is
 
- *Parsing error* 
+{{{ 0x06 file name 1 
+0x06 preprocessed contents of file 1
+...
+0x06 file name n
+0x06 preprocessed contents of file n
+ }}}
 
 === Language parser ===
 
@@ -90,6 +95,41 @@ Since doxygen uses a lot of `flex` code it is important to understand how `flex`
 
 To make it easier to toggle debug information for a given flex file I wrote the following perl script, which automatically adds or removes -d from the correct line in the Makefile:
 
- *Parsing error*  
+{{{ #!/usr/local/bin/perl 
+
+$file = shift @ARGV;
+print "Toggle debugging mode for $file\n";
+
+# add or remove the -d flex flag in the makefile
+unless (rename "Makefile.libdoxygen","Makefile.libdoxygen.old") {
+  print STDERR "Error: cannot rename Makefile.libdoxygen!\n";
+  exit 1;
+}
+if (open(F,"<Makefile.libdoxygen.old")) {
+  unless (open(G,">Makefile.libdoxygen")) {
+    print STDERR "Error: opening file Makefile.libdoxygen for writing\n";
+    exit 1; 
+  }
+  print "Processing Makefile.libdoxygen...\n";
+  while (<F>) {
+    if ( s/\(LEX\) -P([a-zA-Z]+)YY -t $file/(LEX) -d -P\1YY -t $file/g ) {
+      print "Enabling debug info for $file\n";
+    }
+    elsif ( s/\(LEX\) -d -P([a-zA-Z]+)YY -t $file/(LEX) -P\1YY -t $file/g ) {
+      print "Disabling debug info for $file\n";
+    }
+    print G "$_";
+  }
+  close F;
+  unlink "Makefile.libdoxygen.old";
+}
+else {
+  print STDERR "Warning file Makefile.libdoxygen.old does not exist!\n"; 
+}
+
+# touch the file
+$now = time;
+utime $now, $now, $file
+ }}} 
 
     

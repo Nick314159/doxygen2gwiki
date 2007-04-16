@@ -4,7 +4,19 @@
 
  # *How to get information on the index page in HTML?* 
 
-You should use the \mainpage command inside a comment block like this:  *Parsing error*
+You should use the \mainpage command inside a comment block like this: {{{ /*! \mainpage My Personal Index Page
+ *
+ * \section intro_sec Introduction
+ *
+ * This is the introduction.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *  
+ * etc...
+ */
+ }}}
  # *Help, some/all of the members of my class / file / namespace are not documented?*
 
 Check the following: 
@@ -14,7 +26,11 @@ Check the following:
 
 This typically boils down to the following settings in the config file:
 
- *Parsing error* 
+{{{ ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+PREDEFINED             = MY_MACRO()=
+       }}}
 
 Please read the  [Doxygen_preprocessing preprocessing]   section of the manual for more information.
  # *When I set EXTRACT_ALL to NO none of my functions are shown in the documentation.*
@@ -28,14 +44,24 @@ For member functions or functions that are part of a namespace you should docume
 
 The new and easiest way is to add one comment block with a  [Doxygen_commands_1cmdcond \cond]   command at the start and one comment block with a  [Doxygen_commands_1cmdendcond \endcond]   command at the end of the piece of code that should be ignored. This should be within the same file of course.
 
-But you can also use Doxygen's preprocessor for this: If you put  *Parsing error*  around the blocks that should be hidden and put:  *Parsing error*  in the config file then all blocks should be skipped by Doxygen as long as `PREPROCESSING = YES`.
+But you can also use Doxygen's preprocessor for this: If you put {{{ #ifndef DOXYGEN_SHOULD_SKIP_THIS
+
+ /* code that must be skipped by Doxygen */
+
+#endif /* DOXYGEN_SHOULD_SKIP_THIS */
+ }}} around the blocks that should be hidden and put: {{{   PREDEFINED = DOXYGEN_SHOULD_SKIP_THIS
+ }}} in the config file then all blocks should be skipped by Doxygen as long as `PREPROCESSING = YES`.
  # *How can I change what is after the `#include` in the class documentation?*
 
 In most cases you can use STRIP_FROM_INC_PATH to strip a user defined part of a path.
 
 You can also document your class as follows
 
- *Parsing error* 
+{{{ /*! \class MyClassName include.h path/include.h
+ *
+ *  Docs for MyClassName
+ */
+ }}}
 
 To make doxygen put 
 
@@ -45,20 +71,28 @@ To make doxygen put
 
 in the documentation of the class MyClassName regardless of the name of the actual header file in which the definition of MyClassName is contained.
 
-If you want doxygen to show that the include file should be included using quotes instead of angle brackets you should type:  *Parsing error*
+If you want doxygen to show that the include file should be included using quotes instead of angle brackets you should type: {{{ /*! \class MyClassName myhdr.h "path/myhdr.h"
+ *
+ *  Docs for MyClassName
+ */
+ }}}
  # *How can I use tag files in combination with compressed HTML?*
 
-If you want to refer from one compressed HTML file `a.chm` to another compressed HTML file called `b.chm`, the link in `a.chm` must have the following format:  *Parsing error*  Unfortunately this only works if both compressed HTML files are in the same directory.
+If you want to refer from one compressed HTML file `a.chm` to another compressed HTML file called `b.chm`, the link in `a.chm` must have the following format: {{{ <a href="b.chm::/file.html">
+ }}} Unfortunately this only works if both compressed HTML files are in the same directory.
 
 As a result you must rename the generated `index.chm` files for all projects into something unique and put all `.chm` files in one directory.
 
-Suppose you have a project 'a' referring to a project 'b' using tag file `b.tag`, then you could rename the `index.chm` for project 'a' into `a.chm` and the `index.chm` for project 'b' into `b.chm`. In the configuration file for project 'a' you write:  *Parsing error*  or you can use `installdox` to set the links as follows:  *Parsing error*
+Suppose you have a project 'a' referring to a project 'b' using tag file `b.tag`, then you could rename the `index.chm` for project 'a' into `a.chm` and the `index.chm` for project 'b' into `b.chm`. In the configuration file for project 'a' you write: {{{ TAGFILES = b.tag=b.chm::
+ }}} or you can use `installdox` to set the links as follows: {{{ installdox -lb.tag@b.chm::
+ }}}
  # *I don't like the quick index that is put above each HTML page, what do I do?*
 
 You can disable the index by setting DISABLE_INDEX to YES. Then you can put in your own header file by writing your own header and feed that to HTML_HEADER.
  # *The overall HTML output looks different, while I only wanted to use my own html header file*
 
-You probably forgot to include the stylesheet `doxygen.css` that doxygen generates. You can include this by putting  *Parsing error*  in the HEAD section of the HTML page.
+You probably forgot to include the stylesheet `doxygen.css` that doxygen generates. You can include this by putting {{{ <LINK HREF="doxygen.css" REL="stylesheet" TYPE="text/css">
+ }}} in the HEAD section of the HTML page.
  # *Why does doxygen use Qt?*
 
 The most important reason is to have a platform abstraction for most Unices and Windows by means of the QFile, QFileInfo, QDir, QDate, QTime and QIODevice classes. Another reason is for the nice and bug free utility classes, like QList, QDict, QString, QArray, QTextStream, QRegExp, QXML etc.
@@ -68,7 +102,8 @@ The GUI front-end doxywizard uses Qt for... well... the GUI!
 
 Simply put an exclude pattern like this in the configuration file:
 
- *Parsing error*
+{{{ EXCLUDE_PATTERNS = */test/*
+ }}}
  # *Doxygen automatically generates a link to the class MyClass somewhere in the running text. How do I prevent that at a certain place?*
 
 Put a % in front of the class name. Like this: %MyClass. Doxygen will then remove the % and keep the word unlinked.
@@ -96,14 +131,17 @@ Please read  [searchengine.html this]  for hints on where to look.
 
 Not via command line options, but doxygen can read from `stdin`, so you can pipe things through it. Here's an example how to override an option in a configuration file from the command line (assuming a unix environment):
 
- *Parsing error* 
+{{{ ( cat Doxyfile ; echo "PROJECT_NUMBER=1.0" ) | doxygen -
+ }}}
 
 If multiple options with the same name are specified then doxygen will use the last one. To append to an existing option you can use the += operator.
  # *How did doxygen get its name?*
 
 Doxygen got its name from playing with the words documentation and generator.
 
- *Parsing error* 
+{{{ documentation -> docs -> dox
+generator -> gen
+ }}}
 
 At the time I was looking into lex and yacc, where a lot of things start with "yy", so the "y" slipped in and made things pronounceable (the proper pronouncement is Docs-ee-gen, so with a long "e").
  # *What was the reason to develop doxygen?*
