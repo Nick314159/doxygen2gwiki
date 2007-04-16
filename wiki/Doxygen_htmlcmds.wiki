@@ -105,7 +105,9 @@ The special HTML character entities that are recognized by Doxygen:
  * `&?ring;` where ? is one of {a,A}, writes an `a` with a ring (like  *Parsing error* ).
  * `&nbsp;` a non breakable space.
 
-Finally, to put invisible comments inside comment blocks, HTML style comments can be used: {{{ /*! <!-- This is a comment with a comment block --> Visible text */
- }}} 
+Finally, to put invisible comments inside comment blocks, HTML style comments can be used: {{{
+/*! <!-- This is a comment with a comment block --> Visible text */
+
+}}} 
 
     

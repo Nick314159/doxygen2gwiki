@@ -15,10 +15,12 @@ To avoid putting  [Doxygen_commands_1cmdingroup \ingroup]   commands in the docu
 
 Groups themselves can also be nested using these grouping markers.
 
-You will get an error message when you use the same group label more than once. If you don't want doxygen to enforce unique labels, then you can use  [Doxygen_commands_1cmdaddtogroup \addtogroup]   instead of  [Doxygen_commands_1cmddefgroup \defgroup]  . It can be used exactly like  [Doxygen_commands_1cmddefgroup \defgroup]  , but when the group has been defined already, then it silently merges the existing documentation with the new one. The title of the group is optional for this command, so you can use {{{ /** \addtogroup <label> */
+You will get an error message when you use the same group label more than once. If you don't want doxygen to enforce unique labels, then you can use  [Doxygen_commands_1cmdaddtogroup \addtogroup]   instead of  [Doxygen_commands_1cmddefgroup \defgroup]  . It can be used exactly like  [Doxygen_commands_1cmddefgroup \defgroup]  , but when the group has been defined already, then it silently merges the existing documentation with the new one. The title of the group is optional for this command, so you can use {{{
+/** \addtogroup <label> */
 /*\@{*/
 /*\@}*/
- }}} to add additional members to a group that is defined in more detail elsewhere.
+
+}}} to add additional members to a group that is defined in more detail elsewhere.
 
 Note that compound entities (like classes, files and namespaces) can be put into multiple groups, but members (like variable, functions, typedefs and enums) can only be a member of one group (this restriction is in place to avoid ambiguous linking targets in case a member is not documented in the context of its class, namespace or file, but only visible as part of a group).
 
@@ -26,7 +28,8 @@ Doxygen will put members into the group whose definition has the highest "priori
 
 The following example puts VarInA into group A and silently resolves the conflict for IntegerVariable by putting it into group IntVariables, because the second instance of IntegerVariable is undocumented:
 
-{{{ /**
+{{{
+/**
  * \ingroup A
  */
 extern int VarInA;
@@ -54,10 +57,13 @@ int VarInA;
 int IntegerVariable;
 
 /*@}*/
- }}}
 
-The  [Doxygen_commands_1cmdref \ref]   command can be used to refer to a group. The first argument of the \ref command should be group's label. To use a custom link name, you can put the name of the links in double quotes after the label, as shown by the following example {{{ This is the \ref group_label "link" to this group.
- }}}
+}}}
+
+The  [Doxygen_commands_1cmdref \ref]   command can be used to refer to a group. The first argument of the \ref command should be group's label. To use a custom link name, you can put the name of the links in double quotes after the label, as shown by the following example {{{
+This is the \ref group_label "link" to this group.
+
+}}}
 
 The priorities of grouping definitions are (from highest to lowest):  [Doxygen_commands_1cmdingroup \ingroup]  ,  [Doxygen_commands_1cmddefgroup \defgroup]  ,  [Doxygen_commands_1cmdaddtogroup \addtogroup]  ,  [Doxygen_commands_1cmdweakgroup \weakgroup]  . The last command is exactly like  [Doxygen_commands_1cmdaddtogroup \addtogroup]   with a lower priority. It was added to allow "lazy" grouping definitions: you can use commands with a higher priority in your .h files to define the hierarchy and  [Doxygen_commands_1cmdweakgroup \weakgroup]   in .c files without having to duplicate the hierarchy exactly.
 
@@ -68,13 +74,17 @@ The priorities of grouping definitions are (from highest to lowest):  [Doxygen_c
 = Member Groups =
 If a compound (e.g. a class or file) has many members, it is often desired to group them together. Doxygen already automatically groups things together on type and protection level, but maybe you feel that this is not enough or that that default grouping is wrong. For instance, because you feel that members of different (syntactic) types belong to the same (semantic) group.
 
-A member group is defined by a {{{ //@{ 
+A member group is defined by a {{{
+//@{ 
   ...
 //@}
- }}} block or a {{{ /*@{*/ 
+
+}}} block or a {{{
+/*@{*/ 
   ... 
 /*@}*/ 
- }}} block if you prefer C style comments. Note that the members of the group should be physcially inside the member group's body.
+
+}}} block if you prefer C style comments. Note that the members of the group should be physcially inside the member group's body.
 
 Before the opening marker of a block a separate comment block may be placed. This block should contain the  [Doxygen_commands_1cmdname @name]   (or  [Doxygen_commands_1cmdname \name]  ) command and is used to specify the header of the group. Optionally, the comment block may also contain more detailed information about the group.
 

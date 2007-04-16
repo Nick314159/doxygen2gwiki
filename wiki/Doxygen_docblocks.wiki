@@ -12,85 +12,109 @@ As the name suggest, a brief description is a short one-liner, whereas the detai
 There are several ways to mark a comment block as a detailed description: 
  # You can use the JavaDoc style, which consist of a C-style comment block starting with two *'s, like this:
 
-{{{ /**
+{{{
+/**
  * ... text ...
  */
- }}}
+
+}}}
  # or you can use the Qt style and add an exclamation mark (!) after the opening of a C-style comment block, as shown in this example:
 
-{{{ /*!
+{{{
+/*!
  * ... text ...
  */
- }}}
+
+}}}
 
 In both cases the intermediate *'s are optional, so
 
-{{{ /*!
+{{{
+/*!
  ... text ...
 */
- }}}
+
+}}}
 
 is also valid.
  # A third alternative is to use a block of at least two C++ comment lines, where each line starts with an additional slash or an exclamation mark. Here are examples of the two cases:
 
-{{{ ///
+{{{
+///
 /// ... text ...
 ///
- }}}
+
+}}}
 
 or
 
-{{{ //!
+{{{
+//!
 //!... text ...
 //!
- }}}
+
+}}}
  # Some people like to make their comment blocks more visible in the documentation. For this purpose you can use the following:
 
-{{{ /////////////////////////////////////////////////
+{{{
+/////////////////////////////////////////////////
 /// ... text ...
 /////////////////////////////////////////////////
- }}}
+
+}}}
 
 For the brief description there are also several posibilities: 
  # One could use the  [Doxygen_commands_1cmdbrief \brief]   command with one of the above comment blocks. This command ends at the end of a paragraph, so the detailed description follows after an empty line.
 
 Here is an example:
 
-{{{ /*! \brief Brief description.
+{{{
+/*! \brief Brief description.
  *         Brief description continued.
  *
  *  Detailed description starts here.
  */
- }}}
+
+}}}
  # If  [Doxygen_config_1cfg_javadoc_autobrief JAVADOC_AUTOBRIEF]   is set to `YES` in the configuration file, then using JavaDoc style comment blocks will automatically start a brief description which ends at the first dot followed by a space or new line. Here is an example:
 
-{{{ /** Brief description which ends at this dot. Details follow
+{{{
+/** Brief description which ends at this dot. Details follow
  *  here.
  */
- }}} The option has the same effect for multi-line special C++ comments: {{{ /// Brief description which ends at this dot. Details follow
+
+}}} The option has the same effect for multi-line special C++ comments: {{{
+/// Brief description which ends at this dot. Details follow
 /// here.
- }}}
- # A third option is to use a special C++ style comment which does not span more than one line. Here are two examples: {{{ /// Brief description.
+
+}}}
+ # A third option is to use a special C++ style comment which does not span more than one line. Here are two examples: {{{
+/// Brief description.
 /** Detailed description. */
- }}}
+
+}}}
 
 or
 
-{{{ //! Brief descripion.
+{{{
+//! Brief descripion.
 
 //! Detailed description 
 //! starts here.
- }}}
+
+}}}
 
 Note the blank line in the last example, which is required to separate the brief description from the block containing the detailed description. The  [Doxygen_config_1cfg_javadoc_autobrief JAVADOC_AUTOBRIEF]   should also be set to `NO` for this case.
 
 As you can see doxygen is quite flexible. The following however is not legal
 
-{{{ //! Brief description, which is
+{{{
+//! Brief description, which is
 //! really a detailed description since it spans multiple lines.
 /*! Oops, another detailed description!
  */
- }}}
+
+}}}
 
 because doxygen only allows one brief and one detailed description.
 
@@ -102,8 +126,10 @@ The one-line comments contain a brief description, whereas the multi-line commen
 
 The brief descriptions are included in the member overview of a class, namespace or file and are printed using a small italic font (this description can be hidden by setting  [Doxygen_config_1cfg_brief_member_desc BRIEF_MEMBER_DESC]   to `NO` in the config file). By default the brief descriptions become the first sentence of the detailed descriptions (but this can be changed by setting the  [Doxygen_config_1cfg_repeat_brief REPEAT_BRIEF]   tag to `NO`). Both the brief and the detailed descriptions are optional for the Qt style.
 
-By default a JavaDoc style documentation block behaves the same way as a Qt style documentation block. This is not according the JavaDoc specification however, where the first sentence of the documentation block is automatically treated as a brief description. To enable this behaviour you should set  [Doxygen_config_1cfg_javadoc_autobrief JAVADOC_AUTOBRIEF]   to YES in the configuration file. If you enable this option and want to put a dot in the middle of a sentence without ending it, you should put a backslash and a space after it. Here is an example: {{{   /** Brief description (e.g.\ using only a few words). Details follow. */
- }}}
+By default a JavaDoc style documentation block behaves the same way as a Qt style documentation block. This is not according the JavaDoc specification however, where the first sentence of the documentation block is automatically treated as a brief description. To enable this behaviour you should set  [Doxygen_config_1cfg_javadoc_autobrief JAVADOC_AUTOBRIEF]   to YES in the configuration file. If you enable this option and want to put a dot in the middle of a sentence without ending it, you should put a backslash and a space after it. Here is an example: {{{
+  /** Brief description (e.g.\ using only a few words). Details follow. */
+
+}}}
 
 Here is the same piece of code as shown above, this time documented using the JavaDoc style and  [Doxygen_config_1cfg_javadoc_autobrief JAVADOC_AUTOBRIEF]   set to YES:  *Parsing error*  
 
@@ -114,17 +140,29 @@ Unlike most other documentation systems, doxygen also allows you to put the docu
 = Putting documentation after members =
 If you want to document the members of a file, struct, union, class, or enum, and you want to put the documentation for these members inside the compound, it is sometimes desired to place the documentation block after the member instead of before. For this purpose you have to put an additional < marker in the comment block. Note that this also works for the parameters of a function.
 
-Here are some examples: {{{ int var; /*!< Detailed description after the member */
- }}} This block can be used to put a Qt style detailed documentation block 'after' a member. Other ways to do the same are: {{{ int var; /**< Detailed description after the member */
- }}} or {{{ int var; //!< Detailed description after the member
-         //!< 
- }}} or {{{ int var; ///< Detailed description after the member
-         ///< 
- }}}
+Here are some examples: {{{
+int var; /*!< Detailed description after the member */
 
-Most often one only wants to put a brief description after a member. This is done as follows: {{{ int var; //!< Brief description after the member
- }}} or {{{ int var; ///< Brief description after the member
- }}}
+}}} This block can be used to put a Qt style detailed documentation block 'after' a member. Other ways to do the same are: {{{
+int var; /**< Detailed description after the member */
+
+}}} or {{{
+int var; //!< Detailed description after the member
+         //!< 
+
+}}} or {{{
+int var; ///< Detailed description after the member
+         ///< 
+
+}}}
+
+Most often one only wants to put a brief description after a member. This is done as follows: {{{
+int var; //!< Brief description after the member
+
+}}} or {{{
+int var; ///< Brief description after the member
+
+}}}
 
 Note that these blocks have the same structure and meaning as the special comment blocks in the previous section only the < indicates that the member is located in front of the block instead of after the block.
 
@@ -141,12 +179,14 @@ Doxygen allows you to put your documentation blocks practically anywhere (the ex
 
 The price you pay for not putting the documentation block directly before (or after) an item is the need to put a structural command inside the documentation block, which leads to some duplication of information. So in practice you should 'avoid' the use of structural commands 'unless' other requirements force you to do so.
 
-Structural commands (like all other commands) start with a backslash (`\`), or an at-sign (`@`) if you prefer JavaDoc style, followed by a command name and one or more parameters. For instance, if you want to document the class `Test` in the example above, you could have also put the following documentation block somewhere in the input that is read by doxygen: {{{ /*! \class Test
+Structural commands (like all other commands) start with a backslash (`\`), or an at-sign (`@`) if you prefer JavaDoc style, followed by a command name and one or more parameters. For instance, if you want to document the class `Test` in the example above, you could have also put the following documentation block somewhere in the input that is read by doxygen: {{{
+/*! \class Test
     \brief A test class.
 
     A more detailed class description.
 */
- }}}
+
+}}}
 
 Here the special command `\class` is used to indicate that the comment block contains documentation for the class `Test`. Other structural commands are: 
  * `\struct` to document a C-struct.
@@ -165,7 +205,11 @@ See section  [Doxygen_commands Special Commands]   for detailed information abou
 
 To document a member of a C++ class, you must also document the class itself. The same holds for namespaces. To document a global C function, typedef, enum or preprocessor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
 
-Let's repeat that, because it is often overlooked: to document global objects (functions, typedefs, enum, macros, etc), you 'must' document the file in which they are defined. In other words, there 'must' at least be a{{{ /*! \file */  }}} or a{{{ /** @file */  }}} line in this file.
+Let's repeat that, because it is often overlooked: to document global objects (functions, typedefs, enum, macros, etc), you 'must' document the file in which they are defined. In other words, there 'must' at least be a{{{
+/*! \file */ 
+}}} or a{{{
+/** @file */ 
+}}} line in this file.
 
 Here is an example of a C header named `structcmd.h` that is documented using structural commands:  *Parsing error*  
 

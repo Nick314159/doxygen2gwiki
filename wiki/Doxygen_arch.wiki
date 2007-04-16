@@ -32,12 +32,14 @@ The preprocessor is written using `flex` and can be found in `src/pre.l`. For co
 
 The preprocessor is invoked for each file using the `preprocessFile()` function declared in `src/pre.h`, and will append the preprocessed result to a character buffer. The format of the character buffer is
 
-{{{ 0x06 file name 1 
+{{{
+0x06 file name 1 
 0x06 preprocessed contents of file 1
 ...
 0x06 file name n
 0x06 preprocessed contents of file n
- }}}
+
+}}}
 
 === Language parser ===
 
@@ -95,7 +97,8 @@ Since doxygen uses a lot of `flex` code it is important to understand how `flex`
 
 To make it easier to toggle debug information for a given flex file I wrote the following perl script, which automatically adds or removes -d from the correct line in the Makefile:
 
-{{{ #!/usr/local/bin/perl 
+{{{
+#!/usr/local/bin/perl 
 
 $file = shift @ARGV;
 print "Toggle debugging mode for $file\n";
@@ -130,6 +133,7 @@ else {
 # touch the file
 $now = time;
 utime $now, $now, $file
- }}} 
+
+}}} 
 
     

@@ -9,10 +9,16 @@
  * Since it is impossible to test all possible code fragments, it is very well possible, that some valid piece of C/C++ code is not handled properly. If you find such a piece, please send it to me, so I can improve doxygen's parsing capabilities. Try to make the piece of code you send as small as possible, to help me narrow down the search.
  * Doxygen does not work properly if there are multiple classes, structs or unions with the same name in your code. It should not crash however, rather it should ignore all of the classes with the same name except one.
  * Some commands do not work inside the arguments of other commands. Inside a HTML link (i.e <a href="...">...<a>) for instance other commands (including other HTML commands) do not work! The sectioning commands are an important exception.
- * Redundant braces can confuse doxygen in some cases. For example: {{{   void f (int);
- }}} is properly parsed as a function declaration, but {{{   const int (a);
- }}} is also seen as a function declaration with name `int`, because only the syntax is analysed, not the semantics. If the redundant braces can be detected, as in {{{   int *(a[20]);
- }}} then doxygen will remove the braces and correctly parse the result.
+ * Redundant braces can confuse doxygen in some cases. For example: {{{
+  void f (int);
+
+}}} is properly parsed as a function declaration, but {{{
+  const int (a);
+
+}}} is also seen as a function declaration with name `int`, because only the syntax is analysed, not the semantics. If the redundant braces can be detected, as in {{{
+  int *(a[20]);
+
+}}} then doxygen will remove the braces and correctly parse the result.
  * Not all names in code fragments that are included in the documentation are replaced by links (for instance when using `SOURCE_BROWSER` = `YES`) and links to overloaded members may point to the wrong member. This also holds for the "Referenced by" list that is generated for each function.
 
 For a part this is because the code parser isn't smart enough at the moment. I'll try to improve this in the future. But even with these improvements not everything can be properly linked to the corresponding documentation, because of possible ambiguities or lack of information about the context in which the code fragment is found.

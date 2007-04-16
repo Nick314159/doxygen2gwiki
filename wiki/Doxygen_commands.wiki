@@ -25,7 +25,8 @@ The following subsections provide a list of all commands that are recognized by 
 
 The title is optional, so this command can also be used to add a number of entities to an existing group using @{ and @} like this:
 
-{{{   /*! \addtogroup mygrp
+{{{
+  /*! \addtogroup mygrp
    *  Additional documentation for group `mygrp'
    *  @{
    */
@@ -43,7 +44,8 @@ The title is optional, so this command can also be used to add a number of entit
   }
 
   /*! @} */
- }}}
+
+}}}
 
  *Parsing error* 
 
@@ -204,7 +206,8 @@ If the \mainpage command is placed in a comment block the block is used to custo
 
 The title argument is optional and replaces the default title that doxygen normally generates. If you do not want any title you can specify `notitle` as the argument of \mainpage.
 
-Here is an example: {{{ /*! \mainpage My Personal Index Page
+Here is an example: {{{
+/*! \mainpage My Personal Index Page
  *
  * \section intro_sec Introduction
  *
@@ -216,7 +219,8 @@ Here is an example: {{{ /*! \mainpage My Personal Index Page
  *  
  * etc...
  */
- }}}
+
+}}}
 
 You can refer to the main page using \ref index (if the treeview is disabled, otherwise you should use \ref main).
 
@@ -424,7 +428,8 @@ Conditional sections can be nested. In this case a nested section will only be s
 
 Here is an example showing the commands in action:
 
-{{{ /** An interface */
+{{{
+/** An interface */
 class Intf
 {
   public:
@@ -461,7 +466,8 @@ class Implementation : public Intf
 };
 
 /// @endcond 
- }}}
+
+}}}
 
 The output will be different depending on whether `ENABLED_SECTIONS` is empty, `TEST`, `DEV`, or `DEV` `TEST`.
 
@@ -540,11 +546,13 @@ You can also use conditional commands inside aliases. To document a class in two
  *Parsing error* 
 Where the following aliases are defined in the configuration file:
 
-{{{ ALIASES  = "english=\if english" \
+{{{
+ALIASES  = "english=\if english" \
            "endenglish=\endif" \
            "dutch=\if dutch" \
            "enddutch=\endif"
- }}}
+
+}}}
 
 and `ENABLED_SECTIONS` can be used to enable either `english` or `dutch`.
 
@@ -716,9 +724,13 @@ Synonymous to \see.
 
 The first argument <key> is a identifier uniquely representing the type of the section. The second argument is a quoted string representing the heading of the section under which text passed as the forth argument is put. The third argument (list title) is used as the title for the related page containing all items with the same key. The keys "todo", "test", "bug", and "deprecated" are predefined.
 
-To get an idea on how to use the \xrefitem command and what its effect is, consider the todo list, which (for English output) can be seen an alias for the command {{{ \xrefitem todo "Todo" "Todo List"  }}}
+To get an idea on how to use the \xrefitem command and what its effect is, consider the todo list, which (for English output) can be seen an alias for the command {{{
+\xrefitem todo "Todo" "Todo List" 
+}}}
 
-Since it is very tedious and error-prone to repeat the first three parameters of the command for each section, the command is meant to be used in combination with the  [Doxygen_config_1cfg_aliases ALIASES]   option in the configuration file. To define a new command \reminder, for instance, one should add the following line to the configuration file: {{{ ALIASES += "reminder=\xrefitem reminders \"Reminder\" \"Reminders\""  }}} Note the use of escaped quotes for the second and third argument of the \xrefitem command.
+Since it is very tedious and error-prone to repeat the first three parameters of the command for each section, the command is meant to be used in combination with the  [Doxygen_config_1cfg_aliases ALIASES]   option in the configuration file. To define a new command \reminder, for instance, one should add the following line to the configuration file: {{{
+ALIASES += "reminder=\xrefitem reminders \"Reminder\" \"Reminders\"" 
+}}} Note the use of escaped quotes for the second and third argument of the \xrefitem command.
 
  *Parsing error* 
  ==  Commands to create links  ==
@@ -783,7 +795,8 @@ It differs from the \ref command in that it only works for pages, and creates a 
 See the  [Doxygen_commands_1cmdsection \section]   and  [Doxygen_commands_1cmdsubsection \subsection]   commands if you want to add structure without creating multiple pages.
 
  *Parsing error* 
-Here is an example: {{{ /*! \mainpage A simple manual
+Here is an example: {{{
+/*! \mainpage A simple manual
 
 Some general info.
   
@@ -805,7 +818,8 @@ Now you can proceed to the \ref advanced "advanced section".
 This page is for advanced users.
 Make sure you have first read \ref intro "the introduction".
 */
- }}}
+
+}}}
 
  *Parsing error* 
  
@@ -1018,15 +1032,19 @@ The link object can point to a member (of a class, file or group), a class, a na
 
 To copy the documentation for a member of a class for instance one can put the following in the documentation
 
-{{{   /*! @copydoc MyClass::myfunction() 
+{{{
+  /*! @copydoc MyClass::myfunction() 
    *  More documentation.
    */
- }}}
+
+}}}
 
 if the member is overloaded, you should specify the argument types explicitly (without spaces!), like in the following:
 
-{{{   /*! @copydoc MyClass::myfunction(type1,type2) */
- }}}
+{{{
+  /*! @copydoc MyClass::myfunction(type1,type2) */
+
+}}}
 
 Qualified names are only needed if the context in which the documentation block is found requires them.
 
@@ -1209,16 +1227,20 @@ The fourth argument is also optional and can be used to specify the width or hei
 
 Here is example of a comment block:
 
-{{{   /*! Here is a snapshot of my new application:
+{{{
+  /*! Here is a snapshot of my new application:
    *  \image html application.jpg
    *  \image latex application.eps "My application" width=10cm
    */
- }}}
+
+}}}
 
 And this is an example of how the relevant part of the configuration file may look:
 
-{{{   IMAGE_PATH     = my_image_dir
- }}}
+{{{
+  IMAGE_PATH     = my_image_dir
+
+}}}
 
  *Parsing error* 
  *Parsing error* 
@@ -1321,10 +1343,12 @@ This command can be used to include custom XML tags.
 = \~[LanguageId] =
  This command enables/disables a language specific filter. This can be used to put documentation for different language into one comment block and use the `OUTPUT_LANGUAGE` tag to filter out only a specific language. Use \~language_id to enable output for a specific language only and \~ to enable output for all languages (this is also the default mode).
 
-Example: {{{ /*! \~english This is english \~dutch Dit is Nederlands \~german Dieses ist
+Example: {{{
+/*! \~english This is english \~dutch Dit is Nederlands \~german Dieses ist
     deutsch. \~ output for all languages.
  */
- }}}
+
+}}}
 
  *Parsing error* 
  

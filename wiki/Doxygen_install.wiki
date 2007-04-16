@@ -30,42 +30,56 @@ Compilation is now done by performing the following steps:
 
  # Unpack the archive, unless you already have done that:
 
-{{{     gunzip doxygen-$VERSION.src.tar.gz    # uncompress the archive
+{{{
+    gunzip doxygen-$VERSION.src.tar.gz    # uncompress the archive
     tar xf doxygen-$VERSION.src.tar       # unpack it
- }}}
+
+}}}
  # Run the configure script:
 
-{{{     sh ./configure
- }}}
+{{{
+    sh ./configure
+
+}}}
 
 The script tries to determine the platform you use, the make tool (which 'must' be GNU make) and the perl interpreter. It will report what it finds.
 
 To override the auto detected platform and compiler you can run configure as follows:
 
-{{{     configure --platform platform-type
- }}}
+{{{
+    configure --platform platform-type
+
+}}}
 
 See the `PLATFORMS` file for a list of possible platform options.
 
 If you have Qt-3.2.x or higher installed and want to build the GUI front-end, you should run the configure script with the `--with-doxywizard` option:
 
-{{{     configure --with-doxywizard
- }}}
+{{{
+    configure --with-doxywizard
+
+}}}
 
 For an overview of other configuration options use
 
-{{{     configure --help
- }}}
+{{{
+    configure --help
+
+}}}
  # Compile the program by running make:
 
-{{{     make
- }}}
+{{{
+    make
+
+}}}
 
 The program should compile without problems and three binaries (`doxygen` and `doxytag`) should be available in the bin directory of the distribution.
  # Optional: Generate the user manual.
 
-{{{     make docs
- }}}
+{{{
+    make docs
+
+}}}
 
 To let doxygen generate the HTML documentation.
 
@@ -73,8 +87,10 @@ To let doxygen generate the HTML documentation.
 The HTML directory of the distribution will now contain the html documentation (just point a HTML browser to the file `index.html` in the html directory).
  # Optional: Generate a PDF version of the manual (you will need `pdflatex`, `makeindex`, and `egrep` for this).
 
-{{{     make pdf
- }}}
+{{{
+    make pdf
+
+}}}
 
 The PDF manual `doxygen_manual.pdf` will be located in the latex directory of the distribution. Just view and print it via the acrobat reader.
 
@@ -83,9 +99,11 @@ The PDF manual `doxygen_manual.pdf` will be located in the latex directory of th
 = Installing the binaries on Unix =
 After the compilation of the source code do a `make install` to install doxygen. If you downloaded the binary distribution for Unix, type:
 
-{{{     ./configure
+{{{
+    ./configure
     make install
- }}}
+
+}}}
 
 Binaries are installed into the directory `<prefix>/bin`. Use `make install_docs` to install the documentation and examples into `<docdir>/doxygen`.
 
@@ -103,12 +121,14 @@ If you have a RPM or DEP package, then please follow the standard installation p
 
 The Qt include files and libraries are not a subdirectory of the directory pointed to by QTDIR on some systems (for instance on Red Hat 6.0 includes are in /usr/include/qt and libs are in /usr/lib).
 
-The solution: go to the root of the doxygen distribution and do: {{{    mkdir qt
+The solution: go to the root of the doxygen distribution and do: {{{
+   mkdir qt
    cd qt
    ln -s your-qt-include-dir-here include
    ln -s your-qt-lib-dir-here lib
    export QTDIR=$PWD
- }}}
+
+}}}
 
 If you have a csh-like shell you should use `setenv QTDIR $PWD` instead of the `export` command above.
 
@@ -128,35 +148,46 @@ The file `a4wide.sty` is not available for all distributions. If your distributi
 
 *HP-UX & Digital Unix problems*
 
-If you are compiling for HP-UX with aCC and you get this error: {{{     /opt/aCC/lbin/ld: Unsatisfied symbols:
+If you are compiling for HP-UX with aCC and you get this error: {{{
+    /opt/aCC/lbin/ld: Unsatisfied symbols:
     alloca (code)
- }}} then you should (according to Anke Selig) edit `ce_parse.cpp` and replace {{{     extern "C" {
+
+}}} then you should (according to Anke Selig) edit `ce_parse.cpp` and replace {{{
+    extern "C" {
       void *alloca (unsigned int);
     };
- }}} with {{{     #include <alloca.h>  
- }}}
+
+}}} with {{{
+    #include <alloca.h>  
+
+}}}
 
 If that does not help, try removing `ce_parse.cpp` and let bison rebuild it (this worked for me).
 
 If you are compiling for Digital Unix, the same problem can be solved (according to Barnard Schmallhof) by replacing the following in ce_parse.cpp:
 
-{{{     #else /* not GNU C.  */
+{{{
+    #else /* not GNU C.  */
     #if (!defined (__STDC__) && defined (sparc)) || defined (__sparc__) \
         || defined (__sparc) || defined (__sgi)
     #include <alloca.h>
- }}}
+
+}}}
 
 with
 
-{{{     #else /* not GNU C.  */
+{{{
+    #else /* not GNU C.  */
     #if (!defined (__STDC__) && defined (sparc)) || defined (__sparc__) \
         || defined (__sparc) || defined (__sgi) || defined (__osf__)
     #include <alloca.h>
- }}}
+
+}}}
 
 Alternatively, one could fix the problem at the bison side. Here is patch for bison.simple (provided by Andre Johansen):
 
-{{{ --- bison.simple~       Tue Nov 18 11:45:53 1997
+{{{
+--- bison.simple~       Tue Nov 18 11:45:53 1997
 +++ bison.simple        Mon Jan 26 15:10:26 1998
 @@ -27,7 +27,7 @@
  #ifdef __GNUC__
@@ -169,7 +200,8 @@ Alternatively, one could fix the problem at the bison side. Here is patch for bi
  #include <alloca.h>
  #else /* not sparc */
  #if defined (MSDOS) && !defined (__TURBOC__)
- }}}
+
+}}}
 
 The generated scanner.cpp that comes with doxygen is build with this patch applied.
 
@@ -179,18 +211,22 @@ It appears that doxygen doesn't work properly if it is compiled with Sun's C++ W
 
 when configuring with `--static` I got:
 
-{{{ Undefined                       first referenced
+{{{
+Undefined                       first referenced
  symbol                             in file
 dlclose                             /usr/lib/libc.a(nss_deffinder.o)
 dlsym                               /usr/lib/libc.a(nss_deffinder.o)
 dlopen                              /usr/lib/libc.a(nss_deffinder.o)
- }}}
+
+}}}
 
 Manually adding `-Bdynamic` after the target rule in `Makefile.doxygen` and `Makefile.doxytag` will fix this:
 
-{{{ $(TARGET): $(OBJECTS) $(OBJMOC) 
+{{{
+$(TARGET): $(OBJECTS) $(OBJMOC) 
         $(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJMOC) $(LIBS) -Bdynamic
- }}}
+
+}}}
 
 *GCC compiler problems*
 
@@ -206,9 +242,13 @@ Due to a change in the way image maps are generated, older versions of doxygen (
 
 *Red Hat 9.0 problems*
 
-If you get the following error after running make {{{ tmake error: qtools.pro:70: Syntax error
- }}} then first type {{{ export LANG=
- }}} before running make.
+If you get the following error after running make {{{
+tmake error: qtools.pro:70: Syntax error
+
+}}} then first type {{{
+export LANG=
+
+}}} before running make.
 
 
 
@@ -217,8 +257,10 @@ From version 1.5.0 onwards, build files are provided for Visual Studio 2005. Als
 
 Before you can compile doxygen you need to download and install the C++ compiler of Visual Studio. Since Microsoft apparently wants to lure everyone into using their .NET stuff, you need to  [http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/ do some manual steps]  in order to setup a proper working environment for building native win32 applications.
 
-Once your environment is setup, you can  [http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc download]  the source distribution of doxygen and unpack it. If you don't have a tool like WinZip, then I suggest to download  [http://sourceforge.net/projects/unxutils/ unxutils]  and untar the archive from within a command box using {{{   tar zxvf doxygen-version.src.tar.gz
- }}} Inside the archive you will find a `winbuild` directory containing a `Doxygen.sln` file. Just open this file in Visual Studio. You can now build the Doxygen, Doxytag, and Doxywizard projects for Release or Debug to compile the executables.
+Once your environment is setup, you can  [http://www.stack.nl/~dimitri/doxygen/download.html#latestsrc download]  the source distribution of doxygen and unpack it. If you don't have a tool like WinZip, then I suggest to download  [http://sourceforge.net/projects/unxutils/ unxutils]  and untar the archive from within a command box using {{{
+  tar zxvf doxygen-version.src.tar.gz
+
+}}} Inside the archive you will find a `winbuild` directory containing a `Doxygen.sln` file. Just open this file in Visual Studio. You can now build the Doxygen, Doxytag, and Doxywizard projects for Release or Debug to compile the executables.
 
 Note that compiling Doxywizard currently requires a  [http://www.trolltech.com/products/qt/qt3 commercial license for Qt 3] .
 

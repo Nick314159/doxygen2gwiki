@@ -55,8 +55,10 @@ All of these entities can be linked to in the same way as described in the previ
 
 
 = typedefs. =
-Typedefs that involve classes, structs and unions, like {{{ typedef struct StructName TypeName
- }}} create an alias for StructName, so links will be generated to StructName, when either StructName itself or TypeName is encountered.
+Typedefs that involve classes, structs and unions, like {{{
+typedef struct StructName TypeName
+
+}}} create an alias for StructName, so links will be generated to StructName, when either StructName itself or TypeName is encountered.
 
  *Parsing error* 
 
