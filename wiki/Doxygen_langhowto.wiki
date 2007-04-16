@@ -22,53 +22,23 @@ If you want to add support for a language that is not yet listed please read the
 This short HOWTO explains how to add support for the new language to Doxygen:
 
 Just follow these steps: 
- # 
-Tell me for which language you want to add support. If no one else is already working on support for that language, you will be assigned as the maintainer for the language. 
+ # Tell me for which language you want to add support. If no one else is already working on support for that language, you will be assigned as the maintainer for the language.
+ # Create a copy of translator_en.h and name it translator_<your_2_letter_country_code>.h I'll use xx in the rest of this document.
+ # Add definition of the symbol for your language into lang_cfg.h:  *Parsing error*  Use capital letters for your `xx` (to be consistent). The `lang_cfg.h` defines which language translators will be compiled into doxygen executable. It is a kind of configuration file. If you are sure that you do not need some of the languages, you can remove (comment out) definitions of symbols for the languages, or you can say `#undef` instead of `#define` for them.
+ # Edit language.cpp: Add a  *Parsing error*  Remember to use the same symbol LANG_xx that you added to `lang_cfg.h`. I.e., the `xx` should be capital letters that identify your language. On the other hand, the `xx` inside your `translator_xx.h` should use lower case. 
 
- # 
-Create a copy of translator_en.h and name it translator_<your_2_letter_country_code>.h I'll use xx in the rest of this document. 
-
- # 
-Add definition of the symbol for your language into lang_cfg.h:  *Parsing error*  Use capital letters for your `xx` (to be consistent). The `lang_cfg.h` defines which language translators will be compiled into doxygen executable. It is a kind of configuration file. If you are sure that you do not need some of the languages, you can remove (comment out) definitions of symbols for the languages, or you can say `#undef` instead of `#define` for them. 
-
- # 
-Edit language.cpp: Add a  *Parsing error*  Remember to use the same symbol LANG_xx that you added to `lang_cfg.h`. I.e., the `xx` should be capital letters that identify your language. On the other hand, the `xx` inside your `translator_xx.h` should use lower case. 
-
-Now, in `setTranslator()` add  *Parsing error*  after the `if { ... }`. I.e., it must be placed after the code for creating the English translator at the beginning, and before the `else { ... }` part that creates the translator for the default language (English again). 
-
- # 
-Edit libdoxygen.pro.in and add `translator_xx.h` to the `HEADERS` line. 
-
- # 
-Edit `translator_xx.h`: 
- * 
-Rename `TRANSLATOR_EN_H` to `TRANSLATOR_XX_H` twice (i.e. in the `#ifndef` and `#define` preprocessor commands at the beginning of the file). 
-
- * 
-Rename TranslatorEnglish to TranslatorYourLanguage 
-
- * 
-In the member `idLanguage()` change "english" into the name of your language (use lower case characters only). Depending on the language you may also wish to change the member functions latexLanguageSupportCommand(), idLanguageCharset() and others (you will recognize them when you start the work). 
-
- * 
-Edit all the strings that are returned by the member functions that start with tr. Try to match punctuation and capitals! To enter special characters (with accents) you can: 
- * 
-Enter them directly if your keyboard supports that and you are using a Latin-1 font. Doxygen will translate the characters to proper `$\mbox{\LaTeX}$` and leave the HTML and man output for what it is (which is fine, if idLanguageCharset() is set correctly). 
-
- * 
-Use html codes like &auml; for an a with an umlaut (i.e. &auml;). See the HTML specification for the codes. 
-
-
-
- # 
-Run configure and make again from the root of the distribution, in order to regenerated the Makefiles. 
-
- # 
-Now you can use `OUTPUT_LANGUAGE = your_language_name` in the config file to generate output in your language. 
-
- # 
-Send `translator_xx.h` to me so I can add it to doxygen. Send also your name and e-mail address to be included in the `maintainers.txt` list. 
-
+Now, in `setTranslator()` add  *Parsing error*  after the `if { ... }`. I.e., it must be placed after the code for creating the English translator at the beginning, and before the `else { ... }` part that creates the translator for the default language (English again).
+ # Edit libdoxygen.pro.in and add `translator_xx.h` to the `HEADERS` line.
+ # Edit `translator_xx.h`: 
+ * Rename `TRANSLATOR_EN_H` to `TRANSLATOR_XX_H` twice (i.e. in the `#ifndef` and `#define` preprocessor commands at the beginning of the file).
+ * Rename TranslatorEnglish to TranslatorYourLanguage
+ * In the member `idLanguage()` change "english" into the name of your language (use lower case characters only). Depending on the language you may also wish to change the member functions latexLanguageSupportCommand(), idLanguageCharset() and others (you will recognize them when you start the work).
+ * Edit all the strings that are returned by the member functions that start with tr. Try to match punctuation and capitals! To enter special characters (with accents) you can: 
+ * Enter them directly if your keyboard supports that and you are using a Latin-1 font. Doxygen will translate the characters to proper `$\mbox{\LaTeX}$` and leave the HTML and man output for what it is (which is fine, if idLanguageCharset() is set correctly).
+ * Use html codes like &auml; for an a with an umlaut (i.e. &auml;). See the HTML specification for the codes.
+ # Run configure and make again from the root of the distribution, in order to regenerated the Makefiles.
+ # Now you can use `OUTPUT_LANGUAGE = your_language_name` in the config file to generate output in your language.
+ # Send `translator_xx.h` to me so I can add it to doxygen. Send also your name and e-mail address to be included in the `maintainers.txt` list.
 
 === Maintaining a language ===
 

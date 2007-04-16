@@ -6,60 +6,24 @@ Doxygen supports most of the XML commands that are typically used in C# code com
 Here is the list of tags supported by doxygen:
 
 
- * 
-`<c>` Identifies inline text that should be rendered as a piece of code. Similar to using `<tt>`text`</tt>`. 
-
- * 
-`<code>` Set one or more lines of source code or program output. Note that this command behaves like `\code ... \endcode` for C# code, but it behaves like the HTML equivalent `<code>...</code>` for other languages. 
-
- * 
-`<description>` Part of a `<list>` command, describes an item. 
-
- * 
-`<example>` Marks a block of text as an example, ignored by doxygen. 
-
- * 
-`<exception cref="member">` Identifies the exception a method can throw. 
-
- * 
-`<include>` Can be used to import a piece of XML from an external file. Ignored by doxygen at the moment. 
-
- * 
-`<item>` List item. Can only be used inside a `<list>` context. 
-
- * 
-`<list type="type">` Starts a list, supported types are `bullet` or `number`. A list consists of a number of `<item>` tags. 
-
- * 
-`<para>` Identifies a paragraph of text. 
-
- * 
-`<param name="paramName">` Marks a piece of text as the documentation for parameter "paramName". Similar to using  [Doxygen_commands_1cmdparam \param]  . 
-
- * 
-`<paramref name="paramName">` Refers to a parameter with name "paramName". Similar to using  [Doxygen_commands_1cmda \a]  . 
-
- * 
-`<permission>` Identifies the security accessibility of a member. Ignored by doygen. 
-
- * 
-`<remarks>` Identifies the detailed description. 
-
- * 
-`<returns>` Marks a piece of text as the return value of a function or method. Similar to using  [Doxygen_commands_1cmdreturn \return]  . 
-
- * 
-`<see cref="member">` Refers to a member. Similar to  [Doxygen_commands_1cmdref \ref]  . 
-
- * 
-`<seealso cref="member">` Starts a "See also" section referring to "member". Similar to using  [Doxygen_commands_1cmdsa \sa]   member. 
-
- * 
-`<summary>` Identifies the brief description. Similar to using  [Doxygen_commands_1cmdbrief \brief]  . 
-
- * 
-`<value>` Identifies a property. Ignored by doxygen. 
-
+ * `<c>` Identifies inline text that should be rendered as a piece of code. Similar to using `<tt>`text`</tt>`.
+ * `<code>` Set one or more lines of source code or program output. Note that this command behaves like `\code ... \endcode` for C# code, but it behaves like the HTML equivalent `<code>...</code>` for other languages.
+ * `<description>` Part of a `<list>` command, describes an item.
+ * `<example>` Marks a block of text as an example, ignored by doxygen.
+ * `<exception cref="member">` Identifies the exception a method can throw.
+ * `<include>` Can be used to import a piece of XML from an external file. Ignored by doxygen at the moment.
+ * `<item>` List item. Can only be used inside a `<list>` context.
+ * `<list type="type">` Starts a list, supported types are `bullet` or `number`. A list consists of a number of `<item>` tags.
+ * `<para>` Identifies a paragraph of text.
+ * `<param name="paramName">` Marks a piece of text as the documentation for parameter "paramName". Similar to using  [Doxygen_commands_1cmdparam \param]  .
+ * `<paramref name="paramName">` Refers to a parameter with name "paramName". Similar to using  [Doxygen_commands_1cmda \a]  .
+ * `<permission>` Identifies the security accessibility of a member. Ignored by doygen.
+ * `<remarks>` Identifies the detailed description.
+ * `<returns>` Marks a piece of text as the return value of a function or method. Similar to using  [Doxygen_commands_1cmdreturn \return]  .
+ * `<see cref="member">` Refers to a member. Similar to  [Doxygen_commands_1cmdref \ref]  .
+ * `<seealso cref="member">` Starts a "See also" section referring to "member". Similar to using  [Doxygen_commands_1cmdsa \sa]   member.
+ * `<summary>` Identifies the brief description. Similar to using  [Doxygen_commands_1cmdbrief \brief]  .
+ * `<value>` Identifies a property. Ignored by doxygen.
 
 Here is an example of a typical piece of code using some of the above commands:
 

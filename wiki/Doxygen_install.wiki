@@ -4,24 +4,12 @@
  First go to the  [http://www.doxygen.org/download.html download]  page  to get the latest distribution, if you did not have it already.
 
 This section is divided into the following sections: 
- * 
- [Doxygen_install_1install_src_unix Compiling from source on Unix]   
-
- * 
- [Doxygen_install_1install_bin_unix Installing the binaries on Unix]   
-
- * 
- [Doxygen_install_1unix_problems Known compilation problems for Unix]   
-
- * 
- [Doxygen_install_1install_src_windows Compiling from source on Windows]   
-
- * 
- [Doxygen_install_1install_bin_windows Installing the binaries on Windows]   
-
- * 
- [Doxygen_install_1build_tools Tools used to develop doxygen]   
-
+ * [Doxygen_install_1install_src_unix Compiling from source on Unix]
+ * [Doxygen_install_1install_bin_unix Installing the binaries on Unix]
+ * [Doxygen_install_1unix_problems Known compilation problems for Unix]
+ * [Doxygen_install_1install_src_windows Compiling from source on Windows]
+ * [Doxygen_install_1install_bin_windows Installing the binaries on Windows]
+ * [Doxygen_install_1build_tools Tools used to develop doxygen]
 
 
 

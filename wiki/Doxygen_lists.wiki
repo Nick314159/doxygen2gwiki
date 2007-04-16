@@ -12,20 +12,13 @@ Here is an example:  *Parsing error*  The result will be:
 A list of events:
  * mouse events
  # mouse move event
-
  # mouse click event
 
  More info about the click event.
-
  # mouse double click event
-
-
  * keyboard events
  # key down event
-
  # key up event
-
-
 
 More text here.
 
