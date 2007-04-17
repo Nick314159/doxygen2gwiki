@@ -51,7 +51,9 @@ int var; ///< Brief description after the member
 }}}
  Note that these blocks have the same structure and meaning as the special comment blocks in the previous section only the < indicates that the member is located in front of the block instead of after the block.
  Here is an example of the use of these comment blocks:   
-  
+ These blocks can only be used to document  _members_  and  _parameters_  . They cannot be used to document files, classes, unions, structs, groups, namespaces and enums themselves. Furthermore, the structural commands mentioned in the next section (like  `\class`  ) are ignored inside these comment blocks.
+
+ 
     = Documentation at other places =
   So far we have assumed that the documentation blocks are always located  _in_    _front_  of the declaration or definition of a file, class or namespace or in front or after one of its members. Although this is often comfortable, there may sometimes be reasons to put the documentation somewhere else. For documenting a file this is even required since there is no such thing as "in front of a file".
  Doxygen allows you to put your documentation blocks practically anywhere (the exception is inside the body of a function or inside a normal C style comment block).
@@ -65,28 +67,17 @@ int var; ///< Brief description after the member
 */
 }}}
  Here the special command  `\class`  is used to indicate that the comment block contains documentation for the class  `Test`  . Other structural commands are: 
- #   `\struct`  to document a C-struct.
-
- #   `\union`  to document a union.
-
- #   `\enum`  to document an enumeration type.
-
- #   `\fn`  to document a function.
-
- #   `\var`  to document a variable or typedef or enum value.
-
- #   `\def`  to document a #define.
-
- #   `\typedef`  to document a type definition.
-
- #   `\file`  to document a file.
-
- #   `\namespace`  to document a namespace.
-
- #   `\package`  to document a Java package.
-
- #   `\interface`  to document an IDL interface.
-
+ #  `\struct`  to document a C-struct.
+ #  `\union`  to document a union.
+ #  `\enum`  to document an enumeration type.
+ #  `\fn`  to document a function.
+ #  `\var`  to document a variable or typedef or enum value.
+ #  `\def`  to document a #define.
+ #  `\typedef`  to document a type definition.
+ #  `\file`  to document a file.
+ #  `\namespace`  to document a namespace.
+ #  `\package`  to document a Java package.
+ #  `\interface`  to document an IDL interface.
  See section  [Doxygen_commands Special Commands]  for detailed information about these and many other commands.
  To document a member of a C++ class, you must also document the class itself. The same holds for namespaces. To document a global C function, typedef, enum or preprocessor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
  Let's repeat that, because it is often overlooked: to document global objects (functions, typedefs, enum, macros, etc), you  _must_  document the file in which they are defined. In other words, there  _must_  at least be a 

@@ -52,7 +52,13 @@ int IntegerVariable;
 This is the \ref group_label "link" to this group.
 }}}
  The priorities of grouping definitions are (from highest to lowest):  [Doxygen_commands \ingroup]  ,  [Doxygen_commands \defgroup]  ,  [Doxygen_commands \addtogroup]  ,  [Doxygen_commands \weakgroup]  . The last command is exactly like  [Doxygen_commands \addtogroup]  with a lower priority. It was added to allow "lazy" grouping definitions: you can use commands with a higher priority in your .h files to define the hierarchy and  [Doxygen_commands \weakgroup]  in .c files without having to duplicate the hierarchy exactly.
-   
+  = Example: =
+ 
+{{{
+
+}}}
+
+  
     = Member Groups =
   If a compound (e.g. a class or file) has many members, it is often desired to group them together. Doxygen already automatically groups things together on type and protection level, but maybe you feel that this is not enough or that that default grouping is wrong. For instance, because you feel that members of different (syntactic) types belong to the same (semantic) group.
  A member group is defined by a 
@@ -69,7 +75,13 @@ This is the \ref group_label "link" to this group.
  Before the opening marker of a block a separate comment block may be placed. This block should contain the  [Doxygen_commands @name]  (or  [Doxygen_commands \name]  ) command and is used to specify the header of the group. Optionally, the comment block may also contain more detailed information about the group.
  Nesting of member groups is not allowed.
  If all members of a member group inside a class have the same type and protection level (for instance all are static public members), then the whole member group is displayed as a subgroup of the type/protection level group (the group is displayed as a subsection of the "Static Public Members" section for instance). If two or more members have different types, then the group is put at the same level as the automatically generated groups. If you want to force all member-groups of a class to be at the top level, you should put a  [Doxygen_commands \nosubgrouping]  command inside the documentation of the class.
-   
+  = Example: =
+ 
+{{{
+
+}}}
+
+  
  Here Group1 is displayed as a subsection of the "Public Members". And Group2 is a separate section because it contains members with different protection levels (i.e. public and protected).
  
     = Subpaging =

@@ -20,10 +20,8 @@
    */
 }}} The result will be:
  A list of events: 
- # mouse events  
-
- # keyboard events  
-
+ # mouse events
+ # keyboard events
  
  More text here.
  If you use tabs for indentation within lists, please make sure that TAB_SIZE in the configuration file is set to the correct tab size.
@@ -75,7 +73,9 @@
    *  More text here.
    */
 }}}
-    *Using \arg or @li* 
+ In this case the indentation is not important.
+
+   *Using \arg or @li* 
  For compatibility with the Troll Tech's internal documentation tool and with KDoc, doxygen has two commands that can be used to create simple unnested lists.
  See  [Doxygen_commands \arg]  and  [Doxygen_commands \li]  for more info.
   

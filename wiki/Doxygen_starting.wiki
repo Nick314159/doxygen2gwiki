@@ -37,17 +37,11 @@ doxygen <config-file>
  The text inside a special documentation block is parsed before it is written to the HTML and/or $\mbox{\LaTeX}$ output files.
   During parsing the following steps take place: 
  #  The special commands inside the documentation are executed. See section  [Doxygen_commands Special Commands]  for an overview of all commands.
-
  #  If a line starts with some whitespace followed by one or more asterisks (  `*`  ) and then optionally more whitespace, then all whitespace and asterisks are removed.
-
  #  All resulting blank lines are treated as a paragraph separators. This saves you from placing new-paragraph commands yourself in order to make the generated documentation readable.
-
  #  Links are created for words corresponding to documented classes (unless the word is preceded by a %; then the word will not be linked and the % sign is removed).
-
  #  Links to members are created when certain patterns are found in the text. See section  [Doxygen_autolink Automatic link generation]  for more information on how the automatic link generation works.
-
  #  HTML tags that are in the documentation are interpreted and converted to $\mbox{\LaTeX}$ equivalents for the $\mbox{\LaTeX}$ output. See section  [Doxygen_htmlcmds HTML Commands]  for an overview of all supported HTML tags.
-
  
   
  

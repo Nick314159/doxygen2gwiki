@@ -4,15 +4,10 @@
  
  
  #  If you have problems building doxygen from sources, please read  [Doxygen_install this section]  first.
-
  #  Doxygen is  _not_  a real compiler, it is only a lexical scanner. This means that it can and will not detect errors in your source code.
-
  #  Since it is impossible to test all possible code fragments, it is very well possible, that some valid piece of C/C++ code is not handled properly. If you find such a piece, please send it to me, so I can improve doxygen's parsing capabilities. Try to make the piece of code you send as small as possible, to help me narrow down the search.
-
  #  Doxygen does not work properly if there are multiple classes, structs or unions with the same name in your code. It should not crash however, rather it should ignore all of the classes with the same name except one.
-
  #  Some commands do not work inside the arguments of other commands. Inside a HTML link (i.e <a href="...">...<a>) for instance other commands (including other HTML commands) do not work! The sectioning commands are an important exception.
-
  #  Redundant braces can confuse doxygen in some cases. For example: 
 {{{
 void f (int);
@@ -23,20 +18,12 @@ const int (a);
 {{{
 int *(a[20]);
 }}} then doxygen will remove the braces and correctly parse the result.
-
- #  Not all names in code fragments that are included in the documentation are replaced by links (for instance when using  `SOURCE_BROWSER`  =  `YES`  ) and links to overloaded members may point to the wrong member. This also holds for the "Referenced by" list that is generated for each function.
- For a part this is because the code parser isn't smart enough at the moment. I'll try to improve this in the future. But even with these improvements not everything can be properly linked to the corresponding documentation, because of possible ambiguities or lack of information about the context in which the code fragment is found.
-
+ #  Not all names in code fragments that are included in the documentation are replaced by links (for instance when using  `SOURCE_BROWSER`  =  `YES`  ) and links to overloaded members may point to the wrong member. This also holds for the "Referenced by" list that is generated for each function. For a part this is because the code parser isn't smart enough at the moment. I'll try to improve this in the future. But even with these improvements not everything can be properly linked to the corresponding documentation, because of possible ambiguities or lack of information about the context in which the code fragment is found.
  #  It is not possible to insert a non-member function f in a class A using the \relates or \relatesalso command, if class A already has a member with name f and the same argument list.
-
  #  There is only very limited support for member specialization at the moment. It only works if there is a specialized template class as well.
-
  #  Not all special commands are properly translated to RTF.
-
  #  Version 1.8.6 of dot (and maybe earlier versions too) do not generate proper map files, causing the graphs that doxygen generates not to be properly clickable.
-
  #  PHP only: Doxygen requires that all PHP statements (i.e. code) is wrapped in a functions/methods, otherwise you may run into parse problems.
-
  
   = How to help =
  
@@ -48,13 +35,9 @@ int *(a[20]);
  If you are unsure whether or not something is a bug, please ask help on the  [http://sourceforge.net/mail/?group_id=5971 users mailing list]  first (subscription is required).
  If you send only a (vague) description of a bug, you are usually not very helpful and it will cost me much more time to figure out what you mean. In the worst-case your bug report may even be completely ignored by me, so always try to include the following information in your bug report: 
  # The version of doxygen you are using (for instance 1.2.4, use  `doxygen --version`  if you are not sure).
-
  # The name and version number of your operating system (for instance SuSE Linux 6.4)
-
  # It is usually a good idea to send along the configuation file as well, but please use doxygen with the  `-s`  flag while generating it to keep it small (use  `doxygen -s -u [configName]`  to strip the comments from an existing config file).
-
  # The easiest (and often the only) way for me to fix bugs is if you can send me a small example demonstrating the problem you have, so I can reproduce it on my machine. Please make sure the example is valid source code (could potentially compile) and that the problem is really captured by the example (I often get examples that do not trigger the actual bug!). If you intend to send more than one file please zip or tar the files together into a single file for easier processing. When reporting a new bug you'll get a chance to attach a file to it immediately  _after_  opening the bug.
-
  
  You can (and are encouraged to) add a patch for a bug. If you do so please use PATCH as a keyword in the bug entry form.
  If you have ideas how to fix existing bugs and limitations please discuss them on the  [http://sourceforge.net/mail/?group_id=5971 developers mailing list]  (subscription required). Patches can also be sent directly to  [mailto:dimitri@stack.nl dimitri@stack.nl]  if you prefer not to send them via the bug tracker or mailing list.
