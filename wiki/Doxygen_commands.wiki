@@ -3,9 +3,9 @@
    = Introduction =
   All commands in the documentation start with a backslash (  *\*  ) or an at-sign (  *@*  ). If you prefer you can replace all commands starting with a backslash below by their counterparts that start with an at-sign.
  Some commands have one or more arguments. Each argument has a certain range: 
- #  If <sharp> braces are used the argument is a single word.
- #  If (round) braces are used the argument extends until the end of the line on which the command was found.
- #  If {curly} braces are used the argument extends until the next paragraph. Paragraphs are delimited by a blank line or by a section indicator.
+ *  If <sharp> braces are used the argument is a single word.
+ *  If (round) braces are used the argument extends until the end of the line on which the command was found.
+ *  If {curly} braces are used the argument extends until the next paragraph. Paragraphs are delimited by a blank line or by a section indicator.
  If [square] brackets are used the argument is optional.
  Here is an alphabetically sorted list of all commands with references to their documentation:   [Doxygen_commands \a]    [Doxygen_commands \addindex]    [Doxygen_commands \addtogroup]    [Doxygen_commands \anchor]    [Doxygen_commands \arg]    [Doxygen_commands \attention]    [Doxygen_commands \author]    [Doxygen_commands \b]    [Doxygen_commands \brief]    [Doxygen_commands \bug]    [Doxygen_commands \c]    [Doxygen_commands \callgraph]    [Doxygen_commands \callergraph]    [Doxygen_commands \category]    [Doxygen_commands \class]    [Doxygen_commands \code]    [Doxygen_commands \cond]    [Doxygen_commands \copydoc]    [Doxygen_commands \date]    [Doxygen_commands \def]    [Doxygen_commands \defgroup]    [Doxygen_commands \deprecated]    [Doxygen_commands \dir]    [Doxygen_commands \dontinclude]    [Doxygen_commands \dot]    [Doxygen_commands \dotfile]    [Doxygen_commands \e]    [Doxygen_commands \else]    [Doxygen_commands \elseif]    [Doxygen_commands \em]    [Doxygen_commands \endcode]    [Doxygen_commands \endcond]    [Doxygen_commands \enddot]    [Doxygen_commands \endhtmlonly]    [Doxygen_commands \endif]    [Doxygen_commands \endlatexonly]    [Doxygen_commands \endlink]    [Doxygen_commands \endmanonly]    [Doxygen_commands \endmsc]    [Doxygen_commands \endverbatim]    [Doxygen_commands \endxmlonly]    [Doxygen_commands \enum]    [Doxygen_commands \example]    [Doxygen_commands \exception]    [Doxygen_commands \f$]    [Doxygen_commands \f[]    [Doxygen_commands \f]]    [Doxygen_commands \file]    [Doxygen_commands \fn]    [Doxygen_commands \hideinitializer]    [Doxygen_commands \htmlinclude]    [Doxygen_commands \htmlonly]    [Doxygen_commands \if]    [Doxygen_commands \ifnot]    [Doxygen_commands \image]    [Doxygen_commands \include]    [Doxygen_commands \includelineno]    [Doxygen_commands \ingroup]    [Doxygen_commands \internal]    [Doxygen_commands \invariant]    [Doxygen_commands \interface]    [Doxygen_commands \latexonly]    [Doxygen_commands \li]    [Doxygen_commands \line]    [Doxygen_commands \link]    [Doxygen_commands \mainpage]    [Doxygen_commands \manonly]    [Doxygen_commands \msc]    [Doxygen_commands \n]    [Doxygen_commands \name]    [Doxygen_commands \namespace]    [Doxygen_commands \nosubgrouping]    [Doxygen_commands \note]    [Doxygen_commands \overload]    [Doxygen_commands \p]    [Doxygen_commands \package]    [Doxygen_commands \page]    [Doxygen_commands \par]    [Doxygen_commands \paragraph]    [Doxygen_commands \param]    [Doxygen_commands \post]    [Doxygen_commands \pre]    [Doxygen_commands \private (PHP only)]    [Doxygen_commands \privatesection (PHP only)]    [Doxygen_commands \property]    [Doxygen_commands \protected (PHP only)]    [Doxygen_commands \protectedsection (PHP only)]    [Doxygen_commands \protocol]    [Doxygen_commands \public (PHP only)]    [Doxygen_commands \publicsection (PHP only)]    [Doxygen_commands \ref]    [Doxygen_commands \relates]    [Doxygen_commands \relatesalso]    [Doxygen_commands \remarks]    [Doxygen_commands \return]    [Doxygen_commands \retval]    [Doxygen_commands \sa]    [Doxygen_commands \section]    [Doxygen_commands \see]    [Doxygen_commands \showinitializer]    [Doxygen_commands \since]    [Doxygen_commands \skip]    [Doxygen_commands \skipline]    [Doxygen_commands \struct]    [Doxygen_commands \subpage]    [Doxygen_commands \subsection]    [Doxygen_commands \subsubsection]    [Doxygen_commands \test]    [Doxygen_commands \throw]    [Doxygen_commands \todo]    [Doxygen_commands \typedef]    [Doxygen_commands \union]    [Doxygen_commands \until]    [Doxygen_commands \var]    [Doxygen_commands \verbatim]    [Doxygen_commands \verbinclude]    [Doxygen_commands \version]    [Doxygen_commands \warning]    [Doxygen_commands \weakgroup]    [Doxygen_commands \xmlonly]    [Doxygen_commands \xrefitem]    [Doxygen_commands \$]    [Doxygen_commands \@]    [Doxygen_commands \\]    [Doxygen_commands \&]    [Doxygen_commands \~]    [Doxygen_commands \<]    [Doxygen_commands \>]    [Doxygen_commands \#]    [Doxygen_commands \%]   
  The following subsections provide a list of all commands that are recognized by doxygen. Unrecognized commands are treated as normal text.
@@ -686,9 +686,9 @@ Make sure you have first read \ref intro "the introduction".
   
   No other types of alignment are supported.
 }}} will result in the following text:     
- #  `AlignLeft`  left alignment.
- #  `AlignCenter`  center alignment.
- #  `AlignRight`  right alignment
+ *   `AlignLeft`  left alignment.
+ *   `AlignCenter`  center alignment.
+ *   `AlignRight`  right alignment
    No other types of alignment are supported.
 
    = Note: =
@@ -869,9 +869,9 @@ IMAGE_PATH     = my_image_dir
   
   No other types of alignment are supported.
 }}} will result in the following text:     
- #  `AlignLeft`  left alignment.
- #  `AlignCenter`  center alignment.
- #  `AlignRight`  right alignment
+ *   `AlignLeft`  left alignment.
+ *   `AlignCenter`  center alignment.
+ *   `AlignRight`  right alignment
    No other types of alignment are supported.
 
    = Note: =
@@ -944,14 +944,14 @@ IMAGE_PATH     = my_image_dir
  
   
  The following commands are supported to remain compatible to the Qt class browser generator. Do  _not_  use these commands in your own documentation. 
- #  \annotatedclasslist
- #  \classhierarchy
- #  \define
- #  \functionindex
- #  \header
- #  \headerfilelist
- #  \inherit
- #  \l
- #  \postheader
+ *  \annotatedclasslist
+ *  \classhierarchy
+ *  \define
+ *  \functionindex
+ *  \header
+ *  \headerfilelist
+ *  \inherit
+ *  \l
+ *  \postheader
    
  

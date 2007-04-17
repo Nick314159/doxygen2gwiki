@@ -31,9 +31,9 @@
  The preprocessed input buffer is fed to the language parser, which is implemented as a big state machine using  `flex`  . It can be found in the file  `src/scanner.l`  . There is one parser for all languages (C/C++/Java/IDL). The state variables  `insideIDL`  and  `insideJava`  are uses at some places for language specific choices.
  The task of the parser is to convert the input buffer into a tree of entries (basically an abstract syntax tree). An entry is defined in  `src/entry.h`  and is a blob of loosely structured information. The most important field is  `section`  which specifies the kind of information contained in the entry.
  Possible improvements for future versions: 
- # Use one scanner/parser per language instead of one big scanner.
- # Move the first pass parsing of documentation blocks to a separate module.
- # Parse defines (these are currently gathered by the preprocessor, and ignored by the language parser).
+ * Use one scanner/parser per language instead of one big scanner.
+ * Move the first pass parsing of documentation blocks to a separate module.
+ * Parse defines (these are currently gathered by the preprocessor, and ignored by the language parser).
  
   = Data organizer =
  
@@ -58,9 +58,9 @@
  After data is gathered and cross-referenced, doxygen generates output in various formats. For this it uses the methods provided by the abstract class  `OutputGenerator`  . In order to generate output for multiple formats at once, the methods of  `OutputList`  are called instead. This class maintains a list of concrete output generators, where each method called is delegated to all generators in the list.
  To allow small deviations in what is written to the output for each concrete output generator, it is possible to temporarily disable certain generators. The OutputList class contains various  `disable()`  and  `enable()`  methods for this. The methods  `OutputList::pushGeneratorState()`  and  `OutputList::popGeneratorState()`  are used to temporarily save the set of enabled/disabled output generators on a stack.
  The XML is generated directly from the gathered data structures. In the future XML will be used as an intermediate language (IL). The output generators will then use this IL as a starting point to generate the specific output formats. The advantage of having an IL is that various independently developed tools written in various languages, could extract information from the XML output. Possible tools could be: 
- # an interactive source browser
- # a class diagram generator
- # computing code metrics.
+ * an interactive source browser
+ * a class diagram generator
+ * computing code metrics.
  
   = Debugging =
  
