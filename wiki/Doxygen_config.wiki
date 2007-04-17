@@ -1,126 +1,67 @@
 = Configuration =
 
-
-
-= Format =
-A configuration file is a free-form ASCII text file with a structure that is similar to that of a Makefile, with the default name `Doxyfile`. It is parsed by `doxygen`. The file may contain tabs and newlines for formatting purposes. The statements in the file are case-sensitive. Comments may be placed anywhere within the file (except within quotes). Comments begin with the # character and end at the end of the line.
-
-The file essentially consists of a list of assignment statements. Each statement consists of a `TAG_NAME` written in capitals, followed by the `=` character and one or more values. If the same tag is assigned more than once, the last assignment overwrites any earlier assignment. For options that take a list as their argument, the `+=` operator can be used instead of `=` to append new values to the list. Values are sequences of non-blanks. If the value should contain one or more blanks it must be surrounded by quotes ("..."). Multiple lines can be concatenated by inserting a backslash (\) as the last character of a line. Environment variables can be expanded using the pattern `$(ENV_VARIABLE_NAME)`.
-
-You can also include part of a configuration file from another configuration file using a `@INCLUDE` tag as follows: {{{
+   = Format =
+  A configuration file is a free-form ASCII text file with a structure that is similar to that of a Makefile, with the default name  `Doxyfile`  . It is parsed by  `doxygen`  . The file may contain tabs and newlines for formatting purposes. The statements in the file are case-sensitive. Comments may be placed anywhere within the file (except within quotes). Comments begin with the # character and end at the end of the line.
+ The file essentially consists of a list of assignment statements. Each statement consists of a  `TAG_NAME`  written in capitals, followed by the  `=`  character and one or more values. If the same tag is assigned more than once, the last assignment overwrites any earlier assignment. For options that take a list as their argument, the  `+=`  operator can be used instead of  `=`  to append new values to the list. Values are sequences of non-blanks. If the value should contain one or more blanks it must be surrounded by quotes ("..."). Multiple lines can be concatenated by inserting a backslash (\) as the last character of a line. Environment variables can be expanded using the pattern  `$(ENV_VARIABLE_NAME)`  .
+ You can also include part of a configuration file from another configuration file using a  `@INCLUDE`  tag as follows: 
+{{{
 @INCLUDE = config_file_name
-
-}}} The include file is searched in the current working directory. You can also specify a list of directories that should be searched before looking in the current working directory. Do this by putting a `@INCLUDE_PATH` tag with these paths before the `@INCLUDE` tag, e.g: {{{
+}}} The include file is searched in the current working directory. You can also specify a list of directories that should be searched before looking in the current working directory. Do this by putting a  `@INCLUDE_PATH`  tag with these paths before the  `@INCLUDE`  tag, e.g: 
+{{{
 @INCLUDE_PATH = my_config_dir
-
 }}}
-
-The configuration options can be divided into several categories. Below is an alphabetical index of the tags that are recognized followed by the descriptions of the tags grouped by category.
-
- *Parsing error* 
-
-
-
-= Project related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Build related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Options related to warning and progress messages =
- *Parsing error*   *Parsing error* 
-
-
-
-= Input related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Source browsing related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Alphabetical index options =
- *Parsing error*   *Parsing error* 
-
-
-
-= HTML related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= LaTeX related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= RTF related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Man page related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= XML related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= AUTOGEN_DEF related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= PERLMOD related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Preprocessor related options =
- *Parsing error*   *Parsing error* 
-
-
-
-= External reference options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Dot options =
- *Parsing error*   *Parsing error* 
-
-
-
-= Search engine options =
- *Parsing error*   *Parsing error* 
-== Examples ==
-
-Suppose you have a simple project consisting of two files: a source file `example.cc` and a header file `example.h`. Then a minimal configuration file is as simple as: {{{
+ The configuration options can be divided into several categories. Below is an alphabetical index of the tags that are recognized followed by the descriptions of the tags grouped by category.
+  ABBREVIATE_BRIEF  ALIASES  ALLEXTERNALS  ALPHABETICAL_INDEX  ALWAYS_DETAILED_SEC  BINARY_TOC  BUILTIN_STL_SUPPORT  BRIEF_MEMBER_DESC  CALL_GRAPH  CALLER_GRAPH  CASE_SENSE_NAMES  CHM_FILE  CLASS_DIAGRAMS  CLASS_GRAPH  COLLABORATION_GRAPH  COLS_IN_ALPHA_INDEX  COMPACT_LATEX  COMPACT_RTF  CPP_CLI_SUPPORT  CREATE_SUBDIRS  DETAILS_AT_TOP  DIRECTORY_GRAPH  DISABLE_INDEX  DISTRIBUTE_GROUP_DOC  DOT_GRAPH_MAX_NODES  DOT_IMAGE_FORMAT  DOT_MULTI_TARGETS  DOT_PATH  DOT_TRANSPARENT  DOTFILE_DIRS  ENABLE_PREPROCESSING  ENUM_VALUES_PER_LINE  ENABLED_SECTIONS  EXAMPLE_PATH  EXAMPLE_PATTERNS  EXAMPLE_RECURSIVE  EXCLUDE  EXCLUDE_PATTERNS  EXCLUDE_SYMLINKS  EXPAND_AS_DEFINED  EXPAND_ONLY_PREDEF  EXTERNAL_GROUPS  EXTRA_PACKAGES  EXTRACT_ALL  EXTRACT_LOCAL_CLASSES  EXTRACT_LOCAL_METHODS  EXTRACT_PRIVATE  EXTRACT_STATIC  FILE_PATTERNS  FILE_VERSION_FILTER  FILTER_PATTERNS  FILTER_SOURCE_FILES  FULL_PATH_NAMES  GENERATE_AUTOGEN_DEF  GENERATE_BUGLIST  GENERATE_CHI  GENERATE_DEPRECIATEDLIST  GENERATE_HTML  GENERATE_HTMLHELP  GENERATE_LATEX  GENERATE_LEGEND  GENERATE_MAN  GENERATE_PERLMOD  GENERATE_RTF  GENERATE_TAGFILE  GENERATE_TESTLIST  GENERATE_TODOLIST  GENERATE_TREEVIEW  GENERATE_XML  GRAPHICAL_HIERARCHY  GROUP_GRAPHS  HAVE_DOT  HHC_LOCATION  HIDE_FRIEND_COMPOUNDS  HIDE_IN_BODY_DOCS  HIDE_SCOPE_NAMES  HIDE_UNDOC_CLASSES  HIDE_UNDOC_MEMBERS  HIDE_UNDOC_RELATIONS  HTML_ALIGN_MEMBERS  HTML_FOOTER  HTML_HEADER  HTML_OUTPUT  HTML_STYLESHEET  IGNORE_PREFIX  IMAGE_PATH  INCLUDE_GRAPH  INCLUDE_PATH  INHERIT_DOCS  INLINE_INFO  INLINE_INHERITED_MEMB  INLINE_SOURCES  INPUT  INPUT_ENCODING  INPUT_FILTER  INTERNAL_DOCS  JAVADOC_AUTOBRIEF  LATEX_BATCHMODE  LATEX_CMD_NAME  LATEX_HEADER  LATEX_HIDE_INDICES  LATEX_OUTPUT  MACRO_EXPANSION  MAKEINDEX_CMD_NAME  MAN_EXTENSION  MAN_LINKS  MAN_OUTPUT  MAX_INITIALIZER_LINES  MSCGEN_PATH  MULTILINE_CPP_IS_BRIEF  OPTIMIZE_OUTPUT_FOR_C  OPTIMIZE_OUTPUT_JAVA  OUTPUT_DIRECTORY  OUTPUT_LANGUAGE  PAPER_TYPE  PDF_HYPERLINKS  PERL_PATH  PERLMOD_LATEX  PERLMOD_PRETTY  PERLMOD_MAKEVAR_PREFIX  PREDEFINED  PROJECT_NAME  PROJECT_NUMBER  QUIET  RECURSIVE  REFERENCED_BY_RELATION  REFERENCES_RELATION  REFERENCES_LINK_SOURCE  REPEAT_BRIEF  RTF_EXTENSIONS_FILE  RTF_HYPERLINKS  RTF_OUTPUT  RTF_STYLESHEET_FILE  SEARCH_INCLUDES  SEARCHENGINE  SEPARATE_MEMBER_PAGES  SHORT_NAMES  SHOW_DIRECTORIES  SHOW_INCLUDE_FILES  SHOW_USED_FILES  SKIP_FUNCTION_MACROS  SORT_BRIEF_DOCS  SORT_MEMBER_DOCS  SOURCE_BROWSER  STRIP_CODE_COMMENTS  STRIP_FROM_INC_PATH  STRIP_FROM_PATH  SUBGROUPING  TAB_SIZE  TAGFILES  TEMPLATE_RELATIONS  TOC_EXPAND  TREEVIEW_WIDTH  UML_LOOK  USE_HTAGS  USE_PDFLATEX  USE_WINDOWS_ENCODING  VERBATIM_HEADERS  WARN_FORMAT  WARN_IF_DOC_ERROR  WARN_IF_UNDOCUMENTED  WARN_LOGFILE  WARN_NO_PARAMDOC  WARNINGS  XML_DTD  XML_OUTPUT  XML_PROGRAMLISTING  XML_SCHEMA  
+    = Project related options =
+     
+    = Build related options =
+     
+    = Options related to warning and progress messages =
+     
+    = Input related options =
+     
+    = Source browsing related options =
+     
+    = Alphabetical index options =
+     
+    = HTML related options =
+     
+    = LaTeX related options =
+     
+    = RTF related options =
+     
+    = Man page related options =
+     
+    = XML related options =
+     
+    = AUTOGEN_DEF related options =
+     
+    = PERLMOD related options =
+     
+    = Preprocessor related options =
+     
+    = External reference options =
+     
+    = Dot options =
+     
+    = Search engine options =
+       = Examples =
+ 
+ Suppose you have a simple project consisting of two files: a source file  `example.cc`  and a header file  `example.h`  . Then a minimal configuration file is as simple as: 
+{{{
 INPUT            = example.cc example.h
-
 }}}
-
-Assuming the example makes use of Qt classes and perl is located in `/usr/bin`, a more realistic configuration file would be: {{{
+ Assuming the example makes use of Qt classes and perl is located in  `/usr/bin`  , a more realistic configuration file would be: 
+{{{
 PROJECT_NAME     = Example
 INPUT            = example.cc example.h
 WARNINGS         = YES
 TAGFILES         = qt.tag
 PERL_PATH        = /usr/bin/perl
 SEARCHENGINE     = NO
-
 }}}
-
-To generate the documentation for the  [http://www.stack.nl/~dimitri/qdbttabular/index.html QdbtTabular]  package I have used the following configuration file: {{{
+ To generate the documentation for the  [http://www.stack.nl/~dimitri/qdbttabular/index.html QdbtTabular]  package I have used the following configuration file: 
+{{{
 PROJECT_NAME     = QdbtTabular
 OUTPUT_DIRECTORY = html
 WARNINGS         = YES
@@ -130,10 +71,9 @@ INCLUDE_PATH     = examples
 TAGFILES         = qt.tag
 PERL_PATH        = /usr/local/bin/perl
 SEARCHENGINE     = YES
-
 }}}
-
-To regenerate the Qt-1.44 documentation from the sources, you could use the following config file: {{{
+ To regenerate the Qt-1.44 documentation from the sources, you could use the following config file: 
+{{{
 PROJECT_NAME         = Qt
 OUTPUT_DIRECTORY     = qt_docs
 HIDE_UNDOC_MEMBERS   = YES
@@ -169,10 +109,9 @@ INPUT                = $(QTDIR)/doc \
 FILE_PATTERNS        = *.cpp *.h q*.doc
 INCLUDE_PATH         = $(QTDIR)/include 
 RECURSIVE            = YES
-
 }}}
-
-For the Qt-2.1 sources I recommend to use the following settings: {{{
+ For the Qt-2.1 sources I recommend to use the following settings: 
+{{{
 PROJECT_NAME          = Qt
 PROJECT_NUMBER        = 2.1
 HIDE_UNDOC_MEMBERS    = YES
@@ -198,10 +137,6 @@ PREDEFINED            = Q_PROPERTY(x)= \
 EXPAND_ONLY_PREDEF    = YES
 EXPAND_AS_DEFINED     = Q_OBJECT_FAKE Q_OBJECT ACTIVATE_SIGNAL_WITH_PARAM \
                         Q_VARIANT_AS
-
 }}}
-
-Here doxygen's preprocessor is used to substitute some macro names that are normally substituted by the C preprocessor, but without doing full macro expansion. 
-
-
-    
+ Here doxygen's preprocessor is used to substitute some macro names that are normally substituted by the C preprocessor, but without doing full macro expansion.
+ 

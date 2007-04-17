@@ -1,32 +1,25 @@
 = Special Commands =
 
+   = Introduction =
+  All commands in the documentation start with a backslash (  *\*  ) or an at-sign (  *@*  ). If you prefer you can replace all commands starting with a backslash below by their counterparts that start with an at-sign.
+ Some commands have one or more arguments. Each argument has a certain range: 
+ #  If <sharp> braces are used the argument is a single word.
 
+ #  If (round) braces are used the argument extends until the end of the line on which the command was found.
 
-= Introduction =
-All commands in the documentation start with a backslash (*\*) or an at-sign (*@*). If you prefer you can replace all commands starting with a backslash below by their counterparts that start with an at-sign.
+ #  If {curly} braces are used the argument extends until the next paragraph. Paragraphs are delimited by a blank line or by a section indicator.
 
-Some commands have one or more arguments. Each argument has a certain range: 
- * If <sharp> braces are used the argument is a single word.
- * If (round) braces are used the argument extends until the end of the line on which the command was found.
- * If {curly} braces are used the argument extends until the next paragraph. Paragraphs are delimited by a blank line or by a section indicator.
-
-If [square] brackets are used the argument is optional.
-
-Here is an alphabetically sorted list of all commands with references to their documentation:  *Parsing error* 
-
-The following subsections provide a list of all commands that are recognized by doxygen. Unrecognized commands are treated as normal text.
-
-==  Structural indicators  ==
-
-
-
-= \addtogroup <name> [(title)] =
- Defines a group just like  [Doxygen_commands_1cmddefgroup \defgroup]  , but in contrast to that command using the same <name> more than once will not result in a warning, but rather one group with a merged documentation and the first title found in any of the commands.
-
-The title is optional, so this command can also be used to add a number of entities to an existing group using @{ and @} like this:
-
+ If [square] brackets are used the argument is optional.
+ Here is an alphabetically sorted list of all commands with references to their documentation:   [Doxygen_commands \a]    [Doxygen_commands \addindex]    [Doxygen_commands \addtogroup]    [Doxygen_commands \anchor]    [Doxygen_commands \arg]    [Doxygen_commands \attention]    [Doxygen_commands \author]    [Doxygen_commands \b]    [Doxygen_commands \brief]    [Doxygen_commands \bug]    [Doxygen_commands \c]    [Doxygen_commands \callgraph]    [Doxygen_commands \callergraph]    [Doxygen_commands \category]    [Doxygen_commands \class]    [Doxygen_commands \code]    [Doxygen_commands \cond]    [Doxygen_commands \copydoc]    [Doxygen_commands \date]    [Doxygen_commands \def]    [Doxygen_commands \defgroup]    [Doxygen_commands \deprecated]    [Doxygen_commands \dir]    [Doxygen_commands \dontinclude]    [Doxygen_commands \dot]    [Doxygen_commands \dotfile]    [Doxygen_commands \e]    [Doxygen_commands \else]    [Doxygen_commands \elseif]    [Doxygen_commands \em]    [Doxygen_commands \endcode]    [Doxygen_commands \endcond]    [Doxygen_commands \enddot]    [Doxygen_commands \endhtmlonly]    [Doxygen_commands \endif]    [Doxygen_commands \endlatexonly]    [Doxygen_commands \endlink]    [Doxygen_commands \endmanonly]    [Doxygen_commands \endmsc]    [Doxygen_commands \endverbatim]    [Doxygen_commands \endxmlonly]    [Doxygen_commands \enum]    [Doxygen_commands \example]    [Doxygen_commands \exception]    [Doxygen_commands \f$]    [Doxygen_commands \f[]    [Doxygen_commands \f]]    [Doxygen_commands \file]    [Doxygen_commands \fn]    [Doxygen_commands \hideinitializer]    [Doxygen_commands \htmlinclude]    [Doxygen_commands \htmlonly]    [Doxygen_commands \if]    [Doxygen_commands \ifnot]    [Doxygen_commands \image]    [Doxygen_commands \include]    [Doxygen_commands \includelineno]    [Doxygen_commands \ingroup]    [Doxygen_commands \internal]    [Doxygen_commands \invariant]    [Doxygen_commands \interface]    [Doxygen_commands \latexonly]    [Doxygen_commands \li]    [Doxygen_commands \line]    [Doxygen_commands \link]    [Doxygen_commands \mainpage]    [Doxygen_commands \manonly]    [Doxygen_commands \msc]    [Doxygen_commands \n]    [Doxygen_commands \name]    [Doxygen_commands \namespace]    [Doxygen_commands \nosubgrouping]    [Doxygen_commands \note]    [Doxygen_commands \overload]    [Doxygen_commands \p]    [Doxygen_commands \package]    [Doxygen_commands \page]    [Doxygen_commands \par]    [Doxygen_commands \paragraph]    [Doxygen_commands \param]    [Doxygen_commands \post]    [Doxygen_commands \pre]    [Doxygen_commands \private (PHP only)]    [Doxygen_commands \privatesection (PHP only)]    [Doxygen_commands \property]    [Doxygen_commands \protected (PHP only)]    [Doxygen_commands \protectedsection (PHP only)]    [Doxygen_commands \protocol]    [Doxygen_commands \public (PHP only)]    [Doxygen_commands \publicsection (PHP only)]    [Doxygen_commands \ref]    [Doxygen_commands \relates]    [Doxygen_commands \relatesalso]    [Doxygen_commands \remarks]    [Doxygen_commands \return]    [Doxygen_commands \retval]    [Doxygen_commands \sa]    [Doxygen_commands \section]    [Doxygen_commands \see]    [Doxygen_commands \showinitializer]    [Doxygen_commands \since]    [Doxygen_commands \skip]    [Doxygen_commands \skipline]    [Doxygen_commands \struct]    [Doxygen_commands \subpage]    [Doxygen_commands \subsection]    [Doxygen_commands \subsubsection]    [Doxygen_commands \test]    [Doxygen_commands \throw]    [Doxygen_commands \todo]    [Doxygen_commands \typedef]    [Doxygen_commands \union]    [Doxygen_commands \until]    [Doxygen_commands \var]    [Doxygen_commands \verbatim]    [Doxygen_commands \verbinclude]    [Doxygen_commands \version]    [Doxygen_commands \warning]    [Doxygen_commands \weakgroup]    [Doxygen_commands \xmlonly]    [Doxygen_commands \xrefitem]    [Doxygen_commands \$]    [Doxygen_commands \@]    [Doxygen_commands \\]    [Doxygen_commands \&]    [Doxygen_commands \~]    [Doxygen_commands \<]    [Doxygen_commands \>]    [Doxygen_commands \#]    [Doxygen_commands \%]   
+ The following subsections provide a list of all commands that are recognized by doxygen. Unrecognized commands are treated as normal text.
+  =  Structural indicators  =
+ 
+    = \addtogroup <name> [(title)] =
+   Defines a group just like  [Doxygen_commands \defgroup]  , but in contrast to that command using the same <name> more than once will not result in a warning, but rather one group with a merged documentation and the first title found in any of the commands.
+ The title is optional, so this command can also be used to add a number of entities to an existing group using @{ and @} like this:
+ 
 {{{
-  /*! \addtogroup mygrp
+/*! \addtogroup mygrp
    *  Additional documentation for group `mygrp'
    *  @{
    */
@@ -44,169 +37,64 @@ The title is optional, so this command can also be used to add a number of entit
   }
 
   /*! @} */
-
 }}}
-
- *Parsing error* 
-
-
-
-= \callgraph =
- When this command is put in a comment block of a function or method and  [Doxygen_config_1cfg_have_dot HAVE_DOT]   is set to YES, then doxygen will generate a call graph for that function (provided the implementation of the function or method calls other documented functions). The call graph will generated regardless of the value of  [Doxygen_config_1cfg_call_graph CALL_GRAPH]  .  *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \callergraph =
- When this command is put in a comment block of a function or method and  [Doxygen_config_1cfg_have_dot HAVE_DOT]   is set to YES, then doxygen will generate a caller graph for that function (provided the implementation of the function or method calls other documented functions). The caller graph will generated regardless of the value of  [Doxygen_config_1cfg_caller_graph CALLER_GRAPH]  .  *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \category <name> [<header-file>] [<header-name>] =
- For Objective-C only: Indicates that a comment block contains documentation for a class category with name <name>. The arguments are equal to the \class command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \class <name> [<header-file>] [<header-name>] =
- Indicates that a comment block contains documentation for a class with name <name>. Optionally a header file and a header name can be specified. If the header-file is specified, a link to a verbatim copy of the header will be included in the HTML documentation. The <header-name> argument can be used to overwrite the name of the link that is used in the class documentation to something other than <header-file>. This can be useful if the include name is not located on the default include path (like <X11/X.h>). With the <header-name> argument you can also specify how the include statement should look like, by adding either quotes or sharp brackets around the name. Sharp brackets are used if just the name is given.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \def <name> =
- Indicates that a comment block contains documentation for a `#define` macro.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \defgroup <name> (group title) =
- Indicates that a comment block contains documentation for a  [Doxygen_grouping_1modules group]   of classes, files or namespaces. This can be used to categorize classes, files or namespaces, and document those categories. You can also use groups as members of other groups, thus building a hierarchy of groups.
-
-The <name> argument should be a single-word identifier.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \dir [<path fragment>] =
- Indicates that a comment block contains documentation for a directory. The "path fragment" argument should include the directory name and enough of the path to be unique w.r.t. the other directories in the project. The  [Doxygen_config_1cfg_show_dirs SHOW_DIRECTORIES]   option determines whether or not the directory information is shown and the  [Doxygen_config_1cfg_strip_from_path STRIP_FROM_PATH]   option determines what is stripped from the full path before it appears in the output.
-
- *Parsing error* 
-
-
-
-= \enum <name> =
- Indicates that a comment block contains documentation for an enumeration, with name <name>. If the enum is a member of a class and the documentation block is located outside the class definition, the scope of the class should be specified as well. If a comment block is located directly in front of an enum declaration, the \enum comment may be omitted.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \example <file-name> =
- Indicates that a comment block contains documentation for a source code example. The name of the source file is <file-name>. The text of this file will be included in the documentation, just after the documentation contained in the comment block. All examples are placed in a list. The source code is scanned for documented members and classes. If any are found, the names are cross-referenced with the documentation. Source files or directories can be specified using the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag of doxygen's configuration file.
-
-If <file-name> itself is not unique for the set of example files specified by the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag, you can include part of the absolute path to disambiguate it.
-
-If more that one source file is needed for the example, the \include command can be used.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \file [<name>] =
- Indicates that a comment block contains documentation for a source or header file with name <name>. The file name may include (part of) the path if the file-name alone is not unique. If the file name is omitted (i.e. the line after \file is left blank) then the documentation block that contains the \file command will belong to the file it is located in.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \fn (function declaration) =
- Indicates that a comment block contains documentation for a function (either global or as a member of a class). This command is 'only' needed if a comment block is 'not' placed in front (or behind) the function declaration or definition.
-
-If your comment block 'is' in front of the function declaration or definition this command can (and to avoid redundancy should) be omitted.
-
-A full function declaration including arguments should be specified after the \fn command on a 'single' line, since the argument ends at the end of the line!
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \hideinitializer =
- By default the value of a define and the initializer of a variable are displayed unless they are longer than 30 lines. By putting this command in a comment block of a define or variable, the initializer is always hidden.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \ingroup (<groupname> [<groupname> <groupname>]) =
- If the \ingroup command is placed in a comment block of a class, file or namespace, then it will be added to the group or groups identified by <groupname>.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \interface <name> [<header-file>] [<header-name>] =
- Indicates that a comment block contains documentation for an interface with name <name>. The arguments are equal to the \class command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \internal =
- This command writes the message `For internal use only' to the output and all text 'after' an `\internal` command until the end of the comment block or the end of the section (whichever comes first) is marked as "internal".
-
-If the \internal command is put inside a section (see for example  [Doxygen_commands_1cmdsection \section]  ) all subsection after the command are considered to be internal as well. Only a new section at the same level will be visible again.
-
-You can use  [Doxygen_config_1cfg_internal_docs INTERNAL_DOCS]   in the config file to show or hide the internal documentation.
-
- *Parsing error* 
- 
-
-
-
-= \mainpage [(title)] =
-
-
-If the \mainpage command is placed in a comment block the block is used to customize the index page (in HTML) or the first chapter (in `$\mbox{\LaTeX}$`).
-
-The title argument is optional and replaces the default title that doxygen normally generates. If you do not want any title you can specify `notitle` as the argument of \mainpage.
-
-Here is an example: {{{
+  
+    = \callgraph =
+   When this command is put in a comment block of a function or method and HAVE_DOT is set to YES, then doxygen will generate a call graph for that function (provided the implementation of the function or method calls other documented functions). The call graph will generated regardless of the value of CALL_GRAPH .    
+    = \callergraph =
+   When this command is put in a comment block of a function or method and HAVE_DOT is set to YES, then doxygen will generate a caller graph for that function (provided the implementation of the function or method calls other documented functions). The caller graph will generated regardless of the value of CALLER_GRAPH .    
+    = \category <name> [<header-file>] [<header-name>] =
+   For Objective-C only: Indicates that a comment block contains documentation for a class category with name <name>. The arguments are equal to the \class command.
+    
+    = \class <name> [<header-file>] [<header-name>] =
+   Indicates that a comment block contains documentation for a class with name <name>. Optionally a header file and a header name can be specified. If the header-file is specified, a link to a verbatim copy of the header will be included in the HTML documentation. The <header-name> argument can be used to overwrite the name of the link that is used in the class documentation to something other than <header-file>. This can be useful if the include name is not located on the default include path (like <X11/X.h>). With the <header-name> argument you can also specify how the include statement should look like, by adding either quotes or sharp brackets around the name. Sharp brackets are used if just the name is given.
+    
+    = \def <name> =
+   Indicates that a comment block contains documentation for a  `#define`  macro.
+    
+    = \defgroup <name> (group title) =
+   Indicates that a comment block contains documentation for a  [Doxygen_grouping group]  of classes, files or namespaces. This can be used to categorize classes, files or namespaces, and document those categories. You can also use groups as members of other groups, thus building a hierarchy of groups.
+ The <name> argument should be a single-word identifier.
+    
+    = \dir [<path fragment>] =
+   Indicates that a comment block contains documentation for a directory. The "path fragment" argument should include the directory name and enough of the path to be unique w.r.t. the other directories in the project. The SHOW_DIRECTORIES option determines whether or not the directory information is shown and the STRIP_FROM_PATH option determines what is stripped from the full path before it appears in the output.
+  
+    = \enum <name> =
+   Indicates that a comment block contains documentation for an enumeration, with name <name>. If the enum is a member of a class and the documentation block is located outside the class definition, the scope of the class should be specified as well. If a comment block is located directly in front of an enum declaration, the \enum comment may be omitted.
+      
+    = \example <file-name> =
+   Indicates that a comment block contains documentation for a source code example. The name of the source file is <file-name>. The text of this file will be included in the documentation, just after the documentation contained in the comment block. All examples are placed in a list. The source code is scanned for documented members and classes. If any are found, the names are cross-referenced with the documentation. Source files or directories can be specified using the EXAMPLE_PATH tag of doxygen's configuration file.
+ If <file-name> itself is not unique for the set of example files specified by the EXAMPLE_PATH tag, you can include part of the absolute path to disambiguate it.
+ If more that one source file is needed for the example, the \include command can be used.
+      
+    = \file [<name>] =
+   Indicates that a comment block contains documentation for a source or header file with name <name>. The file name may include (part of) the path if the file-name alone is not unique. If the file name is omitted (i.e. the line after \file is left blank) then the documentation block that contains the \file command will belong to the file it is located in.
+        
+    = \fn (function declaration) =
+   Indicates that a comment block contains documentation for a function (either global or as a member of a class). This command is  _only_  needed if a comment block is  _not_  placed in front (or behind) the function declaration or definition.
+ If your comment block  _is_  in front of the function declaration or definition this command can (and to avoid redundancy should) be omitted.
+ A full function declaration including arguments should be specified after the \fn command on a  _single_  line, since the argument ends at the end of the line!
+        
+    = \hideinitializer =
+   By default the value of a define and the initializer of a variable are displayed unless they are longer than 30 lines. By putting this command in a comment block of a define or variable, the initializer is always hidden.
+    
+    = \ingroup (<groupname> [<groupname> <groupname>]) =
+   If the \ingroup command is placed in a comment block of a class, file or namespace, then it will be added to the group or groups identified by <groupname>.
+    
+    = \interface <name> [<header-file>] [<header-name>] =
+   Indicates that a comment block contains documentation for an interface with name <name>. The arguments are equal to the \class command.
+    
+    = \internal =
+   This command writes the message `For internal use only' to the output and all text  _after_  an  `\internal`  command until the end of the comment block or the end of the section (whichever comes first) is marked as "internal".
+ If the \internal command is put inside a section (see for example  [Doxygen_commands \section]  ) all subsection after the command are considered to be internal as well. Only a new section at the same level will be visible again.
+ You can use INTERNAL_DOCS in the config file to show or hide the internal documentation.
+  
+    = \mainpage [(title)] =
+  
+ If the \mainpage command is placed in a comment block the block is used to customize the index page (in HTML) or the first chapter (in $\mbox{\LaTeX}$ ).
+ The title argument is optional and replaces the default title that doxygen normally generates. If you do not want any title you can specify  `notitle`  as the argument of \mainpage.
+ Here is an example: 
+{{{
 /*! \mainpage My Personal Index Page
  *
  * \section intro_sec Introduction
@@ -219,215 +107,83 @@ Here is an example: {{{
  *  
  * etc...
  */
-
 }}}
-
-You can refer to the main page using \ref index (if the treeview is disabled, otherwise you should use \ref main).
-
- *Parsing error* 
- *Parsing error* 
+ You can refer to the main page using \ref index (if the treeview is disabled, otherwise you should use \ref main).
+    
+    = \name (header) =
+  This command turns a comment block into a header definition of a member group. The comment block should be followed by a  `//@{ ... //@}`  block containing the members of the group.
+ See section  [Doxygen_grouping Member Groups]  for an example.
+  
+    = \namespace <name> =
+   Indicates that a comment block contains documentation for a namespace with name <name>.
+  
+    = \nosubgrouping =
+   This command can be put in the documentation of a class. It can be used in combination with member grouping to avoid that doxygen puts a member group as a subgroup of a Public/Protected/Private/... section.
+  
+    = \overload [(function declaration)] =
+   This command can be used to generate the following standard text for an overloaded member function:
+ `This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.'
+ If the documentation for the overloaded member function is not located in front of the function declaration or definition, the optional argument should be used to specify the correct function.
+ Any other documentation that is inside the documentation block will by appended after the generated message.
+        
+    = \package <name> =
+   Indicates that a comment block contains documentation for a Java package with name <name>.
+  
+    = \page <name> (title) =
+   Indicates that a comment block contains a piece of documentation that is not directly related to one specific class, file or member. The HTML generator creates a page containing the documentation. The $\mbox{\LaTeX}$ generator starts a new section in the chapter `Page documentation'.
+        
+    = \property (qualified property name) =
+   Indicates that a comment block contains documentation for a property (either global or as a member of a class). This command is equivalent to \var and \fn.
+    
+    = \protocol <name> [<header-file>] [<header-name>] =
+   Indicates that a comment block contains documentation for a protocol in Objective-C with name <name>. The arguments are equal to the \class command.
+    
+    = \relates <name> =
+   This command can be used in the documentation of a non-member function <name>. It puts the function inside the `related function' section of the class documentation. This command is useful for documenting non-friend functions that are nevertheless strongly coupled to a certain class. It prevents the need of having to document a file, but only works for functions.
+    
+    = \relatesalso <name> =
+   This command can be used in the documentation of a non-member function <name>. It puts the function both inside the `related function' section of the class documentation as well as leaving its normal file documentation location. This command is useful for documenting non-friend functions that are nevertheless strongly coupled to a certain class. It only works for functions.
+  
+    = \showinitializer =
+   By default the value of a define and the initializer of a variable are only displayed if they are less than 30 lines long. By putting this command in a comment block of a define or variable, the initializer is shown unconditionally.
+    
+    = \struct <name> [<header-file>] [<header-name>] =
+   Indicates that a comment block contains documentation for a struct with name <name>. The arguments are equal to the \class command.
+    
+    = \typedef (typedef declaration) =
+   Indicates that a comment block contains documentation for a typedef (either global or as a member of a class). This command is equivalent to \var and \fn.
+    
+    = \union <name> [<header-file>] [<header-name>] =
+   Indicates that a comment block contains documentation for a union with name <name>. The arguments are equal to the \class command.
+    
+    = \var (variable declaration) =
+   Indicates that a comment block contains documentation for a variable or enum value (either global or as a member of a class). This command is equivalent to \typedef and \fn.
+    
+    = \weakgroup <name> [(title)] =
+   Can be used exactly like  [Doxygen_commands \addtogroup]  , but has a lower priority when it comes to resolving conflicting grouping definitions.
+    
+  =  Section indicators  =
  
-
-
-
-= \name (header) =
-This command turns a comment block into a header definition of a member group. The comment block should be followed by a `//@{ ... //@}` block containing the members of the group.
-
-See section  [Doxygen_grouping_1memgroup Member Groups]   for an example.
-
- *Parsing error* 
+  
+    = \attention { attention text } =
+   Starts a paragraph where a message that needs attention may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \attention commands will be joined into a single paragraph. The \attention command ends when a blank line or some other sectioning command is encountered.
+    = \author { list of authors } =
+   Starts a paragraph where one or more author names may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \author commands will be joined into a single paragraph and separated by commas. Alternatively, one \author command may mention several authors. The \author command ends when a blank line or some other sectioning command is encountered.
+    
+    = \brief {brief description} =
+   Starts a paragraph that serves as a brief description. For classes and files the brief description will be used in lists and at the start of the documentation page. For class and file members, the brief description will be placed at the declaration of the member and prepended to the detailed description. A brief description may span several lines (although it is advised to keep it brief!). A brief description ends when a blank line or another sectioning command is encountered. If multiple \brief commands are present they will be joined. See section  [Doxygen_commands \author]  for an example.
+ Synonymous to \short.
+  
+    = \bug { bug description } =
+   Starts a paragraph where one or more bugs may be reported. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \bug commands will be joined into a single paragraph. Each bug description will start on a new line. Alternatively, one \bug command may mention several bugs. The \bug command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]  for an example.
+  
+    = \cond [<section-label>] =
+   Starts a conditional section that ends with a corresponding  [Doxygen_commands \endcond]  command, which is typically found in another comment block. The main purpose of this pair of commands is to (conditionally) exclude part of a file from processing (traditionally this could only be achieved using C processor commands).
+ The section between \cond and \endcond commands can be included by adding its section label to the ENABLED_SECTIONS configuration option. If the section label is omitted, the section will be excluded from processing unconditionally.
+ For conditional sections within a comment block one should use a  [Doxygen_commands \if]  ...  [Doxygen_commands \endif]  block.
+ Conditional sections can be nested. In this case a nested section will only be shown if it and its containing section are included.
+ Here is an example showing the commands in action:
  
-
-
-
-= \namespace <name> =
- Indicates that a comment block contains documentation for a namespace with name <name>.
-
- *Parsing error* 
- 
-
-
-
-= \nosubgrouping =
- This command can be put in the documentation of a class. It can be used in combination with member grouping to avoid that doxygen puts a member group as a subgroup of a Public/Protected/Private/... section.
-
- *Parsing error* 
- 
-
-
-
-= \overload [(function declaration)] =
- This command can be used to generate the following standard text for an overloaded member function:
-
-`This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.'
-
-If the documentation for the overloaded member function is not located in front of the function declaration or definition, the optional argument should be used to specify the correct function.
-
-Any other documentation that is inside the documentation block will by appended after the generated message.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \package <name> =
- Indicates that a comment block contains documentation for a Java package with name <name>.
-
- *Parsing error* 
- 
-
-
-
-= \page <name> (title) =
- Indicates that a comment block contains a piece of documentation that is not directly related to one specific class, file or member. The HTML generator creates a page containing the documentation. The `$\mbox{\LaTeX}$` generator starts a new section in the chapter `Page documentation'.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \property (qualified property name) =
- Indicates that a comment block contains documentation for a property (either global or as a member of a class). This command is equivalent to \var and \fn.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \protocol <name> [<header-file>] [<header-name>] =
- Indicates that a comment block contains documentation for a protocol in Objective-C with name <name>. The arguments are equal to the \class command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \relates <name> =
- This command can be used in the documentation of a non-member function <name>. It puts the function inside the `related function' section of the class documentation. This command is useful for documenting non-friend functions that are nevertheless strongly coupled to a certain class. It prevents the need of having to document a file, but only works for functions.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \relatesalso <name> =
- This command can be used in the documentation of a non-member function <name>. It puts the function both inside the `related function' section of the class documentation as well as leaving its normal file documentation location. This command is useful for documenting non-friend functions that are nevertheless strongly coupled to a certain class. It only works for functions.
-
- *Parsing error* 
- 
-
-
-
-= \showinitializer =
- By default the value of a define and the initializer of a variable are only displayed if they are less than 30 lines long. By putting this command in a comment block of a define or variable, the initializer is shown unconditionally.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \struct <name> [<header-file>] [<header-name>] =
- Indicates that a comment block contains documentation for a struct with name <name>. The arguments are equal to the \class command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \typedef (typedef declaration) =
- Indicates that a comment block contains documentation for a typedef (either global or as a member of a class). This command is equivalent to \var and \fn.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \union <name> [<header-file>] [<header-name>] =
- Indicates that a comment block contains documentation for a union with name <name>. The arguments are equal to the \class command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \var (variable declaration) =
- Indicates that a comment block contains documentation for a variable or enum value (either global or as a member of a class). This command is equivalent to \typedef and \fn.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \weakgroup <name> [(title)] =
- Can be used exactly like  [Doxygen_commands_1cmdaddtogroup \addtogroup]  , but has a lower priority when it comes to resolving conflicting grouping definitions.
-
- *Parsing error* 
- *Parsing error* 
-
-==  Section indicators  ==
-
- *Parsing error* 
- 
-
-
-
-= \attention { attention text } =
- Starts a paragraph where a message that needs attention may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \attention commands will be joined into a single paragraph. The \attention command ends when a blank line or some other sectioning command is encountered.
-
-
-
-= \author { list of authors } =
- Starts a paragraph where one or more author names may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \author commands will be joined into a single paragraph and separated by commas. Alternatively, one \author command may mention several authors. The \author command ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \brief {brief description} =
- Starts a paragraph that serves as a brief description. For classes and files the brief description will be used in lists and at the start of the documentation page. For class and file members, the brief description will be placed at the declaration of the member and prepended to the detailed description. A brief description may span several lines (although it is advised to keep it brief!). A brief description ends when a blank line or another sectioning command is encountered. If multiple \brief commands are present they will be joined. See section  [Doxygen_commands_1cmdauthor \author]   for an example.
-
-Synonymous to \short.
-
- *Parsing error* 
- 
-
-
-
-= \bug { bug description } =
- Starts a paragraph where one or more bugs may be reported. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \bug commands will be joined into a single paragraph. Each bug description will start on a new line. Alternatively, one \bug command may mention several bugs. The \bug command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdauthor \author]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \cond [<section-label>] =
- Starts a conditional section that ends with a corresponding  [Doxygen_commands_1cmdendcond \endcond]   command, which is typically found in another comment block. The main purpose of this pair of commands is to (conditionally) exclude part of a file from processing (traditionally this could only be achieved using C processor commands).
-
-The section between \cond and \endcond commands can be included by adding its section label to the  [Doxygen_config_1cfg_enabled_sections ENABLED_SECTIONS]   configuration option. If the section label is omitted, the section will be excluded from processing unconditionally.
-
-For conditional sections within a comment block one should use a  [Doxygen_commands_1cmdif \if]   ...  [Doxygen_commands_1cmdendif \endif]   block.
-
-Conditional sections can be nested. In this case a nested section will only be shown if it and its containing section are included.
-
-Here is an example showing the commands in action:
-
 {{{
 /** An interface */
 class Intf
@@ -465,337 +221,140 @@ class Implementation : public Intf
     /// @endcond
 };
 
-/// @endcond 
-
+/// @endcond
 }}}
-
-The output will be different depending on whether `ENABLED_SECTIONS` is empty, `TEST`, `DEV`, or `DEV` `TEST`.
-
- *Parsing error* 
+ The output will be different depending on whether  `ENABLED_SECTIONS`  is empty,  `TEST`  ,  `DEV`  , or  `DEV`    `TEST`  .
+  
+    = \date { date description } =
+   Starts a paragraph where one or more dates may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \date commands will be joined into a single paragraph. Each date description will start on a new line. Alternatively, one \date command may mention several dates. The \date command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]  for an example.
+  
+    = \deprecated { description } =
+   Starts a paragraph indicating that this documentation block belongs to a deprecated entity. Can be used to describe alternatives, expected life span, etc.
+  
+    = \else =
+   Starts a conditional section if the previous conditional section was not enabled. The previous section should have been started with a  `\if`  ,  `\ifnot`  , or  `\elseif`  command.
+    
+    = \elseif <section-label> =
+   Starts a conditional documentation section if the previous section was not enabled. A conditional section is disabled by default. To enable it you must put the section-label after the ENABLED_SECTIONS tag in the configuration file. Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.
+    
+    = \endcond =
+   Ends a conditional section that was started by  [Doxygen_commands \cond]  .
+    
+    = \endif =
+   Ends a conditional section that was started by  `\if`  or  `\ifnot`  For each  `\if`  or  `\ifnot`  one and only one matching  `\endif`  must follow.
+    
+    = \exception <exception-object> { exception description } =
+   Starts an exception description for an exception object with name <exception-object>. Followed by a description of the exception. The existence of the exception object is not checked. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \exception commands will be joined into a single paragraph. Each parameter description will start on a new line. The \exception description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \fn]  for an example.
+    
+    = \if <section-label> =
+   Starts a conditional documentation section. The section ends with a matching  `\endif`  command. A conditional section is disabled by default. To enable it you must put the section-label after the ENABLED_SECTIONS tag in the configuration file. Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.
+  You can also use conditional commands inside aliases. To document a class in two languages you could for instance use:
+  Where the following aliases are defined in the configuration file:
  
-
-
-
-= \date { date description } =
- Starts a paragraph where one or more dates may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \date commands will be joined into a single paragraph. Each date description will start on a new line. Alternatively, one \date command may mention several dates. The \date command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdauthor \author]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \deprecated { description } =
- Starts a paragraph indicating that this documentation block belongs to a deprecated entity. Can be used to describe alternatives, expected life span, etc.
-
- *Parsing error* 
- 
-
-
-
-= \else =
- Starts a conditional section if the previous conditional section was not enabled. The previous section should have been started with a `\if`, `\ifnot`, or `\elseif` command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \elseif <section-label> =
- Starts a conditional documentation section if the previous section was not enabled. A conditional section is disabled by default. To enable it you must put the section-label after the  [Doxygen_config_1cfg_enabled_sections ENABLED_SECTIONS]   tag in the configuration file. Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endcond =
- Ends a conditional section that was started by  [Doxygen_commands_1cmdcond \cond]  .
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endif =
- Ends a conditional section that was started by `\if` or `\ifnot` For each `\if` or `\ifnot` one and only one matching `\endif` must follow.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \exception <exception-object> { exception description } =
- Starts an exception description for an exception object with name <exception-object>. Followed by a description of the exception. The existence of the exception object is not checked. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \exception commands will be joined into a single paragraph. Each parameter description will start on a new line. The \exception description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdfn \fn]   for an example.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \if <section-label> =
- Starts a conditional documentation section. The section ends with a matching `\endif` command. A conditional section is disabled by default. To enable it you must put the section-label after the  [Doxygen_config_1cfg_enabled_sections ENABLED_SECTIONS]   tag in the configuration file. Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.
-
- *Parsing error* 
-You can also use conditional commands inside aliases. To document a class in two languages you could for instance use:
-
- *Parsing error* 
-Where the following aliases are defined in the configuration file:
-
 {{{
 ALIASES  = "english=\if english" \
            "endenglish=\endif" \
            "dutch=\if dutch" \
            "enddutch=\endif"
-
 }}}
-
-and `ENABLED_SECTIONS` can be used to enable either `english` or `dutch`.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \ifnot <section-label> =
- Starts a conditional documentation section. The section ends with a matching `\endif` command. This conditional section is enabled by default. To disable it you must put the section-label after the  [Doxygen_config_1cfg_enabled_sections ENABLED_SECTIONS]   tag in the configuration file.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \invariant { description of invariant } =
- Starts a paragraph where the invariant of an entity can be described. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \invariant commands will be joined into a single paragraph. Each invariant description will start on a new line. Alternatively, one \invariant command may mention several invariants. The \invariant command ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- 
-
-
-
-= \note { text } =
- Starts a paragraph where a note can be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \note commands will be joined into a single paragraph. Each note description will start on a new line. Alternatively, one \note command may mention several notes. The \note command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdpar \par]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \par [(paragraph title)] { paragraph } =
- If a paragraph title is given this command starts a paragraph with a user defined heading. The heading extends until the end of the line. The paragraph following the command will be indented.
-
-If no paragraph title is given this command will start a new paragraph. This will also work inside other paragraph commands (like \param or \warning) without ending the that command.
-
-The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. The \par command ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \param <parameter-name> { parameter description } =
- Starts a parameter description for a function parameter with name <parameter-name>. Followed by a description of the parameter. The existence of the parameter is checked and a warning is given if the documentation of this (or any other) parameter is missing or not present in the function declaration or definition.
-
-The \param command has an optional attribute specifying the direction of the attribute. Possible values are "in" and "out". Here is an example for the function memcpy:  *Parsing error*  If a parameter is both input and output, use [in,out] as an attribute.
-
-The parameter description is a paragraph with no special internal structure. All visual enhancement commands may be used inside the paragraph.
-
-Multiple adjacent \param commands will be joined into a single paragraph. Each parameter description will start on a new line. The \param description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdfn \fn]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \post { description of the postcondition } =
- Starts a paragraph where the postcondition of an entity can be described. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \post commands will be joined into a single paragraph. Each postcondition will start on a new line. Alternatively, one \post command may mention several postconditions. The \post command ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- 
-
-
-
-= \pre { description of the precondition } =
- Starts a paragraph where the precondition of an entity can be described. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \pre commands will be joined into a single paragraph. Each precondition will start on a new line. Alternatively, one \pre command may mention several preconditions. The \pre command ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- 
-
-
-
-= \remarks { remark text } =
- Starts a paragraph where one or more remarks may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \remark commands will be joined into a single paragraph. Each remark will start on a new line. Alternatively, one \remark command may mention several remarks. The \remark command ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- 
-
-
-
-= \return { description of the return value } =
- Starts a return value description for a function. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \return commands will be joined into a single paragraph. The \return description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdfn \fn]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \retval <return value> { description } =
- Starts a return value description for a function with name <return value>. Followed by a description of the return value. The text of the paragraph that forms the description has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \retval commands will be joined into a single paragraph. Each return value description will start on a new line. The \retval description ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- 
-
-
-
-= \sa { references } =
- Starts a paragraph where one or more cross-references to classes, functions, methods, variables, files or URL may be specified. Two names joined by either `::` or `#` are understood as referring to a class and one of its members. One of several overloaded methods or constructors may be selected by including a parenthesized list of argument types after the method name.
-
-Synonymous to \see.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \see { references } =
- Equivalent to  [Doxygen_commands_1cmdsa \sa]  . Introduced for compatibility with Javadoc.
-
- *Parsing error* 
- 
-
-
-
-= \since { text } =
- This tag can be used to specify since when (version or time) an entity is available. The paragraph that follows \since does not have any special internal structure. All visual enhancement commands may be used inside the paragraph. The \since description ends when a blank line or some other sectioning command is encountered.
-
- *Parsing error* 
- 
-
-
-
-= \test { paragraph describing a test case } =
- Starts a paragraph where a test case can be described. The description will also add the test case to a separate test list. The two instances of the description will be cross-referenced. Each test case in the test list will be preceded by a header that indicates the origin of the test case.
-
- *Parsing error* 
- 
-
-
-
-= \throw <exception-object> { exception description } =
- Synonymous to \exception (see section  [Doxygen_commands_1cmdexception \exception]  ).
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \todo { paragraph describing what is to be done } =
- Starts a paragraph where a TODO item is described. The description will also add an item to a separate TODO list. The two instances of the description will be cross-referenced. Each item in the TODO list will be preceded by a header that indicates the origin of the item.
-
- *Parsing error* 
- 
-
-
-
-= \version { version number } =
- Starts a paragraph where one or more version strings may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \version commands will be joined into a single paragraph. Each version description will start on a new line. Alternatively, one \version command may mention several version strings. The \version command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdauthor \author]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \warning { warning message } =
- Starts a paragraph where one or more warning messages may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \warning commands will be joined into a single paragraph. Each warning description will start on a new line. Alternatively, one \warning command may mention several warnings. The \warning command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands_1cmdauthor \author]   for an example.
-
-
-
-= \xrefitem <key> "(heading)" "(list title)" {text} =
- This command is a generalization of commands such as  [Doxygen_commands_1cmdtodo \todo]   and  [Doxygen_commands_1cmdbug \bug]  . It can be used to create user-defined text sections which are automatically cross-referenced between the place of occurrence and a related page, which will be generated. On the related page all sections of the same type will be collected.
-
-The first argument <key> is a identifier uniquely representing the type of the section. The second argument is a quoted string representing the heading of the section under which text passed as the forth argument is put. The third argument (list title) is used as the title for the related page containing all items with the same key. The keys "todo", "test", "bug", and "deprecated" are predefined.
-
-To get an idea on how to use the \xrefitem command and what its effect is, consider the todo list, which (for English output) can be seen an alias for the command {{{
-\xrefitem todo "Todo" "Todo List" 
+ and  `ENABLED_SECTIONS`  can be used to enable either  `english`  or  `dutch`  .
+    
+    = \ifnot <section-label> =
+   Starts a conditional documentation section. The section ends with a matching  `\endif`  command. This conditional section is enabled by default. To disable it you must put the section-label after the ENABLED_SECTIONS tag in the configuration file.
+    
+    = \invariant { description of invariant } =
+   Starts a paragraph where the invariant of an entity can be described. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \invariant commands will be joined into a single paragraph. Each invariant description will start on a new line. Alternatively, one \invariant command may mention several invariants. The \invariant command ends when a blank line or some other sectioning command is encountered.
+  
+    = \note { text } =
+   Starts a paragraph where a note can be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \note commands will be joined into a single paragraph. Each note description will start on a new line. Alternatively, one \note command may mention several notes. The \note command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \par]  for an example.
+  
+    = \par [(paragraph title)] { paragraph } =
+   If a paragraph title is given this command starts a paragraph with a user defined heading. The heading extends until the end of the line. The paragraph following the command will be indented.
+ If no paragraph title is given this command will start a new paragraph. This will also work inside other paragraph commands (like \param or \warning) without ending the that command.
+ The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. The \par command ends when a blank line or some other sectioning command is encountered.
+    
+    = \param <parameter-name> { parameter description } =
+   Starts a parameter description for a function parameter with name <parameter-name>. Followed by a description of the parameter. The existence of the parameter is checked and a warning is given if the documentation of this (or any other) parameter is missing or not present in the function declaration or definition.
+ The \param command has an optional attribute specifying the direction of the attribute. Possible values are "in" and "out". Here is an example for the function memcpy:  If a parameter is both input and output, use [in,out] as an attribute.
+ The parameter description is a paragraph with no special internal structure. All visual enhancement commands may be used inside the paragraph.
+ Multiple adjacent \param commands will be joined into a single paragraph. Each parameter description will start on a new line. The \param description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \fn]  for an example.
+  
+    = \post { description of the postcondition } =
+   Starts a paragraph where the postcondition of an entity can be described. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \post commands will be joined into a single paragraph. Each postcondition will start on a new line. Alternatively, one \post command may mention several postconditions. The \post command ends when a blank line or some other sectioning command is encountered.
+  
+    = \pre { description of the precondition } =
+   Starts a paragraph where the precondition of an entity can be described. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \pre commands will be joined into a single paragraph. Each precondition will start on a new line. Alternatively, one \pre command may mention several preconditions. The \pre command ends when a blank line or some other sectioning command is encountered.
+  
+    = \remarks { remark text } =
+   Starts a paragraph where one or more remarks may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \remark commands will be joined into a single paragraph. Each remark will start on a new line. Alternatively, one \remark command may mention several remarks. The \remark command ends when a blank line or some other sectioning command is encountered.
+  
+    = \return { description of the return value } =
+   Starts a return value description for a function. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \return commands will be joined into a single paragraph. The \return description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \fn]  for an example.
+  
+    = \retval <return value> { description } =
+   Starts a return value description for a function with name <return value>. Followed by a description of the return value. The text of the paragraph that forms the description has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \retval commands will be joined into a single paragraph. Each return value description will start on a new line. The \retval description ends when a blank line or some other sectioning command is encountered.
+  
+    = \sa { references } =
+   Starts a paragraph where one or more cross-references to classes, functions, methods, variables, files or URL may be specified. Two names joined by either  `::`  or  `#`  are understood as referring to a class and one of its members. One of several overloaded methods or constructors may be selected by including a parenthesized list of argument types after the method name.
+ Synonymous to \see.
+    
+    = \see { references } =
+   Equivalent to  [Doxygen_commands \sa]  . Introduced for compatibility with Javadoc.
+  
+    = \since { text } =
+   This tag can be used to specify since when (version or time) an entity is available. The paragraph that follows \since does not have any special internal structure. All visual enhancement commands may be used inside the paragraph. The \since description ends when a blank line or some other sectioning command is encountered.
+  
+    = \test { paragraph describing a test case } =
+   Starts a paragraph where a test case can be described. The description will also add the test case to a separate test list. The two instances of the description will be cross-referenced. Each test case in the test list will be preceded by a header that indicates the origin of the test case.
+  
+    = \throw <exception-object> { exception description } =
+   Synonymous to \exception (see section  [Doxygen_commands \exception]  ).
+    
+    = \todo { paragraph describing what is to be done } =
+   Starts a paragraph where a TODO item is described. The description will also add an item to a separate TODO list. The two instances of the description will be cross-referenced. Each item in the TODO list will be preceded by a header that indicates the origin of the item.
+  
+    = \version { version number } =
+   Starts a paragraph where one or more version strings may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \version commands will be joined into a single paragraph. Each version description will start on a new line. Alternatively, one \version command may mention several version strings. The \version command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]  for an example.
+  
+    = \warning { warning message } =
+   Starts a paragraph where one or more warning messages may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \warning commands will be joined into a single paragraph. Each warning description will start on a new line. Alternatively, one \warning command may mention several warnings. The \warning command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]  for an example.
+    = \xrefitem <key> "(heading)" "(list title)" {text} =
+   This command is a generalization of commands such as  [Doxygen_commands \todo]  and  [Doxygen_commands \bug]  . It can be used to create user-defined text sections which are automatically cross-referenced between the place of occurrence and a related page, which will be generated. On the related page all sections of the same type will be collected.
+ The first argument <key> is a identifier uniquely representing the type of the section. The second argument is a quoted string representing the heading of the section under which text passed as the forth argument is put. The third argument (list title) is used as the title for the related page containing all items with the same key. The keys "todo", "test", "bug", and "deprecated" are predefined.
+ To get an idea on how to use the \xrefitem command and what its effect is, consider the todo list, which (for English output) can be seen an alias for the command 
+{{{
+\xrefitem todo "Todo" "Todo List"
 }}}
-
-Since it is very tedious and error-prone to repeat the first three parameters of the command for each section, the command is meant to be used in combination with the  [Doxygen_config_1cfg_aliases ALIASES]   option in the configuration file. To define a new command \reminder, for instance, one should add the following line to the configuration file: {{{
-ALIASES += "reminder=\xrefitem reminders \"Reminder\" \"Reminders\"" 
+ Since it is very tedious and error-prone to repeat the first three parameters of the command for each section, the command is meant to be used in combination with the ALIASES option in the configuration file. To define a new command \reminder, for instance, one should add the following line to the configuration file: 
+{{{
+ALIASES += "reminder=\xrefitem reminders \"Reminder\" \"Reminders\""
 }}} Note the use of escaped quotes for the second and third argument of the \xrefitem command.
-
- *Parsing error* 
- ==  Commands to create links  ==
-
-
-
-= \addindex (text) =
- This command adds (text) to the `$\mbox{\LaTeX}$` index.
-
- *Parsing error* 
+    =  Commands to create links  =
  
-
-
-
-= \anchor <word> =
- This command places an invisible, named anchor into the documentation to which you can refer with the \ref command.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endlink =
- This command ends a link that is started with the \link command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \link <link-object> =
- The links that are automatically generated by doxygen always have the name of the object they point to as link-text.
-
-The \link command can be used to create a link to an object (a file, class, or member) with a user specified link-text. The link command should end with an \endlink command. All text between the \link and \endlink commands serves as text for a link to the <link-object> specified as the first argument of \link.
-
-See section  [Doxygen_autolink autolink]   for more information on automatically generated links and valid link-objects.
-
- *Parsing error* 
- 
-
-
-
-= \ref <name> ["(text)"] =
- Creates a reference to a named section, subsection, page or anchor. For HTML documentation the reference command will generate a link to the section. For a sections or subsections the title of the section will be used as the text of the link. For anchor the optional text between quotes will be used or <name> if no text is specified. For `$\mbox{\LaTeX}$` documentation the reference command will generate a section number for sections or the text followed by a page number if <name> refers to an anchor.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \subpage <name> ["(text)"] =
- This command can be used to create a hierarchy of pages. The same structure can be made using the  [Doxygen_commands_1cmddefgroup \defgroup]   and  [Doxygen_commands_1cmdingroup \ingroup]   commands, but for pages the \subpage command is often more convenient. The main page (see  [Doxygen_commands_1cmdmainpage \mainpage]  ) is typically the root of hierarchy.
-
-This command behaves similar as  [Doxygen_commands_1cmdref \ref]   in the sense that it creates a reference to a page labeled <name> with the optional link text as specified in the second argument.
-
-It differs from the \ref command in that it only works for pages, and creates a parent-child relation between pages, where the child page (or sub page) is identified by label <name>.
-
-See the  [Doxygen_commands_1cmdsection \section]   and  [Doxygen_commands_1cmdsubsection \subsection]   commands if you want to add structure without creating multiple pages.
-
- *Parsing error* 
-Here is an example: {{{
+    = \addindex (text) =
+   This command adds (text) to the $\mbox{\LaTeX}$ index.
+  
+    = \anchor <word> =
+   This command places an invisible, named anchor into the documentation to which you can refer with the \ref command.
+      
+    = \endlink =
+   This command ends a link that is started with the \link command.
+    
+    = \link <link-object> =
+   The links that are automatically generated by doxygen always have the name of the object they point to as link-text.
+ The \link command can be used to create a link to an object (a file, class, or member) with a user specified link-text. The link command should end with an \endlink command. All text between the \link and \endlink commands serves as text for a link to the <link-object> specified as the first argument of \link.
+ See section  [Doxygen_autolink autolink]  for more information on automatically generated links and valid link-objects.
+  
+    = \ref <name> ["(text)"] =
+   Creates a reference to a named section, subsection, page or anchor. For HTML documentation the reference command will generate a link to the section. For a sections or subsections the title of the section will be used as the text of the link. For anchor the optional text between quotes will be used or <name> if no text is specified. For $\mbox{\LaTeX}$ documentation the reference command will generate a section number for sections or the text followed by a page number if <name> refers to an anchor.
+    
+    = \subpage <name> ["(text)"] =
+   This command can be used to create a hierarchy of pages. The same structure can be made using the  [Doxygen_commands \defgroup]  and  [Doxygen_commands \ingroup]  commands, but for pages the \subpage command is often more convenient. The main page (see  [Doxygen_commands \mainpage]  ) is typically the root of hierarchy.
+ This command behaves similar as  [Doxygen_commands \ref]  in the sense that it creates a reference to a page labeled <name> with the optional link text as specified in the second argument.
+ It differs from the \ref command in that it only works for pages, and creates a parent-child relation between pages, where the child page (or sub page) is identified by label <name>.
+ See the  [Doxygen_commands \section]  and  [Doxygen_commands \subsection]  commands if you want to add structure without creating multiple pages.
+  Here is an example: 
+{{{
 /*! \mainpage A simple manual
 
 Some general info.
@@ -818,610 +377,260 @@ Now you can proceed to the \ref advanced "advanced section".
 This page is for advanced users.
 Make sure you have first read \ref intro "the introduction".
 */
-
 }}}
-
- *Parsing error* 
+  
+    = \section <section-name> (section title) =
+   Creates a section with name <section-name>. The title of the section should be specified as the second argument of the \section command.
+    
+    = \subsection <subsection-name> (subsection title) =
+   Creates a subsection with name <subsection-name>. The title of the subsection should be specified as the second argument of the \subsection command.
+      
+    = \subsubsection <subsubsection-name> (subsubsection title) =
+   Creates a subsubsection with name <subsubsection-name>. The title of the subsubsection should be specified as the second argument of the \subsubsection command.
+      
+    = \paragraph <paragraph-name> (paragraph title) =
+   Creates a named paragraph with name <paragraph-name>. The title of the paragraph should be specified as the second argument of the \paragraph command.
+      
+  =  Commands for displaying examples  =
  
-
-
-
-= \section <section-name> (section title) =
- Creates a section with name <section-name>. The title of the section should be specified as the second argument of the \section command.
-
- *Parsing error* 
- *Parsing error* 
+    = \dontinclude <file-name> =
+   This command can be used to parse a source file without actually verbatim including it in the documentation (as the \include command does). This is useful if you want to divide the source file into smaller pieces and add documentation between the pieces. Source files or directories can be specified using the EXAMPLE_PATH tag of doxygen's configuration file.
+ The class and member declarations and definitions inside the code fragment are `remembered' during the parsing of the comment block that contained the \dontinclude command.
+ For line by line descriptions of source files, one or more lines of the example can be displayed using the \line, \skip, \skipline, and \until commands. An internal pointer is used for these commands. The \dontinclude command sets the pointer to the first line of the example.
+      
+    = \include <file-name> =
+   This command can be used to include a source file as a block of code. The command takes the name of an include file as an argument. Source files or directories can be specified using the EXAMPLE_PATH tag of doxygen's configuration file.
+ If <file-name> itself is not unique for the set of example files specified by the EXAMPLE_PATH tag, you can include part of the absolute path to disambiguate it.
+ Using the \include command is equivalent to inserting the file into the documentation block and surrounding it with  [Doxygen_commands \code]  and  [Doxygen_commands \endcode]  commands.
+ The main purpose of the \include command is to avoid code duplication in case of example blocks that consist of multiple source and header files.
+ For a line by line description of a source files use the  [Doxygen_commands \dontinclude]  command in combination with the  [Doxygen_commands \line]  ,  [Doxygen_commands \skip]  ,  [Doxygen_commands \skipline]  , and \until commands.
+      
+    = \includelineno <file-name> =
+   This command works the same way as \include, but will add line numbers to the included file.
+    
+    = \line ( pattern ) =
+   This command searches line by line through the example that was last included using \include or \dontinclude until it finds a non-blank line. If that line contains the specified pattern, it is written to the output.
+ The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following the non-blank line that was found (or to the end of the example if no such line could be found).
+ See section  [Doxygen_commands \dontinclude]  for an example.
+  
+    = \skip ( pattern ) =
+   This command searches line by line through the example that was last included using \include or \dontinclude until it finds a line that contains the specified pattern.
+ The internal pointer that is used to keep track of the current line in the example, is set to the start of the line that contains the specified pattern (or to the end of the example if the pattern could not be found).
+ See section  [Doxygen_commands \dontinclude]  for an example.
+  
+    = \skipline ( pattern ) =
+   This command searches line by line through the example that was last included using \include or \dontinclude until it finds a line that contains the specified pattern. It then writes the line to the output.
+ The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following the line that is written (or to the end of the example if the pattern could not be found).
+  See section  [Doxygen_commands \dontinclude]  for an example.
+  
+    = \until ( pattern ) =
+   This command writes all lines of the example that was last included using \include or \dontinclude to the output, until it finds a line containing the specified pattern. The line containing the pattern will be written as well.
+ The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following last written line (or to the end of the example if the pattern could not be found).
+ See section  [Doxygen_commands \dontinclude]  for an example.
+  
+    = \verbinclude <file-name> =
+   This command includes the file <file-name> verbatim in the documentation. The command is equivalent to pasting the file in the documentation and placing \verbatim and \endverbatim commands around it.
+ Files or directories that doxygen should look for can be specified using the EXAMPLE_PATH tag of doxygen's configuration file.
+  
+    = \htmlinclude <file-name> =
+   This command includes the file <file-name> as is in the HTML documentation. The command is equivalent to pasting the file in the documentation and placing \htmlonly and \endhtmlonly commands around it.
+ Files or directories that doxygen should look for can be specified using the EXAMPLE_PATH tag of doxygen's configuration file.
+    =  Commands for visual enhancements  =
  
-
-
-
-= \subsection <subsection-name> (subsection title) =
- Creates a subsection with name <subsection-name>. The title of the subsection should be specified as the second argument of the \subsection command.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
+    = \a <word> =
+   Displays the argument <word> using a special font. Use this command to refer to member arguments in the running text.
+    
+    = \arg { item-description } =
+   This command has one argument that continues until the first blank line or until another \arg is encountered. The command can be used to generate a simple, not nested list of arguments. Each argument should start with a \arg command.
+    Equivalent to  [Doxygen_commands \li]  
+  
+    = \b <word> =
+   Displays the argument <word> using a bold font. Equivalent to <b>word</b>. To put multiple words in bold use <b>multiple words</b>.
+  
+    = \c <word> =
+   Displays the argument <word> using a typewriter font. Use this to refer to a word of code. Equivalent to <tt>word</tt>.
+  Equivalent to  [Doxygen_commands \p]  To have multiple words in typewriter font use <tt>multiple words</tt>.
+  
+    = \code =
+   Starts a block of code. A code block is treated differently from ordinary text. It is interpreted as C/C++ code. The names of the classes and members that are documented are automatically replaced by links to the documentation.
+    
+    = \copydoc <link-object> =
+   Copies a documentation block from the object specified by <link-object> and pastes it at the location of the command. This command can be useful to avoid cases where a documentation block would otherwise have to be duplicated or it can be used to extend the documentation of an inherited member.
+ The link object can point to a member (of a class, file or group), a class, a namespace, a group, a page, or a file (checked in that order). Note that if the object pointed to is a member (function, variable, typedef, etc), the compound (class, file, or group) containing it should also be documented for the copying to work.
+ To copy the documentation for a member of a class for instance one can put the following in the documentation
  
-
-
-
-= \subsubsection <subsubsection-name> (subsubsection title) =
- Creates a subsubsection with name <subsubsection-name>. The title of the subsubsection should be specified as the second argument of the \subsubsection command.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \paragraph <paragraph-name> (paragraph title) =
- Creates a named paragraph with name <paragraph-name>. The title of the paragraph should be specified as the second argument of the \paragraph command.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
-
-==  Commands for displaying examples  ==
-
-
-
-= \dontinclude <file-name> =
- This command can be used to parse a source file without actually verbatim including it in the documentation (as the \include command does). This is useful if you want to divide the source file into smaller pieces and add documentation between the pieces. Source files or directories can be specified using the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag of doxygen's configuration file.
-
-The class and member declarations and definitions inside the code fragment are `remembered' during the parsing of the comment block that contained the \dontinclude command.
-
-For line by line descriptions of source files, one or more lines of the example can be displayed using the \line, \skip, \skipline, and \until commands. An internal pointer is used for these commands. The \dontinclude command sets the pointer to the first line of the example.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \include <file-name> =
- This command can be used to include a source file as a block of code. The command takes the name of an include file as an argument. Source files or directories can be specified using the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag of doxygen's configuration file.
-
-If <file-name> itself is not unique for the set of example files specified by the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag, you can include part of the absolute path to disambiguate it.
-
-Using the \include command is equivalent to inserting the file into the documentation block and surrounding it with  [Doxygen_commands_1cmdcode \code]   and  [Doxygen_commands_1cmdendcode \endcode]   commands.
-
-The main purpose of the \include command is to avoid code duplication in case of example blocks that consist of multiple source and header files.
-
-For a line by line description of a source files use the  [Doxygen_commands_1cmddontinclude \dontinclude]   command in combination with the  [Doxygen_commands_1cmdline \line]  ,  [Doxygen_commands_1cmdskip \skip]  ,  [Doxygen_commands_1cmdskipline \skipline]  , and \until commands.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \includelineno <file-name> =
- This command works the same way as \include, but will add line numbers to the included file.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \line ( pattern ) =
- This command searches line by line through the example that was last included using \include or \dontinclude until it finds a non-blank line. If that line contains the specified pattern, it is written to the output.
-
-The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following the non-blank line that was found (or to the end of the example if no such line could be found).
-
-See section  [Doxygen_commands_1cmddontinclude \dontinclude]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \skip ( pattern ) =
- This command searches line by line through the example that was last included using \include or \dontinclude until it finds a line that contains the specified pattern.
-
-The internal pointer that is used to keep track of the current line in the example, is set to the start of the line that contains the specified pattern (or to the end of the example if the pattern could not be found).
-
-See section  [Doxygen_commands_1cmddontinclude \dontinclude]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \skipline ( pattern ) =
- This command searches line by line through the example that was last included using \include or \dontinclude until it finds a line that contains the specified pattern. It then writes the line to the output.
-
-The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following the line that is written (or to the end of the example if the pattern could not be found).
-
- *Parsing error* 
-See section  [Doxygen_commands_1cmddontinclude \dontinclude]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \until ( pattern ) =
- This command writes all lines of the example that was last included using \include or \dontinclude to the output, until it finds a line containing the specified pattern. The line containing the pattern will be written as well.
-
-The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following last written line (or to the end of the example if the pattern could not be found).
-
-See section  [Doxygen_commands_1cmddontinclude \dontinclude]   for an example.
-
- *Parsing error* 
- 
-
-
-
-= \verbinclude <file-name> =
- This command includes the file <file-name> verbatim in the documentation. The command is equivalent to pasting the file in the documentation and placing \verbatim and \endverbatim commands around it.
-
-Files or directories that doxygen should look for can be specified using the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag of doxygen's configuration file.
-
- *Parsing error* 
- 
-
-
-
-= \htmlinclude <file-name> =
- This command includes the file <file-name> as is in the HTML documentation. The command is equivalent to pasting the file in the documentation and placing \htmlonly and \endhtmlonly commands around it.
-
-Files or directories that doxygen should look for can be specified using the  [Doxygen_config_1cfg_example_path EXAMPLE_PATH]   tag of doxygen's configuration file.
-
- *Parsing error* 
- ==  Commands for visual enhancements  ==
-
-
-
-= \a <word> =
- Displays the argument <word> using a special font. Use this command to refer to member arguments in the running text.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \arg { item-description } =
- This command has one argument that continues until the first blank line or until another \arg is encountered. The command can be used to generate a simple, not nested list of arguments. Each argument should start with a \arg command.
-
- *Parsing error* 
- *Parsing error* 
-Equivalent to  [Doxygen_commands_1cmdli \li]  
-
- *Parsing error* 
- 
-
-
-
-= \b <word> =
- Displays the argument <word> using a bold font. Equivalent to <b>word</b>. To put multiple words in bold use <b>multiple words</b>.
-
- *Parsing error* 
- 
-
-
-
-= \c <word> =
- Displays the argument <word> using a typewriter font. Use this to refer to a word of code. Equivalent to <tt>word</tt>.
-
- *Parsing error* 
-Equivalent to  [Doxygen_commands_1cmdp \p]   To have multiple words in typewriter font use <tt>multiple words</tt>.
-
- *Parsing error* 
- 
-
-
-
-= \code =
- Starts a block of code. A code block is treated differently from ordinary text. It is interpreted as C/C++ code. The names of the classes and members that are documented are automatically replaced by links to the documentation.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \copydoc <link-object> =
- Copies a documentation block from the object specified by <link-object> and pastes it at the location of the command. This command can be useful to avoid cases where a documentation block would otherwise have to be duplicated or it can be used to extend the documentation of an inherited member.
-
-The link object can point to a member (of a class, file or group), a class, a namespace, a group, a page, or a file (checked in that order). Note that if the object pointed to is a member (function, variable, typedef, etc), the compound (class, file, or group) containing it should also be documented for the copying to work.
-
-To copy the documentation for a member of a class for instance one can put the following in the documentation
-
 {{{
-  /*! @copydoc MyClass::myfunction() 
+/*! @copydoc MyClass::myfunction() 
    *  More documentation.
    */
-
 }}}
-
-if the member is overloaded, you should specify the argument types explicitly (without spaces!), like in the following:
-
+ if the member is overloaded, you should specify the argument types explicitly (without spaces!), like in the following:
+ 
 {{{
-  /*! @copydoc MyClass::myfunction(type1,type2) */
-
+/*! @copydoc MyClass::myfunction(type1,type2) */
 }}}
-
-Qualified names are only needed if the context in which the documentation block is found requires them.
-
-The copydoc command can be used recursively, but cycles in the copydoc relation will be broken and flagged as an error.
-
- *Parsing error* 
+ Qualified names are only needed if the context in which the documentation block is found requires them.
+ The copydoc command can be used recursively, but cycles in the copydoc relation will be broken and flagged as an error.
+  
+    = \dot =
+   Starts a text fragment which should contain a valid description of a dot graph. The text fragment ends with  [Doxygen_commands \enddot]  . Doxygen will pass the text on to dot and include the resulting image (and image map) into the output. The nodes of a graph can be made clickable by using the URL attribute. By using the command \ref inside the URL value you can conveniently link to an item inside doxygen. Here is an example: 
+  
+    = \msc =
+   Starts a text fragment which should contain a valid description of a message sequence chart. See  [http://www.mcternan.me.uk/mscgen/ http://www.mcternan.me.uk/mscgen/]  for examples. The text fragment ends with  [Doxygen_commands \endmsc]  .  Here is an example of the use of the \msc command. 
+  
+    = \dotfile <file> ["caption"] =
+   Inserts an image generated by dot from <file> into the documentation.
+ The first argument specifies the file name of the image. doxygen will look for files in the paths (or files) that you specified after the DOTFILE_DIRS tag. If the dot file is found it will be used as an input file to the dot tool. The resulting image will be put into the correct output directory. If the dot file name contains spaces you'll have to put quotes (") around it.
+ The second argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.
+  
+    = \e <word> =
+   Displays the argument <word> in italics. Use this command to emphasize words.
+  Equivalent to  [Doxygen_commands \em]  . To emphasis multiple words use <em>multiple words</em>.
+  
+    = \em <word> =
+   Displays the argument <word> in italics. Use this command to emphasize words.
+  Equivalent to  [Doxygen_commands \e]  
+  
+    = \endcode =
+   Ends a block of code.    
+    = \enddot =
+   Ends a blocks that was started with  [Doxygen_commands \dot]  .
+  
+    = \endmsc =
+   Ends a blocks that was started with  [Doxygen_commands \msc]  .
+  
+    = \endhtmlonly =
+   Ends a block of text that was started with a \htmlonly command.
+    
+    = \endlatexonly =
+   Ends a block of text that was started with a \latexonly command.
+    
+    = \endmanonly =
+   Ends a block of text that was started with a \manonly command.
+    
+    = \endverbatim =
+   Ends a block of text that was started with a \verbatim command.
+    
+    = \endxmlonly =
+   Ends a block of text that was started with a \xmlonly command.
+    
+    = \f$ =
+  
+ Marks the start and end of an in-text formula.    
+    = \f[ =
+  
+ Marks the start of a long formula that is displayed centered on a separate line.    
+    = \f] =
+  
+ Marks the end of a long formula that is displayed centered on a separate line.    
+    = \htmlonly =
+   Starts a block of text that will be verbatim included in the generated HTML documentation only. The block ends with a endhtmlonly command.
+ This command can be used to include HTML code that is too complex for doxygen (i.e. applets, java-scripts, and HTML tags that require attributes). You can use the \latexonly and \endlatexonly pair to provide a proper $\mbox{\LaTeX}$ alternative.
+  *Note:*  environment variables (like $(HOME) ) are resolved inside a HTML-only block.
+    
+    = \image <format> <file> ["caption"] [<sizeindication>=<size>] =
+   Inserts an image into the documentation. This command is format specific, so if you want to insert an image for more than one format you'll have to repeat this command for each format.
+ The first argument specifies the output format. Currently, the following values are supported:  `html`  and  `latex`  .
+ The second argument specifies the file name of the image. doxygen will look for files in the paths (or files) that you specified after the IMAGE_PATH tag. If the image is found it will be copied to the correct output directory. If the image name contains spaces you'll have to put quotes (") around it. You can also specify an absolute URL instead of a file name, but then doxygen does not copy the image nor check its existance.
+ The third argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified on a single line and between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.
+ The fourth argument is also optional and can be used to specify the width or height of the image. This is only useful for $\mbox{\LaTeX}$ output (i.e. format=  `latex`  ). The  `sizeindication`  can be either  `width`  or  `height`  . The size should be a valid size specifier in $\mbox{\LaTeX}$ (for example  `10cm`  or  `6in`  or a symbolic width like  `\textwidth`  ).
+ Here is example of a comment block:
  
-
-
-
-= \dot =
- Starts a text fragment which should contain a valid description of a dot graph. The text fragment ends with  [Doxygen_commands_1cmdenddot \enddot]  . Doxygen will pass the text on to dot and include the resulting image (and image map) into the output. The nodes of a graph can be made clickable by using the URL attribute. By using the command \ref inside the URL value you can conveniently link to an item inside doxygen. Here is an example:  *Parsing error* 
-
- *Parsing error* 
- 
-
-
-
-= \msc =
- Starts a text fragment which should contain a valid description of a message sequence chart. See  [http://www.mcternan.me.uk/mscgen/ http://www.mcternan.me.uk/mscgen/]  for examples. The text fragment ends with  [Doxygen_commands_1cmdendmsc \endmsc]  .  *Parsing error* 
-Here is an example of the use of the \msc command.  *Parsing error* 
-
- *Parsing error* 
- 
-
-
-
-= \dotfile <file> ["caption"] =
- Inserts an image generated by dot from <file> into the documentation.
-
-The first argument specifies the file name of the image. doxygen will look for files in the paths (or files) that you specified after the  [Doxygen_config_1cfg_dotfile_dirs DOTFILE_DIRS]   tag. If the dot file is found it will be used as an input file to the dot tool. The resulting image will be put into the correct output directory. If the dot file name contains spaces you'll have to put quotes (") around it.
-
-The second argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.
-
- *Parsing error* 
- 
-
-
-
-= \e <word> =
- Displays the argument <word> in italics. Use this command to emphasize words.
-
- *Parsing error* 
-Equivalent to  [Doxygen_commands_1cmdem \em]  . To emphasis multiple words use <em>multiple words</em>.
-
- *Parsing error* 
- 
-
-
-
-= \em <word> =
- Displays the argument <word> in italics. Use this command to emphasize words.
-
- *Parsing error* 
-Equivalent to  [Doxygen_commands_1cmde \e]  
-
- *Parsing error* 
- 
-
-
-
-= \endcode =
- Ends a block of code.  *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \enddot =
- Ends a blocks that was started with  [Doxygen_commands_1cmddot \dot]  .
-
- *Parsing error* 
- 
-
-
-
-= \endmsc =
- Ends a blocks that was started with  [Doxygen_commands_1cmdmsc \msc]  .
-
- *Parsing error* 
- 
-
-
-
-= \endhtmlonly =
- Ends a block of text that was started with a \htmlonly command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endlatexonly =
- Ends a block of text that was started with a \latexonly command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endmanonly =
- Ends a block of text that was started with a \manonly command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endverbatim =
- Ends a block of text that was started with a \verbatim command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \endxmlonly =
- Ends a block of text that was started with a \xmlonly command.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \f$ =
-
-
-Marks the start and end of an in-text formula.  *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \f[ =
-
-
-Marks the start of a long formula that is displayed centered on a separate line.  *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \f] =
-
-
-Marks the end of a long formula that is displayed centered on a separate line.  *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \htmlonly =
- Starts a block of text that will be verbatim included in the generated HTML documentation only. The block ends with a endhtmlonly command.
-
-This command can be used to include HTML code that is too complex for doxygen (i.e. applets, java-scripts, and HTML tags that require attributes). You can use the \latexonly and \endlatexonly pair to provide a proper `$\mbox{\LaTeX}$` alternative.
-
-*Note:* environment variables (like $(HOME) ) are resolved inside a HTML-only block.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \image <format> <file> ["caption"] [<sizeindication>=<size>] =
- Inserts an image into the documentation. This command is format specific, so if you want to insert an image for more than one format you'll have to repeat this command for each format.
-
-The first argument specifies the output format. Currently, the following values are supported: `html` and `latex`.
-
-The second argument specifies the file name of the image. doxygen will look for files in the paths (or files) that you specified after the  [Doxygen_config_1cfg_image_path IMAGE_PATH]   tag. If the image is found it will be copied to the correct output directory. If the image name contains spaces you'll have to put quotes (") around it. You can also specify an absolute URL instead of a file name, but then doxygen does not copy the image nor check its existance.
-
-The third argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified on a single line and between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.
-
-The fourth argument is also optional and can be used to specify the width or height of the image. This is only useful for `$\mbox{\LaTeX}$` output (i.e. format=`latex`). The `sizeindication` can be either `width` or `height`. The size should be a valid size specifier in `$\mbox{\LaTeX}$` (for example `10cm` or `6in` or a symbolic width like `\textwidth`).
-
-Here is example of a comment block:
-
 {{{
-  /*! Here is a snapshot of my new application:
+/*! Here is a snapshot of my new application:
    *  \image html application.jpg
    *  \image latex application.eps "My application" width=10cm
    */
-
 }}}
-
-And this is an example of how the relevant part of the configuration file may look:
-
+ And this is an example of how the relevant part of the configuration file may look:
+ 
 {{{
-  IMAGE_PATH     = my_image_dir
-
+IMAGE_PATH     = my_image_dir
 }}}
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \latexonly =
- Starts a block of text that will be verbatim included in the generated `$\mbox{\LaTeX}$` documentation only. The block ends with a endlatexonly command.
-
-This command can be used to include `$\mbox{\LaTeX}$` code that is too complex for doxygen (i.e. images, formulas, special characters). You can use the \htmlonly and \endhtmlonly pair to provide a proper HTML alternative.
-
-*Note:* environment variables (like $(HOME) ) are resolved inside a `$\mbox{\LaTeX}$`-only block.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \manonly =
- Starts a block of text that will be verbatim included in the generated MAN documentation only. The block ends with a endmanonly command.
-
-This command can be used to include groff code directly into MAN pages. You can use the \htmlonly and \latexonly and \endhtmlonly and \endlatexonly pairs to provide proper HTML and `$\mbox{\LaTeX}$` alternatives.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \li { item-description } =
- This command has one argument that continues until the first blank line or until another \li is encountered. The command can be used to generate a simple, not nested list of arguments. Each argument should start with a \li command.
-
- *Parsing error* 
- *Parsing error* 
-Equivalent to  [Doxygen_commands_1cmdarg \arg]  
-
- *Parsing error* 
- 
-
-
-
-= \n =
- Forces a new line. Equivalent to <br> and inspired by the printf function.
-
- *Parsing error* 
- 
-
-
-
-= \p <word> =
- Displays the parameter <word> using a typewriter font. You can use this command to refer to member function parameters in the running text.
-
- *Parsing error* 
-Equivalent to  [Doxygen_commands_1cmdc \c]  
-
- *Parsing error* 
- 
-
-
-
-= \verbatim =
- Starts a block of text that will be verbatim included in both the HTML and the `$\mbox{\LaTeX}$` documentation. The block should end with a \endverbatim block. All commands are disabled in a verbatim block.
-
- *Parsing error* 
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \xmlonly =
- Starts a block of text that will be verbatim included in the generated XML output only. The block ends with a endxmlonly command.
-
-This command can be used to include custom XML tags.
-
- *Parsing error* 
- *Parsing error* 
- 
-
-
-
-= \\ =
- This command writes a backslash character (\) to the HTML and `$\mbox{\LaTeX}$` output. The backslash has to be escaped in some cases because doxygen uses it to detect commands.
-
- *Parsing error* 
- 
-
-
-
-= \@ =
- This command writes an at-sign (@) to the HTML and `$\mbox{\LaTeX}$` output. The at-sign has to be escaped in some cases because doxygen uses it to detect JavaDoc commands.
-
- *Parsing error* 
- 
-
-
-
-= \~[LanguageId] =
- This command enables/disables a language specific filter. This can be used to put documentation for different language into one comment block and use the `OUTPUT_LANGUAGE` tag to filter out only a specific language. Use \~language_id to enable output for a specific language only and \~ to enable output for all languages (this is also the default mode).
-
-Example: {{{
+    
+    = \latexonly =
+   Starts a block of text that will be verbatim included in the generated $\mbox{\LaTeX}$ documentation only. The block ends with a endlatexonly command.
+ This command can be used to include $\mbox{\LaTeX}$ code that is too complex for doxygen (i.e. images, formulas, special characters). You can use the \htmlonly and \endhtmlonly pair to provide a proper HTML alternative.
+  *Note:*  environment variables (like $(HOME) ) are resolved inside a $\mbox{\LaTeX}$ -only block.
+    
+    = \manonly =
+   Starts a block of text that will be verbatim included in the generated MAN documentation only. The block ends with a endmanonly command.
+ This command can be used to include groff code directly into MAN pages. You can use the \htmlonly and \latexonly and \endhtmlonly and \endlatexonly pairs to provide proper HTML and $\mbox{\LaTeX}$ alternatives.
+    
+    = \li { item-description } =
+   This command has one argument that continues until the first blank line or until another \li is encountered. The command can be used to generate a simple, not nested list of arguments. Each argument should start with a \li command.
+    Equivalent to  [Doxygen_commands \arg]  
+  
+    = \n =
+   Forces a new line. Equivalent to <br> and inspired by the printf function.
+  
+    = \p <word> =
+   Displays the parameter <word> using a typewriter font. You can use this command to refer to member function parameters in the running text.
+  Equivalent to  [Doxygen_commands \c]  
+  
+    = \verbatim =
+   Starts a block of text that will be verbatim included in both the HTML and the $\mbox{\LaTeX}$ documentation. The block should end with a \endverbatim block. All commands are disabled in a verbatim block.
+      
+    = \xmlonly =
+   Starts a block of text that will be verbatim included in the generated XML output only. The block ends with a endxmlonly command.
+ This command can be used to include custom XML tags.
+    
+    = \\ =
+   This command writes a backslash character (\) to the HTML and $\mbox{\LaTeX}$ output. The backslash has to be escaped in some cases because doxygen uses it to detect commands.
+  
+    = \@ =
+   This command writes an at-sign (@) to the HTML and $\mbox{\LaTeX}$ output. The at-sign has to be escaped in some cases because doxygen uses it to detect JavaDoc commands.
+  
+    = \~[LanguageId] =
+   This command enables/disables a language specific filter. This can be used to put documentation for different language into one comment block and use the  `OUTPUT_LANGUAGE`  tag to filter out only a specific language. Use \~language_id to enable output for a specific language only and \~ to enable output for all languages (this is also the default mode).
+ Example: 
+{{{
 /*! \~english This is english \~dutch Dit is Nederlands \~german Dieses ist
     deutsch. \~ output for all languages.
  */
-
 }}}
-
- *Parsing error* 
+  
+    = \& =
+   This command writes the & character to output. This character has to be escaped because it has a special meaning in HTML.
+  
+    = \$ =
+   This command writes the $ character to the output. This character has to be escaped in some cases, because it is used to expand environment variables.
+  
+    = \# =
+   This command writes the # character to the output. This character has to be escaped in some cases, because it is used to refer to documented entities.
+  
+    = \< =
+   This command writes the < character to the output. This character has to be escaped because it has a special meaning in HTML.
+  
+    = \> =
+   This command writes the > character to the output. This character has to be escaped because it has a special meaning in HTML.
+    = \% =
+   This command writes the % character to the output. This character has to be escaped in some cases, because it is used to prevent auto-linking to word that is also a documented class or struct.
+  
+    = PHP only commands =
+  For PHP files there are a number of additional commands, that can be used inside classes to make members public, private, or protected even though the language itself doesn't support this notion.
+ To mark a single item use one of \private, \protected, \public. For starting a section with a certain protection level use one of: \privatesection, \protectedsection, \publicsection. The latter commands are similar to "private:", "protected:", and "public:" in C++.
+  =  Commands included for Qt compatibility  =
  
+  
+ The following commands are supported to remain compatible to the Qt class browser generator. Do  _not_  use these commands in your own documentation. 
+ #  \annotatedclasslist
 
+ #  \classhierarchy
 
+ #  \define
 
-= \& =
- This command writes the & character to output. This character has to be escaped because it has a special meaning in HTML.
+ #  \functionindex
 
- *Parsing error* 
+ #  \header
+
+ #  \headerfilelist
+
+ #  \inherit
+
+ #  \l
+
+ #  \postheader
+
+   
  
-
-
-
-= \$ =
- This command writes the $ character to the output. This character has to be escaped in some cases, because it is used to expand environment variables.
-
- *Parsing error* 
- 
-
-
-
-= \# =
- This command writes the # character to the output. This character has to be escaped in some cases, because it is used to refer to documented entities.
-
- *Parsing error* 
- 
-
-
-
-= \< =
- This command writes the < character to the output. This character has to be escaped because it has a special meaning in HTML.
-
- *Parsing error* 
- 
-
-
-
-= \> =
- This command writes the > character to the output. This character has to be escaped because it has a special meaning in HTML.
-
-
-
-= \% =
- This command writes the % character to the output. This character has to be escaped in some cases, because it is used to prevent auto-linking to word that is also a documented class or struct.
-
- *Parsing error* 
- 
-
-
-
-= PHP only commands =
-For PHP files there are a number of additional commands, that can be used inside classes to make members public, private, or protected even though the language itself doesn't support this notion.
-
-To mark a single item use one of \private, \protected, \public. For starting a section with a certain protection level use one of: \privatesection, \protectedsection, \publicsection. The latter commands are similar to "private:", "protected:", and "public:" in C++.
-
-==  Commands included for Qt compatibility  ==
-
- *Parsing error* 
-
-The following commands are supported to remain compatible to the Qt class browser generator. Do 'not' use these commands in your own documentation. 
- * \annotatedclasslist
- * \classhierarchy
- * \define
- * \functionindex
- * \header
- * \headerfilelist
- * \inherit
- * \l
- * \postheader
-
- *Parsing error* 
- 
-
-
-    
