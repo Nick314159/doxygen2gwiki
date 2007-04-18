@@ -5,7 +5,7 @@ import sys
 from xml.dom.minidom import parse
 
 from options import options
-from doxygen import Doxygen
+from doxygen import doxygen
 
 def getPreviousFiles():
     try:
@@ -39,12 +39,12 @@ def addRemovePages(oldfiles, newfiles):
     open("%s%s.status" % (options.output, options.prefix), "w").write("\n".join(newfiles))
 
 def main():
-    d = Doxygen(parse(options.docs + "index.xml"))
+    doxygen.processFile(parse(options.docs + "index.xml"))
 
     oldfiles = getPreviousFiles()
     files = []
 
-    for file, code in d.createFiles():
+    for file, code in doxygen.createFiles():
         file = file + ".wiki"
         files.append(file)
 

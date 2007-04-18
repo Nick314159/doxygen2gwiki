@@ -3,14 +3,13 @@ from xml.dom.minidom import parseString
 from options import options
 from member_function import DoxygenMemberFunction
 from file import DoxygenFile
-from page import DoxygenPage
 from utils import getText
 from fix_xml import fixXML
 
 class Doxygen:
-    def __init__(self, xml):
+    def __init__(self):
         self.files = []
-        self.processFile(xml)
+        self.links = {}
 
     def processFile(self, xml):
         if xml.documentElement.tagName == "doxygenindex":
@@ -34,8 +33,15 @@ class Doxygen:
         else:
             raise SystemError, "Unrecognised root file node. (%s)" % (xml.documentElement.tagName, )
 
+    def addLink(self, refid, linkto):
+        self.links[refid] = linkto
+
     def createFiles(self):
         files = []
         for f in self.files:
             files += f.createFiles()
         return files
+
+doxygen = Doxygen()
+
+from page import DoxygenPage
