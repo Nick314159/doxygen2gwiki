@@ -1,7 +1,7 @@
 = Output Formats =
 
-   = Output Formats =
-  
- The following output formats are  _directly_  supported by doxygen:  
- The following output formats are  _indirectly_  supported by doxygen:  
- 
+= Output Formats =
+
+
+The following output formats are _directly_ supported by doxygen:
+The following output formats are _indirectly_ supported by doxygen:
