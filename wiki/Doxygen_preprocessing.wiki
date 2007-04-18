@@ -2,8 +2,10 @@
 
 
 Source files that are used as input to doxygen can be parsed by doxygen's built-in C-preprocessor.
+
 By default doxygen does only partial preprocessing. That is, it evaluates conditional compilation statements (like #if) and evaluates macro definitions, but it does not perform macro expansion.
-So if you have the following code fragment
+
+So if you have the following code fragment 
 {{{
 #define VERSION 200
 #define CONST_STRING const char *
@@ -15,7 +17,9 @@ So if you have the following code fragment
 #endif
 }}}
 
+
 Then by default doxygen will feed the following to its parser:
+
 {{{
 #define VERSION
 #define CONST_STRING
@@ -23,13 +27,17 @@ Then by default doxygen will feed the following to its parser:
   static CONST_STRING version = "2.xx";
 }}}
 
-You can disable all preprocessing by settingto `NO` in the configuation file. In the case above doxygen will then read both statements, i.e:
+
+You can disable all preprocessing by setting ENABLE_PREPROCESSING  to `NO` in the configuation file. In the case above doxygen will then read both statements, i.e:
+
 {{{
-static CONST_STRING version = "2.xx";
+  static CONST_STRING version = "2.xx";
   static CONST_STRING version = "1.xx";
 }}}
 
-In case you want to expand the `CONST_STRING` macro, you should set thetag in the config file to `YES` . Then the result after preprocessing becomes:
+
+In case you want to expand the `CONST_STRING` macro, you should set the MACRO_EXPANSION  tag in the config file to `YES`. Then the result after preprocessing becomes:
+
 {{{
 #define VERSION
 #define CONST_STRING
@@ -37,13 +45,18 @@ In case you want to expand the `CONST_STRING` macro, you should set thetag in th
   static const char * version = "1.xx";
 }}}
 
-Note that doxygen will now expand _all_ macro definitions (recursively if needed). This is often too much. Therefore, doxygen also allows you to expand only those defines that you explicitly specify. For this you have to set thetag to `YES` and specify the macro definitions after theortag.
+
+Note that doxygen will now expand _all_ macro definitions (recursively if needed). This is often too much. Therefore, doxygen also allows you to expand only those defines that you explicitly specify. For this you have to set the EXPAND_ONLY_PREDEF  tag to `YES` and specify the macro definitions after the PREDEFINED  or EXPAND_AS_DEFINED  tag.
+
 A typically example where some help from the preprocessor is needed is when dealing with Microsoft's __declspec language extension. Here is an example function.
+
 {{{
 extern "C" void __declspec(dllexport) ErrorMsg( String aMessage,...);
 }}}
 
+
 When nothing is done, doxygen will be confused and see __declspec as some sort of function. To help doxygen one typically uses the following preprocessor settings:
+
 {{{
 ENABLE_PREPROCESSING   = YES
 MACRO_EXPANSION        = YES
@@ -51,8 +64,11 @@ EXPAND_ONLY_PREDEF     = YES
 PREDEFINED             = __declspec(x)=
 }}}
 
+
 This will make sure the __declspec(dllexport) is removed before doxygen parses the source code.
+
 For a more complex example, suppose you have the following obfuscated code fragment of an abstract base class called `IUnknown:` 
+
 {{{
 /*! A reference to an IID */
 #ifdef __cplusplus
@@ -71,8 +87,11 @@ DECLARE_INTERFACE(IUnknown)
 };
 }}}
 
+
 without macro expansion doxygen will get confused, but we may not want to expand the REFIID macro, because it is documented and the user that reads the documentation should use it when implementing the interface.
+
 By setting the following in the config file:
+
 {{{
 ENABLE_PREPROCESSING = YES
 MACRO_EXPANSION      = YES
@@ -85,7 +104,8 @@ PREDEFINED           = "DECLARE_INTERFACE(name)=class name" \
 		       __cplusplus
 }}}
 
-we can make sure that the proper result is fed to doxygen's parser:
+
+we can make sure that the proper result is fed to doxygen's parser: 
 {{{
 /*! A reference to an IID */
 #define REFIID
@@ -99,10 +119,14 @@ class  IUnknown
 };
 }}}
 
-Note that thetag accepts function like macro definitions (like `DECLARE_INTERFACE` ), normal macro substitutions (like `PURE` and `THIS` ) and plain defines (like `__cplusplus` ).
-Note also that preprocessor definitions that are normally defined automatically by the preprocessor (like `__cplusplus` ), have to be defined by hand with doxygen's parser (this is done because these defines are often platform/compiler specific).
-In some cases you may want to substitute a macro name or function by something else without exposing the result to further macro substitution. You can do this but using the `:=` operator instead of `=` 
-As an example suppose we have the following piece of code:
+
+Note that the PREDEFINED  tag accepts function like macro definitions (like `DECLARE_INTERFACE` ), normal macro substitutions (like `PURE` and `THIS`) and plain defines (like `__cplusplus`).
+
+Note also that preprocessor definitions that are normally defined automatically by the preprocessor (like `__cplusplus`), have to be defined by hand with doxygen's parser (this is done because these defines are often platform/compiler specific).
+
+In some cases you may want to substitute a macro name or function by something else without exposing the result to further macro substitution. You can do this but using the `:=` operator instead of `=`
+
+As an example suppose we have the following piece of code: 
 {{{
 #define QList QListT
 class QListT
@@ -110,12 +134,15 @@ class QListT
 };
 }}}
 
-Then the only way to get doxygen interpret this as a class definition for class QList is to define:
+
+Then the only way to get doxygen interpret this as a class definition for class QList is to define: 
 {{{
 PREDEFINED = QListT:=QList
 }}}
 
+
 Here is an example provided by Valter Minute and Reyes Ponce that helps doxygen to wade through the boilerplate code in Microsoft's ATL & MFC libraries:
+
 {{{
 PREDEFINED           = "DECLARE_INTERFACE(name)=class name" \
                        "STDMETHOD(result,name)=virtual result name" \
@@ -174,10 +201,14 @@ PREDEFINED           = "DECLARE_INTERFACE(name)=class name" \
                         id5, id6, id7, id8, id9, id10, id11)="
 }}}
 
-As you can see doxygen's preprocessor is quite powerful, but if you want even more flexibility you can always write an input filter and specify it after thetag.
-If you are unsure what the effect of doxygen's preprocessing will be you can run doxygen as follows:
+
+As you can see doxygen's preprocessor is quite powerful, but if you want even more flexibility you can always write an input filter and specify it after the INPUT_FILTER  tag.
+
+If you are unsure what the effect of doxygen's preprocessing will be you can run doxygen as follows: 
 {{{
-doxygen -d Preprocessor
+  doxygen -d Preprocessor
 }}}
 This will instruct doxygen to dump the input sources to standard output after preprocessing has been done (Hint: set `QUIET = YES` and `WARNINGS = NO` in the configuration file to disable any other output).
+
+
 
