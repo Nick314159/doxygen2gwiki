@@ -559,7 +559,7 @@ Starts a paragraph indicating that this documentation block belongs to a depreca
 
 Starts a conditional section if the previous conditional section was not enabled. The previous section should have been started with a `\if`, `\ifnot`, or `\elseif` command.
 
-Doxygen_commands \if] , [Doxygen_commands \ifnot] , [Doxygen_commands \elseif] , [Doxygen_commands \endif.] 
+[Doxygen_commands \if] , [Doxygen_commands \ifnot] , [Doxygen_commands \elseif] , [Doxygen_commands \endif.] 
 
 
  
@@ -577,7 +577,7 @@ sections [Doxygen_commands \endif] , [Doxygen_commands \ifnot] , [Doxygen_comman
 
 Ends a conditional section that was started by [Doxygen_commands \cond] .
 
-Doxygen_commands \cond] .
+[Doxygen_commands \cond] .
 
 
  
@@ -586,7 +586,7 @@ Doxygen_commands \cond] .
 
 Ends a conditional section that was started by `\if` or `\ifnot` For each `\if` or `\ifnot` one and only one matching `\endif` must follow.
 
-Doxygen_commands \if] , and [Doxygen_commands \ifnot] .
+[Doxygen_commands \if] , and [Doxygen_commands \ifnot] .
 
 
  
