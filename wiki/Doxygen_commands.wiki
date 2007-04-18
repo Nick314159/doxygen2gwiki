@@ -10,7 +10,7 @@ Some commands have one or more arguments. Each argument has a certain range:
  * If {curly} braces are used the argument extends until the next paragraph. Paragraphs are delimited by a blank line or by a section indicator.
 If [square] brackets are used the argument is optional.
 
-Here is an alphabetically sorted list of all commands with references to their documentation: 
+Here is an alphabetically sorted list of all commands with references to their documentation: [Doxygen_commands \a][Doxygen_commands \addindex][Doxygen_commands \addtogroup][Doxygen_commands \anchor][Doxygen_commands \arg][Doxygen_commands \attention][Doxygen_commands \author][Doxygen_commands \b][Doxygen_commands \brief][Doxygen_commands \bug][Doxygen_commands \c][Doxygen_commands \callgraph][Doxygen_commands \callergraph][Doxygen_commands \category][Doxygen_commands \class][Doxygen_commands \code][Doxygen_commands \cond][Doxygen_commands \copydoc][Doxygen_commands \date][Doxygen_commands \def][Doxygen_commands \defgroup][Doxygen_commands \deprecated][Doxygen_commands \dir][Doxygen_commands \dontinclude][Doxygen_commands \dot][Doxygen_commands \dotfile][Doxygen_commands \e][Doxygen_commands \else][Doxygen_commands \elseif][Doxygen_commands \em][Doxygen_commands \endcode][Doxygen_commands \endcond][Doxygen_commands \enddot][Doxygen_commands \endhtmlonly][Doxygen_commands \endif][Doxygen_commands \endlatexonly][Doxygen_commands \endlink][Doxygen_commands \endmanonly][Doxygen_commands \endmsc][Doxygen_commands \endverbatim][Doxygen_commands \endxmlonly][Doxygen_commands \enum][Doxygen_commands \example][Doxygen_commands \exception][Doxygen_commands \f$][Doxygen_commands \f[][Doxygen_commands \f]][Doxygen_commands \file][Doxygen_commands \fn][Doxygen_commands \hideinitializer][Doxygen_commands \htmlinclude][Doxygen_commands \htmlonly][Doxygen_commands \if][Doxygen_commands \ifnot][Doxygen_commands \image][Doxygen_commands \include][Doxygen_commands \includelineno][Doxygen_commands \ingroup][Doxygen_commands \internal][Doxygen_commands \invariant][Doxygen_commands \interface][Doxygen_commands \latexonly][Doxygen_commands \li][Doxygen_commands \line][Doxygen_commands \link][Doxygen_commands \mainpage][Doxygen_commands \manonly][Doxygen_commands \msc][Doxygen_commands \n][Doxygen_commands \name][Doxygen_commands \namespace][Doxygen_commands \nosubgrouping][Doxygen_commands \note][Doxygen_commands \overload][Doxygen_commands \p][Doxygen_commands \package][Doxygen_commands \page][Doxygen_commands \par][Doxygen_commands \paragraph][Doxygen_commands \param][Doxygen_commands \post][Doxygen_commands \pre][Doxygen_commands \private (PHP only)][Doxygen_commands \privatesection (PHP only)][Doxygen_commands \property][Doxygen_commands \protected (PHP only)][Doxygen_commands \protectedsection (PHP only)][Doxygen_commands \protocol][Doxygen_commands \public (PHP only)][Doxygen_commands \publicsection (PHP only)][Doxygen_commands \ref][Doxygen_commands \relates][Doxygen_commands \relatesalso][Doxygen_commands \remarks][Doxygen_commands \return][Doxygen_commands \retval][Doxygen_commands \sa][Doxygen_commands \section][Doxygen_commands \see][Doxygen_commands \showinitializer][Doxygen_commands \since][Doxygen_commands \skip][Doxygen_commands \skipline][Doxygen_commands \struct][Doxygen_commands \subpage][Doxygen_commands \subsection][Doxygen_commands \subsubsection][Doxygen_commands \test][Doxygen_commands \throw][Doxygen_commands \todo][Doxygen_commands \typedef][Doxygen_commands \union][Doxygen_commands \until][Doxygen_commands \var][Doxygen_commands \verbatim][Doxygen_commands \verbinclude][Doxygen_commands \version][Doxygen_commands \warning][Doxygen_commands \weakgroup][Doxygen_commands \xmlonly][Doxygen_commands \xrefitem][Doxygen_commands \$][Doxygen_commands \@][Doxygen_commands \\][Doxygen_commands \&][Doxygen_commands \~][Doxygen_commands \<][Doxygen_commands \>][Doxygen_commands \#][Doxygen_commands \%]
 
 The following subsections provide a list of all commands that are recognized by doxygen. Unrecognized commands are treated as normal text.
 
@@ -19,7 +19,7 @@ The following subsections provide a list of all commands that are recognized by 
 
 = \addtogroup <name> [(title)] =
 
-Defines a group just like  [Doxygen_commands \defgroup]  , but in contrast to that command using the same <name> more than once will not result in a warning, but rather one group with a merged documentation and the first title found in any of the commands.
+Defines a group just like [Doxygen_commands \defgroup] , but in contrast to that command using the same <name> more than once will not result in a warning, but rather one group with a merged documentation and the first title found in any of the commands.
 
 The title is optional, so this command can also be used to add a number of entities to an existing group using @{ and @} like this:
 
@@ -45,7 +45,7 @@ The title is optional, so this command can also be used to add a number of entit
 }}}
 
 
-page  [Doxygen_grouping Grouping]  , sections  [Doxygen_commands \defgroup]  ,  [Doxygen_commands \ingroup]   and  [Doxygen_commands \weakgroup]  .
+page [Doxygen_grouping Grouping] , sections [Doxygen_commands \defgroup] , [Doxygen_commands \ingroup]  and [Doxygen_commands \weakgroup] .
 
 
 
@@ -72,7 +72,7 @@ The completeness (and correctness) of the caller graph depends on the doxygen co
 
 For Objective-C only: Indicates that a comment block contains documentation for a class category with name <name>. The arguments are equal to the \class command.
 
-section  [Doxygen_commands \class]  .
+section [Doxygen_commands \class] .
 
 
  
@@ -105,11 +105,11 @@ Indicates that a comment block contains documentation for a `#define` macro.
 
 = \defgroup <name> (group title) =
 
-Indicates that a comment block contains documentation for a  [Doxygen_grouping group]   of classes, files or namespaces. This can be used to categorize classes, files or namespaces, and document those categories. You can also use groups as members of other groups, thus building a hierarchy of groups.
+Indicates that a comment block contains documentation for a [Doxygen_grouping group]  of classes, files or namespaces. This can be used to categorize classes, files or namespaces, and document those categories. You can also use groups as members of other groups, thus building a hierarchy of groups.
 
 The <name> argument should be a single-word identifier.
 
-page  [Doxygen_grouping Grouping]  , sections  [Doxygen_commands \ingroup]  ,  [Doxygen_commands \addtogroup]  ,  [Doxygen_commands \weakgroup]  .
+page [Doxygen_grouping Grouping] , sections [Doxygen_commands \ingroup] , [Doxygen_commands \addtogroup] , [Doxygen_commands \weakgroup] .
 
 
  
@@ -158,7 +158,7 @@ Where the example file `example_test.cpp` looks as follows:
 
 
 
-section  [Doxygen_commands \include]  .
+section [Doxygen_commands \include] .
 
 
  
@@ -206,7 +206,7 @@ Do not use this command if it is not absolutely needed, since it will lead to du
 
 
 
-section  [Doxygen_commands \var]   and  [Doxygen_commands \typedef]  .
+section [Doxygen_commands \var]  and [Doxygen_commands \typedef] .
 
 
  
@@ -215,7 +215,7 @@ section  [Doxygen_commands \var]   and  [Doxygen_commands \typedef]  .
 
 By default the value of a define and the initializer of a variable are displayed unless they are longer than 30 lines. By putting this command in a comment block of a define or variable, the initializer is always hidden.
 
-section  [Doxygen_commands \showinitializer]  .
+section [Doxygen_commands \showinitializer] .
 
 
  
@@ -224,7 +224,7 @@ section  [Doxygen_commands \showinitializer]  .
 
 If the \ingroup command is placed in a comment block of a class, file or namespace, then it will be added to the group or groups identified by <groupname>.
 
-page  [Doxygen_grouping Grouping]  , sections  [Doxygen_commands \defgroup]  ,  [Doxygen_commands \addtogroup]   and  [Doxygen_commands \weakgroup]  
+page [Doxygen_grouping Grouping] , sections [Doxygen_commands \defgroup] , [Doxygen_commands \addtogroup]  and [Doxygen_commands \weakgroup] 
 
 
  
@@ -233,7 +233,7 @@ page  [Doxygen_grouping Grouping]  , sections  [Doxygen_commands \defgroup]  ,  
 
 Indicates that a comment block contains documentation for an interface with name <name>. The arguments are equal to the \class command.
 
-section  [Doxygen_commands \class]  .
+section [Doxygen_commands \class] .
 
 
  
@@ -242,7 +242,7 @@ section  [Doxygen_commands \class]  .
 
 This command writes the message `For internal use only' to the output and all text _after_ an `\internal` command until the end of the comment block or the end of the section (whichever comes first) is marked as "internal".
 
-If the \internal command is put inside a section (see for example  [Doxygen_commands \section]  ) all subsection after the command are considered to be internal as well. Only a new section at the same level will be visible again.
+If the \internal command is put inside a section (see for example [Doxygen_commands \section] ) all subsection after the command are considered to be internal as well. Only a new section at the same level will be visible again.
 
 You can use INTERNAL_DOCS  in the config file to show or hide the internal documentation.
 
@@ -274,7 +274,7 @@ Here is an example:
 
 You can refer to the main page using \ref index (if the treeview is disabled, otherwise you should use \ref main).
 
-section  [Doxygen_commands \section]  , section  [Doxygen_commands \subsection]   and section  [Doxygen_commands \page]  .
+section [Doxygen_commands \section] , section [Doxygen_commands \subsection]  and section [Doxygen_commands \page] .
 
 
  
@@ -283,7 +283,7 @@ section  [Doxygen_commands \section]  , section  [Doxygen_commands \subsection] 
 
 This command turns a comment block into a header definition of a member group. The comment block should be followed by a `//@{ ... //@}` block containing the members of the group.
 
-See section  [Doxygen_grouping Member Groups]   for an example.
+See section [Doxygen_grouping Member Groups]  for an example.
 
 
 
@@ -354,7 +354,7 @@ The <name> argument consists of a combination of letters and number digits. If y
 
 
 
-section  [Doxygen_commands \section]  , section  [Doxygen_commands \subsection]  , and section  [Doxygen_commands \ref]  .
+section [Doxygen_commands \section] , section [Doxygen_commands \subsection] , and section [Doxygen_commands \ref] .
 
 
  
@@ -363,7 +363,7 @@ section  [Doxygen_commands \section]  , section  [Doxygen_commands \subsection] 
 
 Indicates that a comment block contains documentation for a property (either global or as a member of a class). This command is equivalent to \var and \fn.
 
-section  [Doxygen_commands \fn]   and  [Doxygen_commands \var]  .
+section [Doxygen_commands \fn]  and [Doxygen_commands \var] .
 
 
  
@@ -372,7 +372,7 @@ section  [Doxygen_commands \fn]   and  [Doxygen_commands \var]  .
 
 Indicates that a comment block contains documentation for a protocol in Objective-C with name <name>. The arguments are equal to the \class command.
 
-section  [Doxygen_commands \class]  .
+section [Doxygen_commands \class] .
 
 
  
@@ -400,7 +400,7 @@ This command can be used in the documentation of a non-member function <name>. I
 
 By default the value of a define and the initializer of a variable are only displayed if they are less than 30 lines long. By putting this command in a comment block of a define or variable, the initializer is shown unconditionally.
 
-section  [Doxygen_commands \hideinitializer]  .
+section [Doxygen_commands \hideinitializer] .
 
 
  
@@ -409,7 +409,7 @@ section  [Doxygen_commands \hideinitializer]  .
 
 Indicates that a comment block contains documentation for a struct with name <name>. The arguments are equal to the \class command.
 
-section  [Doxygen_commands \class]  .
+section [Doxygen_commands \class] .
 
 
  
@@ -418,7 +418,7 @@ section  [Doxygen_commands \class]  .
 
 Indicates that a comment block contains documentation for a typedef (either global or as a member of a class). This command is equivalent to \var and \fn.
 
-section  [Doxygen_commands \fn]   and  [Doxygen_commands \var]  .
+section [Doxygen_commands \fn]  and [Doxygen_commands \var] .
 
 
  
@@ -427,7 +427,7 @@ section  [Doxygen_commands \fn]   and  [Doxygen_commands \var]  .
 
 Indicates that a comment block contains documentation for a union with name <name>. The arguments are equal to the \class command.
 
-section  [Doxygen_commands \class]  .
+section [Doxygen_commands \class] .
 
 
  
@@ -436,16 +436,16 @@ section  [Doxygen_commands \class]  .
 
 Indicates that a comment block contains documentation for a variable or enum value (either global or as a member of a class). This command is equivalent to \typedef and \fn.
 
-section  [Doxygen_commands \fn]   and  [Doxygen_commands \typedef]  .
+section [Doxygen_commands \fn]  and [Doxygen_commands \typedef] .
 
 
  
 
 = \weakgroup <name> [(title)] =
 
-Can be used exactly like  [Doxygen_commands \addtogroup]  , but has a lower priority when it comes to resolving conflicting grouping definitions.
+Can be used exactly like [Doxygen_commands \addtogroup] , but has a lower priority when it comes to resolving conflicting grouping definitions.
 
-page  [Doxygen_grouping Grouping]   and  [Doxygen_commands \addtogroup]  .
+page [Doxygen_grouping Grouping]  and [Doxygen_commands \addtogroup] .
 
 
 
@@ -474,7 +474,7 @@ Starts a paragraph where one or more author names may be entered. The paragraph 
 
 = \brief {brief description} =
 
-Starts a paragraph that serves as a brief description. For classes and files the brief description will be used in lists and at the start of the documentation page. For class and file members, the brief description will be placed at the declaration of the member and prepended to the detailed description. A brief description may span several lines (although it is advised to keep it brief!). A brief description ends when a blank line or another sectioning command is encountered. If multiple \brief commands are present they will be joined. See section  [Doxygen_commands \author]   for an example.
+Starts a paragraph that serves as a brief description. For classes and files the brief description will be used in lists and at the start of the documentation page. For class and file members, the brief description will be placed at the declaration of the member and prepended to the detailed description. A brief description may span several lines (although it is advised to keep it brief!). A brief description ends when a blank line or another sectioning command is encountered. If multiple \brief commands are present they will be joined. See section [Doxygen_commands \author]  for an example.
 
 Synonymous to \short.
 
@@ -482,17 +482,17 @@ Synonymous to \short.
 
 = \bug { bug description } =
 
-Starts a paragraph where one or more bugs may be reported. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \bug commands will be joined into a single paragraph. Each bug description will start on a new line. Alternatively, one \bug command may mention several bugs. The \bug command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]   for an example.
+Starts a paragraph where one or more bugs may be reported. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \bug commands will be joined into a single paragraph. Each bug description will start on a new line. Alternatively, one \bug command may mention several bugs. The \bug command ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \author]  for an example.
 
 
 
 = \cond [<section-label>] =
 
-Starts a conditional section that ends with a corresponding  [Doxygen_commands \endcond]   command, which is typically found in another comment block. The main purpose of this pair of commands is to (conditionally) exclude part of a file from processing (traditionally this could only be achieved using C processor commands).
+Starts a conditional section that ends with a corresponding [Doxygen_commands \endcond]  command, which is typically found in another comment block. The main purpose of this pair of commands is to (conditionally) exclude part of a file from processing (traditionally this could only be achieved using C processor commands).
 
 The section between \cond and \endcond commands can be included by adding its section label to the ENABLED_SECTIONS  configuration option. If the section label is omitted, the section will be excluded from processing unconditionally.
 
-For conditional sections within a comment block one should use a  [Doxygen_commands \if]   ...  [Doxygen_commands \endif]   block.
+For conditional sections within a comment block one should use a [Doxygen_commands \if]  ... [Doxygen_commands \endif]  block.
 
 Conditional sections can be nested. In this case a nested section will only be shown if it and its containing section are included.
 
@@ -545,7 +545,7 @@ The output will be different depending on whether `ENABLED_SECTIONS` is empty, `
 
 = \date { date description } =
 
-Starts a paragraph where one or more dates may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \date commands will be joined into a single paragraph. Each date description will start on a new line. Alternatively, one \date command may mention several dates. The \date command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]   for an example.
+Starts a paragraph where one or more dates may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \date commands will be joined into a single paragraph. Each date description will start on a new line. Alternatively, one \date command may mention several dates. The \date command ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \author]  for an example.
 
 
 
@@ -559,7 +559,7 @@ Starts a paragraph indicating that this documentation block belongs to a depreca
 
 Starts a conditional section if the previous conditional section was not enabled. The previous section should have been started with a `\if`, `\ifnot`, or `\elseif` command.
 
-[Doxygen_commands \if]  ,  [Doxygen_commands \ifnot]  ,  [Doxygen_commands \elseif]  ,  [Doxygen_commands \endif.]  
+Doxygen_commands \if] , [Doxygen_commands \ifnot] , [Doxygen_commands \elseif] , [Doxygen_commands \endif.] 
 
 
  
@@ -568,16 +568,16 @@ Starts a conditional section if the previous conditional section was not enabled
 
 Starts a conditional documentation section if the previous section was not enabled. A conditional section is disabled by default. To enable it you must put the section-label after the ENABLED_SECTIONS  tag in the configuration file. Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.
 
-sections  [Doxygen_commands \endif]  ,  [Doxygen_commands \ifnot]  ,  [Doxygen_commands \else]  , and  [Doxygen_commands \elseif]  .
+sections [Doxygen_commands \endif] , [Doxygen_commands \ifnot] , [Doxygen_commands \else] , and [Doxygen_commands \elseif] .
 
 
  
 
 = \endcond =
 
-Ends a conditional section that was started by  [Doxygen_commands \cond]  .
+Ends a conditional section that was started by [Doxygen_commands \cond] .
 
-[Doxygen_commands \cond]  .
+Doxygen_commands \cond] .
 
 
  
@@ -586,14 +586,14 @@ Ends a conditional section that was started by  [Doxygen_commands \cond]  .
 
 Ends a conditional section that was started by `\if` or `\ifnot` For each `\if` or `\ifnot` one and only one matching `\endif` must follow.
 
-[Doxygen_commands \if]  , and  [Doxygen_commands \ifnot]  .
+Doxygen_commands \if] , and [Doxygen_commands \ifnot] .
 
 
  
 
 = \exception <exception-object> { exception description } =
 
-Starts an exception description for an exception object with name <exception-object>. Followed by a description of the exception. The existence of the exception object is not checked. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \exception commands will be joined into a single paragraph. Each parameter description will start on a new line. The \exception description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \fn]   for an example.
+Starts an exception description for an exception object with name <exception-object>. Followed by a description of the exception. The existence of the exception object is not checked. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \exception commands will be joined into a single paragraph. Each parameter description will start on a new line. The \exception description ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \fn]  for an example.
 
 = Note:  =
 
@@ -657,7 +657,7 @@ ALIASES  = "english=\if english" \
 
 and `ENABLED_SECTIONS` can be used to enable either `english` or `dutch`.
 
-sections  [Doxygen_commands \endif]  ,  [Doxygen_commands \ifnot]  ,  [Doxygen_commands \else]  , and  [Doxygen_commands \elseif]  .
+sections [Doxygen_commands \endif] , [Doxygen_commands \ifnot] , [Doxygen_commands \else] , and [Doxygen_commands \elseif] .
 
 
  
@@ -666,7 +666,7 @@ sections  [Doxygen_commands \endif]  ,  [Doxygen_commands \ifnot]  ,  [Doxygen_c
 
 Starts a conditional documentation section. The section ends with a matching `\endif` command. This conditional section is enabled by default. To disable it you must put the section-label after the ENABLED_SECTIONS  tag in the configuration file.
 
-sections  [Doxygen_commands \endif]  ,  [Doxygen_commands \if]  ,  [Doxygen_commands \else]  , and  [Doxygen_commands \elseif]  .
+sections [Doxygen_commands \endif] , [Doxygen_commands \if] , [Doxygen_commands \else] , and [Doxygen_commands \elseif] .
 
 
  
@@ -679,7 +679,7 @@ Starts a paragraph where the invariant of an entity can be described. The paragr
 
 = \note { text } =
 
-Starts a paragraph where a note can be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \note commands will be joined into a single paragraph. Each note description will start on a new line. Alternatively, one \note command may mention several notes. The \note command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \par]   for an example.
+Starts a paragraph where a note can be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \note commands will be joined into a single paragraph. Each note description will start on a new line. Alternatively, one \note command may mention several notes. The \note command ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \par]  for an example.
 
 
 
@@ -708,7 +708,7 @@ The \param command has an optional attribute specifying the direction of the att
 
 The parameter description is a paragraph with no special internal structure. All visual enhancement commands may be used inside the paragraph.
 
-Multiple adjacent \param commands will be joined into a single paragraph. Each parameter description will start on a new line. The \param description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \fn]   for an example.
+Multiple adjacent \param commands will be joined into a single paragraph. Each parameter description will start on a new line. The \param description ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \fn]  for an example.
 
 
 
@@ -732,7 +732,7 @@ Starts a paragraph where one or more remarks may be entered. The paragraph will 
 
 = \return { description of the return value } =
 
-Starts a return value description for a function. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \return commands will be joined into a single paragraph. The \return description ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \fn]   for an example.
+Starts a return value description for a function. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \return commands will be joined into a single paragraph. The \return description ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \fn]  for an example.
 
 
 
@@ -748,14 +748,14 @@ Starts a paragraph where one or more cross-references to classes, functions, met
 
 Synonymous to \see.
 
-section  [Doxygen_autolink autolink]   for information on how to create links to objects.
+section [Doxygen_autolink autolink]  for information on how to create links to objects.
 
 
  
 
 = \see { references } =
 
-Equivalent to  [Doxygen_commands \sa]  . Introduced for compatibility with Javadoc.
+Equivalent to [Doxygen_commands \sa] . Introduced for compatibility with Javadoc.
 
 
 
@@ -773,7 +773,7 @@ Starts a paragraph where a test case can be described. The description will also
 
 = \throw <exception-object> { exception description } =
 
-Synonymous to \exception (see section  [Doxygen_commands \exception]  ).
+Synonymous to \exception (see section [Doxygen_commands \exception] ).
 
 = Note:  =
 
@@ -790,17 +790,17 @@ Starts a paragraph where a TODO item is described. The description will also add
 
 = \version { version number } =
 
-Starts a paragraph where one or more version strings may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \version commands will be joined into a single paragraph. Each version description will start on a new line. Alternatively, one \version command may mention several version strings. The \version command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]   for an example.
+Starts a paragraph where one or more version strings may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \version commands will be joined into a single paragraph. Each version description will start on a new line. Alternatively, one \version command may mention several version strings. The \version command ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \author]  for an example.
 
 
 
 = \warning { warning message } =
 
-Starts a paragraph where one or more warning messages may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \warning commands will be joined into a single paragraph. Each warning description will start on a new line. Alternatively, one \warning command may mention several warnings. The \warning command ends when a blank line or some other sectioning command is encountered. See section  [Doxygen_commands \author]   for an example.
+Starts a paragraph where one or more warning messages may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent \warning commands will be joined into a single paragraph. Each warning description will start on a new line. Alternatively, one \warning command may mention several warnings. The \warning command ends when a blank line or some other sectioning command is encountered. See section [Doxygen_commands \author]  for an example.
 
 = \xrefitem <key> "(heading)" "(list title)" {text} =
 
-This command is a generalization of commands such as  [Doxygen_commands \todo]   and  [Doxygen_commands \bug]  . It can be used to create user-defined text sections which are automatically cross-referenced between the place of occurrence and a related page, which will be generated. On the related page all sections of the same type will be collected.
+This command is a generalization of commands such as [Doxygen_commands \todo]  and [Doxygen_commands \bug] . It can be used to create user-defined text sections which are automatically cross-referenced between the place of occurrence and a related page, which will be generated. On the related page all sections of the same type will be collected.
 
 The first argument <key> is a identifier uniquely representing the type of the section. The second argument is a quoted string representing the heading of the section under which text passed as the forth argument is put. The third argument (list title) is used as the title for the related page containing all items with the same key. The keys "todo", "test", "bug", and "deprecated" are predefined.
 
@@ -829,11 +829,11 @@ This command adds (text) to the $\mbox{\LaTeX}$ index.
 
 This command places an invisible, named anchor into the documentation to which you can refer with the \ref command.
 
-Anchors can currently only be put into a comment block that is marked as a page (using  [Doxygen_commands \page]  ) or mainpage ( [Doxygen_commands \mainpage]  ).
+Anchors can currently only be put into a comment block that is marked as a page (using [Doxygen_commands \page] ) or mainpage ([Doxygen_commands \mainpage] ).
 
 
 
-section  [Doxygen_commands \ref]  .
+section [Doxygen_commands \ref] .
 
 
  
@@ -842,7 +842,7 @@ section  [Doxygen_commands \ref]  .
 
 This command ends a link that is started with the \link command.
 
-section  [Doxygen_commands \link]  .
+section [Doxygen_commands \link] .
 
 
  
@@ -853,7 +853,7 @@ The links that are automatically generated by doxygen always have the name of th
 
 The \link command can be used to create a link to an object (a file, class, or member) with a user specified link-text. The link command should end with an \endlink command. All text between the \link and \endlink commands serves as text for a link to the <link-object> specified as the first argument of \link.
 
-See section  [Doxygen_autolink autolink]   for more information on automatically generated links and valid link-objects.
+See section [Doxygen_autolink autolink]  for more information on automatically generated links and valid link-objects.
 
 
 
@@ -861,20 +861,20 @@ See section  [Doxygen_autolink autolink]   for more information on automatically
 
 Creates a reference to a named section, subsection, page or anchor. For HTML documentation the reference command will generate a link to the section. For a sections or subsections the title of the section will be used as the text of the link. For anchor the optional text between quotes will be used or <name> if no text is specified. For $\mbox{\LaTeX}$ documentation the reference command will generate a section number for sections or the text followed by a page number if <name> refers to an anchor.
 
-Section  [Doxygen_commands \page]   for an example of the \ref command.
+Section [Doxygen_commands \page]  for an example of the \ref command.
 
 
  
 
 = \subpage <name> ["(text)"] =
 
-This command can be used to create a hierarchy of pages. The same structure can be made using the  [Doxygen_commands \defgroup]   and  [Doxygen_commands \ingroup]   commands, but for pages the \subpage command is often more convenient. The main page (see  [Doxygen_commands \mainpage]  ) is typically the root of hierarchy.
+This command can be used to create a hierarchy of pages. The same structure can be made using the [Doxygen_commands \defgroup]  and [Doxygen_commands \ingroup]  commands, but for pages the \subpage command is often more convenient. The main page (see [Doxygen_commands \mainpage] ) is typically the root of hierarchy.
 
-This command behaves similar as  [Doxygen_commands \ref]   in the sense that it creates a reference to a page labeled <name> with the optional link text as specified in the second argument.
+This command behaves similar as [Doxygen_commands \ref]  in the sense that it creates a reference to a page labeled <name> with the optional link text as specified in the second argument.
 
 It differs from the \ref command in that it only works for pages, and creates a parent-child relation between pages, where the child page (or sub page) is identified by label <name>.
 
-See the  [Doxygen_commands \section]   and  [Doxygen_commands \subsection]   commands if you want to add structure without creating multiple pages.
+See the [Doxygen_commands \section]  and [Doxygen_commands \subsection]  commands if you want to add structure without creating multiple pages.
 
 Each page can be the sub page of only one other page and no cyclic relations are allowed, i.e. the page hierarchy must have a tree structure.
 
@@ -925,7 +925,7 @@ This command only works inside a section of a related page documentation block a
 
 
 
-Section  [Doxygen_commands \page]   for an example of the  [Doxygen_commands \subsection]   command.
+Section [Doxygen_commands \page]  for an example of the [Doxygen_commands \subsection]  command.
 
 
  
@@ -938,7 +938,7 @@ This command only works inside a subsection of a related page documentation bloc
 
 
 
-Section  [Doxygen_commands \page]   for an example of the  [Doxygen_commands \subsubsection]   command.
+Section [Doxygen_commands \page]  for an example of the [Doxygen_commands \subsubsection]  command.
 
 
  
@@ -951,7 +951,7 @@ This command only works inside a subsubsection of a related page documentation b
 
 
 
-Section  [Doxygen_commands \page]   for an example of the  [Doxygen_commands \paragraph]   command.
+Section [Doxygen_commands \page]  for an example of the [Doxygen_commands \paragraph]  command.
 
 
 
@@ -978,7 +978,7 @@ Where the example file `example_test.cpp` looks as follows:
 
 
 
-sections  [Doxygen_commands \line]  ,  [Doxygen_commands \skip]  ,  [Doxygen_commands \skipline]  , and  [Doxygen_commands \until]  .
+sections [Doxygen_commands \line] , [Doxygen_commands \skip] , [Doxygen_commands \skipline] , and [Doxygen_commands \until] .
 
 
  
@@ -989,17 +989,17 @@ This command can be used to include a source file as a block of code. The comman
 
 If <file-name> itself is not unique for the set of example files specified by the EXAMPLE_PATH  tag, you can include part of the absolute path to disambiguate it.
 
-Using the \include command is equivalent to inserting the file into the documentation block and surrounding it with  [Doxygen_commands \code]   and  [Doxygen_commands \endcode]   commands.
+Using the \include command is equivalent to inserting the file into the documentation block and surrounding it with [Doxygen_commands \code]  and [Doxygen_commands \endcode]  commands.
 
 The main purpose of the \include command is to avoid code duplication in case of example blocks that consist of multiple source and header files.
 
-For a line by line description of a source files use the  [Doxygen_commands \dontinclude]   command in combination with the  [Doxygen_commands \line]  ,  [Doxygen_commands \skip]  ,  [Doxygen_commands \skipline]  , and \until commands.
+For a line by line description of a source files use the [Doxygen_commands \dontinclude]  command in combination with the [Doxygen_commands \line] , [Doxygen_commands \skip] , [Doxygen_commands \skipline] , and \until commands.
 
 Doxygen's special commands do not work inside blocks of code. It is allowed to nest C-style comments inside a code block though.
 
 
 
-section  [Doxygen_commands \example]  ,  [Doxygen_commands \dontinclude]  , and section  [Doxygen_commands \verbatim]  .
+section [Doxygen_commands \example] , [Doxygen_commands \dontinclude] , and section [Doxygen_commands \verbatim] .
 
 
  
@@ -1008,7 +1008,7 @@ section  [Doxygen_commands \example]  ,  [Doxygen_commands \dontinclude]  , and 
 
 This command works the same way as \include, but will add line numbers to the included file.
 
-section  [Doxygen_commands \include]  .
+section [Doxygen_commands \include] .
 
 
  
@@ -1019,7 +1019,7 @@ This command searches line by line through the example that was last included us
 
 The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following the non-blank line that was found (or to the end of the example if no such line could be found).
 
-See section  [Doxygen_commands \dontinclude]   for an example.
+See section [Doxygen_commands \dontinclude]  for an example.
 
 
 
@@ -1029,7 +1029,7 @@ This command searches line by line through the example that was last included us
 
 The internal pointer that is used to keep track of the current line in the example, is set to the start of the line that contains the specified pattern (or to the end of the example if the pattern could not be found).
 
-See section  [Doxygen_commands \dontinclude]   for an example.
+See section [Doxygen_commands \dontinclude]  for an example.
 
 
 
@@ -1053,7 +1053,7 @@ is equivalent to:
 
 
 
-See section  [Doxygen_commands \dontinclude]   for an example.
+See section [Doxygen_commands \dontinclude]  for an example.
 
 
 
@@ -1063,7 +1063,7 @@ This command writes all lines of the example that was last included using \inclu
 
 The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following last written line (or to the end of the example if the pattern could not be found).
 
-See section  [Doxygen_commands \dontinclude]   for an example.
+See section [Doxygen_commands \dontinclude]  for an example.
 
 
 
@@ -1127,7 +1127,7 @@ will result in the following text:
 For nested lists, HTML commands should be used.
 
 
-Equivalent to  [Doxygen_commands \li]  
+Equivalent to [Doxygen_commands \li] 
 
 
 
@@ -1151,7 +1151,7 @@ Typing:
 will result in the following text: ... This function returns `void` and not `int` ...
 
 
-Equivalent to  [Doxygen_commands \p]   To have multiple words in typewriter font use <tt>multiple words</tt>.
+Equivalent to [Doxygen_commands \p]  To have multiple words in typewriter font use <tt>multiple words</tt>.
 
 
 
@@ -1159,7 +1159,7 @@ Equivalent to  [Doxygen_commands \p]   To have multiple words in typewriter font
 
 Starts a block of code. A code block is treated differently from ordinary text. It is interpreted as C/C++ code. The names of the classes and members that are documented are automatically replaced by links to the documentation.
 
-section  [Doxygen_commands \endcode]  , section  [Doxygen_commands \verbatim]  .
+section [Doxygen_commands \endcode] , section [Doxygen_commands \verbatim] .
 
 
  
@@ -1194,13 +1194,13 @@ The copydoc command can be used recursively, but cycles in the copydoc relation 
 
 = \dot =
 
-Starts a text fragment which should contain a valid description of a dot graph. The text fragment ends with  [Doxygen_commands \enddot]  . Doxygen will pass the text on to dot and include the resulting image (and image map) into the output. The nodes of a graph can be made clickable by using the URL attribute. By using the command \ref inside the URL value you can conveniently link to an item inside doxygen. Here is an example: 
+Starts a text fragment which should contain a valid description of a dot graph. The text fragment ends with [Doxygen_commands \enddot] . Doxygen will pass the text on to dot and include the resulting image (and image map) into the output. The nodes of a graph can be made clickable by using the URL attribute. By using the command \ref inside the URL value you can conveniently link to an item inside doxygen. Here is an example: 
 
 
 
 = \msc =
 
-Starts a text fragment which should contain a valid description of a message sequence chart. See  [http://www.mcternan.me.uk/mscgen/ http://www.mcternan.me.uk/mscgen/]  for examples. The text fragment ends with  [Doxygen_commands \endmsc]  . 
+Starts a text fragment which should contain a valid description of a message sequence chart. See [http://www.mcternan.me.uk/mscgen/ http://www.mcternan.me.uk/mscgen/] for examples. The text fragment ends with [Doxygen_commands \endmsc] . 
 
 The text fragment should only include the part of the message sequence chart that is within the `msc {...}` block. 
 
@@ -1235,7 +1235,7 @@ Typing:
 will result in the following text: ... this is a _really_ good example ...
 
 
-Equivalent to  [Doxygen_commands \em]  . To emphasis multiple words use <em>multiple words</em>.
+Equivalent to [Doxygen_commands \em] . To emphasis multiple words use <em>multiple words</em>.
 
 
 
@@ -1253,7 +1253,7 @@ Typing:
 will result in the following text: ... this is a _really_ good example ...
 
 
-Equivalent to  [Doxygen_commands \e]  
+Equivalent to [Doxygen_commands \e] 
 
 
 
@@ -1261,20 +1261,20 @@ Equivalent to  [Doxygen_commands \e]
 
 Ends a block of code. 
 
-section  [Doxygen_commands \code]  
+section [Doxygen_commands \code] 
 
 
  
 
 = \enddot =
 
-Ends a blocks that was started with  [Doxygen_commands \dot]  .
+Ends a blocks that was started with [Doxygen_commands \dot] .
 
 
 
 = \endmsc =
 
-Ends a blocks that was started with  [Doxygen_commands \msc]  .
+Ends a blocks that was started with [Doxygen_commands \msc] .
 
 
 
@@ -1282,7 +1282,7 @@ Ends a blocks that was started with  [Doxygen_commands \msc]  .
 
 Ends a block of text that was started with a \htmlonly command.
 
-section  [Doxygen_commands \htmlonly]  .
+section [Doxygen_commands \htmlonly] .
 
 
  
@@ -1291,7 +1291,7 @@ section  [Doxygen_commands \htmlonly]  .
 
 Ends a block of text that was started with a \latexonly command.
 
-section  [Doxygen_commands \latexonly]  .
+section [Doxygen_commands \latexonly] .
 
 
  
@@ -1300,7 +1300,7 @@ section  [Doxygen_commands \latexonly]  .
 
 Ends a block of text that was started with a \manonly command.
 
-section  [Doxygen_commands \manonly]  .
+section [Doxygen_commands \manonly] .
 
 
  
@@ -1309,7 +1309,7 @@ section  [Doxygen_commands \manonly]  .
 
 Ends a block of text that was started with a \verbatim command.
 
-section  [Doxygen_commands \endcode]  , section  [Doxygen_commands \verbatim]  .
+section [Doxygen_commands \endcode] , section [Doxygen_commands \verbatim] .
 
 
  
@@ -1318,7 +1318,7 @@ section  [Doxygen_commands \endcode]  , section  [Doxygen_commands \verbatim]  .
 
 Ends a block of text that was started with a \xmlonly command.
 
-section  [Doxygen_commands \xmlonly]  .
+section [Doxygen_commands \xmlonly] .
 
 
  
@@ -1328,7 +1328,7 @@ section  [Doxygen_commands \xmlonly]  .
 
 Marks the start and end of an in-text formula. 
 
-section  [Doxygen_formulas formulas]   for an example.
+section [Doxygen_formulas formulas]  for an example.
 
 
  
@@ -1338,7 +1338,7 @@ section  [Doxygen_formulas formulas]   for an example.
 
 Marks the start of a long formula that is displayed centered on a separate line. 
 
-section  [Doxygen_commands \f]]   and section  [Doxygen_formulas formulas]  .
+section [Doxygen_commands \f]]  and section [Doxygen_formulas formulas] .
 
 
  
@@ -1348,7 +1348,7 @@ section  [Doxygen_commands \f]]   and section  [Doxygen_formulas formulas]  .
 
 Marks the end of a long formula that is displayed centered on a separate line. 
 
-section  [Doxygen_commands \f[]   and section  [Doxygen_formulas formulas]  .
+section [Doxygen_commands \f[]  and section [Doxygen_formulas formulas] .
 
 
  
@@ -1361,7 +1361,7 @@ This command can be used to include HTML code that is too complex for doxygen (i
 
 *Note:* environment variables (like $(HOME) ) are resolved inside a HTML-only block.
 
-section  [Doxygen_commands \manonly]   and section  [Doxygen_commands \latexonly]  .
+section [Doxygen_commands \manonly]  and section [Doxygen_commands \latexonly] .
 
 
  
@@ -1408,7 +1408,7 @@ This command can be used to include $\mbox{\LaTeX}$ code that is too complex for
 
 *Note:* environment variables (like $(HOME) ) are resolved inside a $\mbox{\LaTeX}$-only block.
 
-section  [Doxygen_commands \latexonly]   and section  [Doxygen_commands \htmlonly]  .
+section [Doxygen_commands \latexonly]  and section [Doxygen_commands \htmlonly] .
 
 
  
@@ -1419,7 +1419,7 @@ Starts a block of text that will be verbatim included in the generated MAN docum
 
 This command can be used to include groff code directly into MAN pages. You can use the \htmlonly and \latexonly and \endhtmlonly and \endlatexonly pairs to provide proper HTML and $\mbox{\LaTeX}$ alternatives.
 
-section  [Doxygen_commands \htmlonly]   and section  [Doxygen_commands \latexonly]  .
+section [Doxygen_commands \htmlonly]  and section [Doxygen_commands \latexonly] .
 
 
  
@@ -1452,7 +1452,7 @@ will result in the following text:
 For nested lists, HTML commands should be used.
 
 
-Equivalent to  [Doxygen_commands \arg]  
+Equivalent to [Doxygen_commands \arg] 
 
 
 
@@ -1475,7 +1475,7 @@ Displays the parameter <word> using a typewriter font. You can use this command 
 This will result in the following text: ... the `x` and `y` coordinates are used to ...
 
 
-Equivalent to  [Doxygen_commands \c]  
+Equivalent to [Doxygen_commands \c] 
 
 
 
@@ -1487,7 +1487,7 @@ Make sure you include a \endverbatim command for each \verbatim command or the p
 
 
 
-section  [Doxygen_commands \code]  , and section  [Doxygen_commands \verbinclude]  .
+section [Doxygen_commands \code] , and section [Doxygen_commands \verbinclude] .
 
 
  
@@ -1498,7 +1498,7 @@ Starts a block of text that will be verbatim included in the generated XML outpu
 
 This command can be used to include custom XML tags.
 
-section  [Doxygen_commands \htmlonly]   and section  [Doxygen_commands \latexonly]  .
+section [Doxygen_commands \htmlonly]  and section [Doxygen_commands \latexonly] .
 
 
  

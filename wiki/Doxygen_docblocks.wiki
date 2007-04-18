@@ -2,7 +2,7 @@
 
 = Special documentation blocks =
 
-A special documentation block is a C or C++ style comment block with some additional markings, so doxygen knows it is a piece of documentation that needs to end up in the generated documentation. For Python code there is a different comment convention, which can be found in section  [Doxygen_docblocks Special documentation blocks in Python]  
+A special documentation block is a C or C++ style comment block with some additional markings, so doxygen knows it is a piece of documentation that needs to end up in the generated documentation. For Python code there is a different comment convention, which can be found in section [Doxygen_docblocks Special documentation blocks in Python] 
 
 For each code item there are two types of descriptions, which together form the documentation: a _brief_ description and _detailed_ description, both are optional. Having more than one brief or detailed description however, is not allowed.
 
@@ -10,98 +10,98 @@ As the name suggest, a brief description is a short one-liner, whereas the detai
 
 There are several ways to mark a comment block as a detailed description: 
  1. You can use the JavaDoc style, which consist of a C-style comment block starting with two *'s, like this:
- 
- {{{
- /**
- * ... text ...
- */
- }}}
- 2. or you can use the Qt style and add an exclamation mark (!) after the opening of a C-style comment block, as shown in this example:
- 
- {{{
- /*!
- * ... text ...
- */
- }}}
 
- 
- In both cases the intermediate *'s are optional, so
- 
- {{{
- /*!
+{{{
+/**
+ * ... text ...
+ */
+}}}
+ 2. or you can use the Qt style and add an exclamation mark (!) after the opening of a C-style comment block, as shown in this example:
+
+{{{
+/*!
+ * ... text ...
+ */
+}}}
+
+
+In both cases the intermediate *'s are optional, so
+
+{{{
+/*!
  ... text ...
 */
- }}}
+}}}
 
- 
- is also valid.
+
+is also valid.
  3. A third alternative is to use a block of at least two C++ comment lines, where each line starts with an additional slash or an exclamation mark. Here are examples of the two cases:
- 
- {{{
- ///
+
+{{{
+///
 /// ... text ...
 ///
- }}}
+}}}
 
- 
- or
- 
- {{{
- //!
+
+or
+
+{{{
+//!
 //!... text ...
 //!
- }}}
+}}}
  4. Some people like to make their comment blocks more visible in the documentation. For this purpose you can use the following:
- 
- {{{
- /////////////////////////////////////////////////
+
+{{{
+/////////////////////////////////////////////////
 /// ... text ...
 /////////////////////////////////////////////////
- }}}
+}}}
 
 
 For the brief description there are also several posibilities: 
- 1. One could use the  [Doxygen_commands \brief]   command with one of the above comment blocks. This command ends at the end of a paragraph, so the detailed description follows after an empty line.
- 
- Here is an example:
- 
- {{{
- /*! \brief Brief description.
+ 1. One could use the [Doxygen_commands \brief]  command with one of the above comment blocks. This command ends at the end of a paragraph, so the detailed description follows after an empty line.
+
+Here is an example:
+
+{{{
+/*! \brief Brief description.
  *         Brief description continued.
  *
  *  Detailed description starts here.
  */
- }}}
+}}}
  2. If JAVADOC_AUTOBRIEF  is set to `YES` in the configuration file, then using JavaDoc style comment blocks will automatically start a brief description which ends at the first dot followed by a space or new line. Here is an example:
- 
- {{{
- /** Brief description which ends at this dot. Details follow
+
+{{{
+/** Brief description which ends at this dot. Details follow
  *  here.
  */
- }}}
- The option has the same effect for multi-line special C++ comments: 
- {{{
- /// Brief description which ends at this dot. Details follow
+}}}
+The option has the same effect for multi-line special C++ comments: 
+{{{
+/// Brief description which ends at this dot. Details follow
 /// here.
- }}}
+}}}
  3. A third option is to use a special C++ style comment which does not span more than one line. Here are two examples: 
- {{{
- /// Brief description.
+{{{
+/// Brief description.
 /** Detailed description. */
- }}}
+}}}
 
- 
- or
- 
- {{{
- //! Brief descripion.
+
+or
+
+{{{
+//! Brief descripion.
 
 //! Detailed description 
 //! starts here.
- }}}
+}}}
 
- 
- Note the blank line in the last example, which is required to separate the brief description from the block containing the detailed description. The JAVADOC_AUTOBRIEF  should also be set to `NO` for this case.
+
+Note the blank line in the last example, which is required to separate the brief description from the block containing the detailed description. The JAVADOC_AUTOBRIEF  should also be set to `NO` for this case.
 
 
 As you can see doxygen is quite flexible. The following however is not legal
@@ -207,7 +207,7 @@ Here the special command `\class` is used to indicate that the comment block con
  * `\namespace` to document a namespace.
  * `\package` to document a Java package.
  * `\interface` to document an IDL interface.
-See section  [Doxygen_commands Special Commands]   for detailed information about these and many other commands.
+See section [Doxygen_commands Special Commands]  for detailed information about these and many other commands.
 
 To document a member of a C++ class, you must also document the class itself. The same holds for namespaces. To document a global C function, typedef, enum or preprocessor definition you must first document the file that contains it (usually this will be a header file, because that file contains the information that is exported to other source files).
 
@@ -231,7 +231,7 @@ For Python there is a standard way of documenting the code using so called docum
 
  
 
-Note that in this case none of doxygen's  [Doxygen_commands special commands]   are supported.
+Note that in this case none of doxygen's [Doxygen_commands special commands]  are supported.
 
 There is also another way to document Python code using comments that start with "##". These type of comment blocks are more in line with the way documentation blocks work for the other languages supported by doxygen and this also allows the use of special commands.
 

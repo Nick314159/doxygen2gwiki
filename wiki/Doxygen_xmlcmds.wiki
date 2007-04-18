@@ -1,7 +1,7 @@
 = XML Commands =
 
 
-Doxygen supports most of the XML commands that are typically used in C# code comments. The XML tags are defined in Appendix E of the  [http://www.ecma-international.org/publications/standards/Ecma-334.htm ECMA-334]  standard, which defines the C# language. Unfortunately, the specification is not very precise and a number of the examples given are of poor quality.
+Doxygen supports most of the XML commands that are typically used in C# code comments. The XML tags are defined in Appendix E of the [http://www.ecma-international.org/publications/standards/Ecma-334.htm ECMA-334] standard, which defines the C# language. Unfortunately, the specification is not very precise and a number of the examples given are of poor quality.
 
 Here is the list of tags supported by doxygen:
 
@@ -14,14 +14,14 @@ Here is the list of tags supported by doxygen:
  * `<item>` List item. Can only be used inside a `<list>` context.
  * `<list type="type">` Starts a list, supported types are `bullet` or `number`. A list consists of a number of `<item>` tags.
  * `<para>` Identifies a paragraph of text.
- * `<param name="paramName">` Marks a piece of text as the documentation for parameter "paramName". Similar to using  [Doxygen_commands \param]  .
- * `<paramref name="paramName">` Refers to a parameter with name "paramName". Similar to using  [Doxygen_commands \a]  .
+ * `<param name="paramName">` Marks a piece of text as the documentation for parameter "paramName". Similar to using [Doxygen_commands \param] .
+ * `<paramref name="paramName">` Refers to a parameter with name "paramName". Similar to using [Doxygen_commands \a] .
  * `<permission>` Identifies the security accessibility of a member. Ignored by doygen.
  * `<remarks>` Identifies the detailed description.
- * `<returns>` Marks a piece of text as the return value of a function or method. Similar to using  [Doxygen_commands \return]  .
- * `<see cref="member">` Refers to a member. Similar to  [Doxygen_commands \ref]  .
- * `<seealso cref="member">` Starts a "See also" section referring to "member". Similar to using  [Doxygen_commands \sa]   member.
- * `<summary>` Identifies the brief description. Similar to using  [Doxygen_commands \brief]  .
+ * `<returns>` Marks a piece of text as the return value of a function or method. Similar to using [Doxygen_commands \return] .
+ * `<see cref="member">` Refers to a member. Similar to [Doxygen_commands \ref] .
+ * `<seealso cref="member">` Starts a "See also" section referring to "member". Similar to using [Doxygen_commands \sa]  member.
+ * `<summary>` Identifies the brief description. Similar to using [Doxygen_commands \brief] .
  * `<value>` Identifies a property. Ignored by doxygen.
 
 

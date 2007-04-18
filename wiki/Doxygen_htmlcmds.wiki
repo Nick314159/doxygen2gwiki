@@ -15,8 +15,8 @@ Here is a list of all HTML commands that may be used inside the documentation. N
  * `</CENTER>` ends a section of centered text.
  * `<CAPTION>` Starts a caption. Use within a table only.
  * `</CAPTION>` Ends a caption. Use within a table only.
- * `<CODE>` Starts a piece of text displayed in a typewriter font. Note that for C# code, this command is equivalent to  [Doxygen_commands \code]  .
- * `</CODE>` End a `<CODE>` section. Note that for C# code, this command is equivalent to  [Doxygen_commands \endcode]  .
+ * `<CODE>` Starts a piece of text displayed in a typewriter font. Note that for C# code, this command is equivalent to [Doxygen_commands \code] .
+ * `</CODE>` End a `<CODE>` section. Note that for C# code, this command is equivalent to [Doxygen_commands \endcode] .
  * `<DD>` Starts an item description.
  * `<DFN>` Starts a piece of text displayed in a typewriter font.
  * `</DFN>` Ends a `<DFN>` section.

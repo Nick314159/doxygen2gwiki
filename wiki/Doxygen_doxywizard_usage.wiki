@@ -26,7 +26,7 @@ You can also select how doxygen should present the results. The latter does not 
 
 Wizard dialog: Output to produce You can select one or more of the output formats that doxygen should produce. For HTML and LaTeX there are additional options.
 
-Wizard dialog: Diagrams to generate Doxygen can produce a number of diagrams. Using the diagrams tab you can select which ones to generate. For most diagrams the dot tool of the  [http://www.graphviz.org GraphViz]  package is needed (if you use the binary packages for Mac or Windows this tool is already included).
+Wizard dialog: Diagrams to generate Doxygen can produce a number of diagrams. Using the diagrams tab you can select which ones to generate. For most diagrams the dot tool of the [http://www.graphviz.org GraphViz] package is needed (if you use the binary packages for Mac or Windows this tool is already included).
 
 = Expert dialog =
 

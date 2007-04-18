@@ -9,16 +9,16 @@ Doxygen allows you to put $\mbox{\LaTeX}$ formulas in the output (this works onl
 
 There are three ways to include formulas in the documentation. 
  1. Using in-text formulas that appear in the running text. These formulas should be put between a pair of \f$ commands, so 
- {{{
-   The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
+{{{
+  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
   \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
- }}}
- results in:
- 
- The distance between $(x_1,y_1)$ and $(x_2,y_2)$ is $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$.
+}}}
+results in:
+
+The distance between $(x_1,y_1)$ and $(x_2,y_2)$ is $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$.
  2. Unnumbered displayed formulas that are centered on a separate line. These formulas should be put between \f[ and \f] commands. An example: 
- {{{
-   \f[
+{{{
+  \f[
     |I_2|=\left| \int_{0}^T \psi(t) 
              \left\{ 
                 u(a,t)-
@@ -28,18 +28,18 @@ There are three ways to include formulas in the documentation.
              \right\} dt
           \right|
   \f]
- }}}
- results in: \[ |I_2|=\left| \int_{0}^T \psi(t) \left\{ u(a,t)- \int_{\gamma(t)}^a \frac{d\theta}{k(\theta,t)} \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi \right\} dt \right| \]
+}}}
+results in: \[ |I_2|=\left| \int_{0}^T \psi(t) \left\{ u(a,t)- \int_{\gamma(t)}^a \frac{d\theta}{k(\theta,t)} \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi \right\} dt \right| \]
  3. Formulas or other latex elements that are not in a math environment can be specified using \f{environment}, where `environment` is the name of the $\mbox{\LaTeX}$ environment, the corresponding end command is \f}. Here is an example for an equation array 
- {{{
-    \f{eqnarray*}
+{{{
+   \f{eqnarray*}
         g &=& \frac{Gm_2}{r^2} \\ 
           &=& \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\,
               \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ 
           &=& 9.82066032\,\mbox{m/s}^2
    \f}
- }}}
- which results in: \begin{eqnarray*} g &=& \frac{Gm_2}{r^2} \\ &=& \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\, \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ &=& 9.82066032\,\mbox{m/s}^2 \end{eqnarray*}
+}}}
+which results in: \begin{eqnarray*} g &=& \frac{Gm_2}{r^2} \\ &=& \frac{(6.673 \times 10^{-11}\,\mbox{m}^3\,\mbox{kg}^{-1}\, \mbox{s}^{-2})(5.9736 \times 10^{24}\,\mbox{kg})}{(6371.01\,\mbox{km})^2} \\ &=& 9.82066032\,\mbox{m/s}^2 \end{eqnarray*}
 For the first two commands one should make sure formulas contain valid commands in $\mbox{\LaTeX}$'s math-mode. For the third command the section should contain valid command for the specific environment.
 
 Currently, doxygen is not very fault tolerant in recovering from typos in formulas. It may have to be necessary to remove the file `formula.repository` that is written to the html directory to a rid of an incorrect formula
