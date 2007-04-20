@@ -40,7 +40,8 @@ doxygen -w rtf rtfstyle.cfg
 }}}
 
 
-*Note:* 
+*Note:*
+
  * If you do not want documentation for each item inside the configuration file then you can use the optional `-s` option. This can use be used in combination with the `-u` option, to add or strip the documentation from an existing configuration file. Please use the `-s` option if you send me a configuration file as part of a bug report!
  * To make doxygen read/write to standard input/output instead of from/to a file, use `-` for the file name.
 

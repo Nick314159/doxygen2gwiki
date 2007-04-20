@@ -27,5 +27,8 @@ Here is the list of tags supported by doxygen:
 
 Here is an example of a typical piece of code using some of the above commands:
 
- 
+{{{
+
+}}}
+
 

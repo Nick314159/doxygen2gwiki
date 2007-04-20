@@ -16,7 +16,7 @@ It can help you in three ways:
 
 Doxygen is developed under [http://www.linux.org Linux] and Mac OS X, but is set-up to be highly portable. As a result, it runs on most other Unix flavors as well. Furthermore, executables for Windows are available.
 
- This manual is divided into three parts, each of which is divided into several sections.
+This manual is divided into three parts, each of which is divided into several sections.
 
 The first part forms a user manual: 
  * Section [Doxygen_install Installation]  discusses how to [http://www.doxygen.org/download.html download], compile and install doxygen for your platform.

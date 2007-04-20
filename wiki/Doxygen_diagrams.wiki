@@ -8,7 +8,8 @@ Doxygen can use the "dot" tool from graphviz 1.5 to generate more advanced diagr
 If you have the "dot" tool available in the path, you can set HAVE_DOT  to `YES` in the configuration file to let doxygen use it.
 
 Doxygen uses the "dot" tool to generate the following graphs: 
- * if GRAPHICAL_HIERARCHY  is set to `YES`, a graphical representation of the class hierarchy will be drawn, along with the textual one. Currently this feature is supported for HTML only. *Warning:* When you have a very large class hierarchy where many classes derive from a common base class, the resulting image may become too big to handle for some browsers.
+ * if GRAPHICAL_HIERARCHY  is set to `YES`, a graphical representation of the class hierarchy will be drawn, along with the textual one. Currently this feature is supported for HTML only.
+*Warning:* When you have a very large class hierarchy where many classes derive from a common base class, the resulting image may become too big to handle for some browsers.
  * if CLASS_GRAPH  is set to `YES`, a graph will be generated for each documented class showing the direct and indirect inheritance relations. This disables the generation of the built-in class inheritance diagrams.
  * if INCLUDE_GRAPH  is set to `YES`, an include dependency graph is generated for each documented file that includes at least one other file. This feature is currently supported for HTML and RTF only.
  * if COLLABORATION_GRAPH  is set to YES, a graph is drawn for each documented class and struct that shows: 

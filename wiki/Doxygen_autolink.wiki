@@ -23,10 +23,10 @@ Links to functions are created if one of the following patterns is encountered:
  1. `<functionName>"("<argument-list>")"`
  2. `<functionName>"()"`
  3. `"::"<functionName>`
- 4. `(<className>"::")n<functionName>"("<argument-list>")"`
- 5. `(<className>"::")n<functionName>"("<argument-list>")"<modifiers>`
- 6. `(<className>"::")n<functionName>"()"`
- 7. `(<className>"::")n<functionName>`
+ 4. `(<className>"::")^n^<functionName>"("<argument-list>")"`
+ 5. `(<className>"::")^n^<functionName>"("<argument-list>")"<modifiers>`
+ 6. `(<className>"::")^n^<functionName>"()"`
+ 7. `(<className>"::")^n^<functionName>`
 where n>0.
 
 = Note 1:  =

@@ -28,7 +28,8 @@ The result will be:
 A list of events:
  * mouse events
  1. mouse move event
- 2. mouse click event More info about the click event.
+ 2. mouse click event
+More info about the click event.
  3. mouse double click event
  * keyboard events
  1. key down event

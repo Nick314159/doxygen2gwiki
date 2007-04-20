@@ -704,7 +704,11 @@ The text of the paragraph has no special internal structure. All visual enhancem
 
 Starts a parameter description for a function parameter with name <parameter-name>. Followed by a description of the parameter. The existence of the parameter is checked and a warning is given if the documentation of this (or any other) parameter is missing or not present in the function declaration or definition.
 
-The \param command has an optional attribute specifying the direction of the attribute. Possible values are "in" and "out". Here is an example for the function memcpy:  If a parameter is both input and output, use [in,out] as an attribute.
+The \param command has an optional attribute specifying the direction of the attribute. Possible values are "in" and "out". Here is an example for the function memcpy: 
+{{{
+
+}}}
+If a parameter is both input and output, use [in,out] as an attribute.
 
 The parameter description is a paragraph with no special internal structure. All visual enhancement commands may be used inside the paragraph.
 
@@ -1094,7 +1098,9 @@ Displays the argument <word> using a special font. Use this command to refer to 
   ... the \a x and \a y coordinates are used to ...
   
 }}}
-This will result in the following text: ... the _x_ and _y_ coordinates are used to ...
+This will result in the following text:
+
+... the _x_ and _y_ coordinates are used to ...
 
 
  
@@ -1114,11 +1120,14 @@ Typing:
   No other types of alignment are supported.
   
 }}}
-will result in the following text: 
+will result in the following text:
+
+
  * `AlignLeft` left alignment.
  * `AlignCenter` center alignment.
  * `AlignRight` right alignment
- No other types of alignment are supported.
+
+No other types of alignment are supported.
 
 
 
@@ -1148,7 +1157,9 @@ Typing:
      ... This function returns \c void and not \c int ...
   
 }}}
-will result in the following text: ... This function returns `void` and not `int` ...
+will result in the following text:
+
+... This function returns `void` and not `int` ...
 
 
 Equivalent to [Doxygen_commands \p]  To have multiple words in typewriter font use <tt>multiple words</tt>.
@@ -1195,6 +1206,10 @@ The copydoc command can be used recursively, but cycles in the copydoc relation 
 = \dot =
 
 Starts a text fragment which should contain a valid description of a dot graph. The text fragment ends with [Doxygen_commands \enddot] . Doxygen will pass the text on to dot and include the resulting image (and image map) into the output. The nodes of a graph can be made clickable by using the URL attribute. By using the command \ref inside the URL value you can conveniently link to an item inside doxygen. Here is an example: 
+{{{
+
+}}}
+
 
 
 
@@ -1208,6 +1223,10 @@ You need to install the `mscgen` tool, if you want to use this command.
 
 
 Here is an example of the use of the \msc command. 
+{{{
+
+}}}
+
 
 
 
@@ -1232,7 +1251,9 @@ Typing:
   ... this is a \e really good example ... 
   
 }}}
-will result in the following text: ... this is a _really_ good example ...
+will result in the following text:
+
+... this is a _really_ good example ...
 
 
 Equivalent to [Doxygen_commands \em] . To emphasis multiple words use <em>multiple words</em>.
@@ -1250,7 +1271,9 @@ Typing:
   ... this is a \em really good example ... 
   
 }}}
-will result in the following text: ... this is a _really_ good example ...
+will result in the following text:
+
+... this is a _really_ good example ...
 
 
 Equivalent to [Doxygen_commands \e] 
@@ -1395,7 +1418,9 @@ And this is an example of how the relevant part of the configuration file may lo
 }}}
 
 
-The image format for HTML is limited to what your browser supports. For $\mbox{\LaTeX}$, the image format must be Encapsulated PostScript (eps).  Doxygen does not check if the image is in the correct format. So _you_ have to make sure this is the case!
+The image format for HTML is limited to what your browser supports. For $\mbox{\LaTeX}$, the image format must be Encapsulated PostScript (eps). 
+
+Doxygen does not check if the image is in the correct format. So _you_ have to make sure this is the case!
 
 
  
@@ -1439,11 +1464,14 @@ Typing:
   No other types of alignment are supported.
   
 }}}
-will result in the following text: 
+will result in the following text:
+
+
  * `AlignLeft` left alignment.
  * `AlignCenter` center alignment.
  * `AlignRight` right alignment
- No other types of alignment are supported.
+
+No other types of alignment are supported.
 
 
 
@@ -1472,7 +1500,9 @@ Displays the parameter <word> using a typewriter font. You can use this command 
   ... the \p x and \p y coordinates are used to ...
   
 }}}
-This will result in the following text: ... the `x` and `y` coordinates are used to ...
+This will result in the following text:
+
+... the `x` and `y` coordinates are used to ...
 
 
 Equivalent to [Doxygen_commands \c] 

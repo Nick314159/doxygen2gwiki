@@ -25,7 +25,9 @@ where <config-file> is the name of the configuration file. If you omit the file 
 
 The configuration file has a format that is similar to that of a (simple) Makefile. It consists of a number of assignments (tags) of the form:
 
-`TAGNAME = VALUE` or  `TAGNAME = VALUE1 VALUE2 ... `
+`TAGNAME = VALUE` or 
+`TAGNAME = VALUE1 VALUE2 ... `
+
 
 You can probably leave the values of most tags in a generated template configuration file to their default value. See section [Doxygen_config Configuration]  for more details about the configuration file.
 
