@@ -60,6 +60,34 @@ class Emphasis:
         else:
             lines[-1] = lines[-1] + text
 
+class SuperScript:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        self.text = convertLine(xml, self)
+
+    def getLines(self, lines):
+        l = [""]
+        [x.getLines(l) for x in self.text]
+        text = "^" + "".join(l) + "^"
+        if len(lines[-1]) > 0 and lines[-1][-1] == "\n":
+            lines.append(text)
+        else:
+            lines[-1] = lines[-1] + text
+
+class SubScript:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        self.text = convertLine(xml, self)
+
+    def getLines(self, lines):
+        l = [""]
+        [x.getLines(l) for x in self.text]
+        text = ",," + "".join(l) + ",,"
+        if len(lines[-1]) > 0 and lines[-1][-1] == "\n":
+            lines.append(text)
+        else:
+            lines[-1] = lines[-1] + text
+
 class Para:
     def __init__(self, xml, parent):
         self.parent = parent
@@ -72,6 +100,16 @@ class Para:
         if not lines[-1] == "\n":
             lines[-1] = lines[-1] + "\n"
         lines.append("\n")
+
+class LineBreak:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        if len(lines[-1]) == 0:
+            lines[-1] = "\n"
+        elif not lines[-1].endswith("\n"):
+            lines[-1] = lines[-1] + "\n"
 
 class Sect1:
     def __init__(self, xml, parent):
@@ -280,7 +318,12 @@ elements = {
     "tocitem": TocItem,
     "itemizedlist": ItemizedList,
     "orderedlist": OrderedList,
-    "simplesect": Para
+    "simplesect": Para,
+    "linebreak": LineBreak,
+    "programlisting": Verbatim,
+#    "codeline": Verbatim,
+    "superscript": SuperScript,
+    "subscript": SubScript
 }
 
 from doxygen import doxygen
