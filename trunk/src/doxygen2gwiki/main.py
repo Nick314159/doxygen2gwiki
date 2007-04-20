@@ -48,6 +48,6 @@ def main():
         file = file + ".wiki"
         files.append(file)
 
-        open(options.output + file, "w").write(code)
+        open(options.output + file, "w").write(str(code))
 
     addRemovePages(oldfiles, files)
