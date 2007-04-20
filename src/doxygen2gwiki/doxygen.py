@@ -9,6 +9,7 @@ class Doxygen:
     def __init__(self):
         self.files = []
         self.links = {}
+        self.labels = ["Doxygen"]
 
     def processFile(self, xml):
         if xml.documentElement.tagName == "doxygenindex":

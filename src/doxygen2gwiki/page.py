@@ -2,6 +2,7 @@ from utils import getText
 
 from options import options
 from member_function import DoxygenMemberFunction
+from templates.Page import Page
 
 class DoxygenPage:
     def __init__(self, xml):
@@ -26,7 +27,7 @@ class DoxygenPage:
         lines = [""]
         for d in self.detailed:
             d.getLines(lines)
-        return [(self.pagename, "= %s =\n\n%s" % (self.title, "".join(lines)))]
+        return [(self.pagename, Page(searchList={"summary": "", "labels": doxygen.labels, "page": "".join(lines)}))]
 
 from text_elements import convertLine
 from doxygen import doxygen
