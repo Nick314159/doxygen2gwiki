@@ -2,7 +2,6 @@ from xml.dom.minidom import parseString
 
 from options import options
 from member_function import DoxygenMemberFunction
-from file import DoxygenFile
 from utils import getText
 from fix_xml import fixXML
 
@@ -45,3 +44,4 @@ class Doxygen:
 doxygen = Doxygen()
 
 from page import DoxygenPage
+from file import DoxygenFile

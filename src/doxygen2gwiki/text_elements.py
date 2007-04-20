@@ -298,6 +298,29 @@ class TocItem:
         else:
             lines[-1] = lines[-1] + text
 
+class ProgramListing:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        self.code = [convertLine(x, self) for x in xml.getElementsByTagName("codeline")]
+
+    def getLines(self, lines):
+        if len(lines[-1]) == 0 or lines[-1][-1] != "\n":
+            lines[-1] = lines[-1] + "\n"
+        for l in self.code:
+            [x.getLines(lines) for x in l]
+            if len(lines[-1]) == 0 or lines[-1][-1] != "\n":
+                lines[-1] = lines[-1] + "\n"
+        if len(lines[-1]) == 0 or lines[-1][-1] != "\n":
+            lines[-1] = lines[-1] + "\n"
+        lines.append("\n")
+
+class Space:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + " "
+
 elements = {
     "highlight": Highlight,
     "bold": Highlight,
@@ -320,10 +343,10 @@ elements = {
     "orderedlist": OrderedList,
     "simplesect": Para,
     "linebreak": LineBreak,
-    "programlisting": Verbatim,
-#    "codeline": Verbatim,
+    "programlisting": ProgramListing,
     "superscript": SuperScript,
-    "subscript": SubScript
+    "subscript": SubScript,
+    "sp": Space
 }
 
 from doxygen import doxygen
