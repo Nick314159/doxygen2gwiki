@@ -24,3 +24,12 @@ This command will look for the XML documentation in `examples/doxygen/doc/xml` a
 = Examples =
 
 As an example, the complete Doxygen user manual can be found [Doxygen here]. The equivalent HTML output is [http://www.stack.nl/~dimitri/doxygen/manual.html here].
+
+More examples can be found [ListOfExamples here].
+
+= Useful Pages =
+
+Below is a list of pages you might find useful when learning how to use Doxygen2GWiki.
+
+ * [CommandLineParameters Command Line Parameters]
+ * [History Version History]
