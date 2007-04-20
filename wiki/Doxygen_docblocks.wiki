@@ -119,8 +119,7 @@ because doxygen only allows one brief and one detailed description.
 Furthermore, if there is one brief description before a declaration and one before a definition of a code item, only the one before the _declaration_ will be used. If the same situation occurs for a detailed description, the one before the _definition_ is preferred and the one before the declaration will be ignored.
 
 Here is an example of a documented piece of C++ code using the Qt style: 
-{{{
-}}}
+
 
 
 The one-line comments contain a brief description, whereas the multi-line comment blocks contain a more detailed description.
@@ -134,8 +133,7 @@ By default a JavaDoc style documentation block behaves the same way as a Qt styl
 
 
 Here is the same piece of code as shown above, this time documented using the JavaDoc style and JAVADOC_AUTOBRIEF  set to YES: 
-{{{
-}}}
+
 
 
 Unlike most other documentation systems, doxygen also allows you to put the documentation of members (including global functions) in front of the _definition_. This way the documentation can be placed in the source file instead of the header file. This keeps the header file compact, and allows the implementer of the members more direct access to the documentation. As a compromise the brief description could be placed before the declaration and the detailed description before the member definition.
@@ -177,8 +175,7 @@ int var; ///< Brief description after the member
 Note that these blocks have the same structure and meaning as the special comment blocks in the previous section only the < indicates that the member is located in front of the block instead of after the block.
 
 Here is an example of the use of these comment blocks: 
-{{{
-}}}
+
 
 
 These blocks can only be used to document _members_ and _parameters_. They cannot be used to document files, classes, unions, structs, groups, namespaces and enums themselves. Furthermore, the structural commands mentioned in the next section (like `\class`) are ignored inside these comment blocks.
@@ -231,8 +228,7 @@ or a
 line in this file.
 
 Here is an example of a C header named `structcmd.h` that is documented using structural commands: 
-{{{
-}}}
+
 
 
 Because each comment block in the example above contains a structural command, all the comment blocks could be moved to another location or input file (the source file for instance), without affecting the generated documentation. The disadvantage of this approach is that prototypes are duplicated, so all changes have to be made twice! Because of this you should first consider if this is really needed, and avoid structural commands if possible. I often receive examples that contain \fn command in comment blocks which are place in front of a function. This is clearly a case where the \fn command is redundant and will only lead to problems.
@@ -241,8 +237,7 @@ Because each comment block in the example above contains a structural command, a
 
 For Python there is a standard way of documenting the code using so called documentation strings. Such strings are stored in `__doc__` and can be retrieved at runtime. Doxygen will extract such comments and assume they have to be represented in a preformatted way.
 
-{{{
-}}}
+
 
 
 Note that in this case none of doxygen's [Doxygen_commands special commands]  are supported.
@@ -251,8 +246,7 @@ There is also another way to document Python code using comments that start with
 
 Here is the same example again but now using doxygen style comments:
 
-{{{
-}}}
+
 
 
 Since python looks more like Java than like C or C++, you should set OPTMIZE_OUTPUT_JAVA  to `YES` in the config file.

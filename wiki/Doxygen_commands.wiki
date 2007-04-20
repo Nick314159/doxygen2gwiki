@@ -705,9 +705,15 @@ The text of the paragraph has no special internal structure. All visual enhancem
 Starts a parameter description for a function parameter with name <parameter-name>. Followed by a description of the parameter. The existence of the parameter is checked and a warning is given if the documentation of this (or any other) parameter is missing or not present in the function declaration or definition.
 
 The \param command has an optional attribute specifying the direction of the attribute. Possible values are "in" and "out". Here is an example for the function memcpy: 
-{{{
+*/*!*
+* Copies bytes from a source memory area to a destination memory area,*
+* where both areas may not overlap.*
+* @param[out] dest The memory area to copy to.*
+* @param[in]  src  The memory area to copy from.*
+* @param[in]  n    The number of bytes to copy*
+* */***
+***void** memcpy(**void** *dest, **const** **void** *src, size_t n);*
 
-}}}
 If a parameter is both input and output, use [in,out] as an attribute.
 
 The parameter description is a paragraph with no special internal structure. All visual enhancement commands may be used inside the paragraph.
@@ -1206,9 +1212,26 @@ The copydoc command can be used recursively, but cycles in the copydoc relation 
 = \dot =
 
 Starts a text fragment which should contain a valid description of a dot graph. The text fragment ends with [Doxygen_commands \enddot] . Doxygen will pass the text on to dot and include the resulting image (and image map) into the output. The nodes of a graph can be made clickable by using the URL attribute. By using the command \ref inside the URL value you can conveniently link to an item inside doxygen. Here is an example: 
-{{{
-
-}}}
+*/*! class B */***
+***class **B {};*
+****
+*/*! class C */***
+***class **C {};*
+****
+*/*! \mainpage*
+**
+*  Class relations expressed via an inline dot graph:*
+*  \dot*
+*  digraph example {*
+*      node [shape=record, fontname=Helvetica, fontsize=10];*
+*      b [ label="class B" URL="\ref B"];*
+*      c [ label="class C" URL="\ref C"];*
+*      b -> c [ arrowhead="open", style="dashed" ];*
+*  }*
+*  \enddot*
+*  Note that the classes in the above graph are clickable *
+*  (in the HTML output).*
+* */*
 
 
 
@@ -1223,9 +1246,35 @@ You need to install the `mscgen` tool, if you want to use this command.
 
 
 Here is an example of the use of the \msc command. 
-{{{
-
-}}}
+*/** Sender class. Can be used to send a command to the server.*
+*  The receiver will acknowlegde the command by calling Ack().*
+*  \msc*
+*    Sender,Receiver;*
+*    Sender->Receiver [label="Command()", URL="\ref Receiver::Command()"];*
+*    Sender<-Receiver [label="Ack()", URL="\ref Ack()", ID="1"];*
+*  \endmsc*
+* */***
+***class **Sender*
+*{*
+*  **public**:***
+*    /** Acknowledgement from server */***
+*    **void** Ack(**bool** ok);*
+*};*
+****
+*/** Receiver class. Can be used to receive and execute commands.*
+*  After execution of a command, the receiver will send an acknowledgement*
+*  \msc*
+*    Receiver,Sender;*
+*    Receiver<-Sender [label="Command()", URL="\ref Command()"];*
+*    Receiver->Sender [label="Ack()", URL="\ref Sender::Ack()", ID="1"];*
+*  \endmsc*
+* */***
+***class **Receiver*
+*{*
+*  **public**:***
+*    /** Executable a command on the server */***
+*    **void** Command(**int** commandId);*
+*};*
 
 
 
