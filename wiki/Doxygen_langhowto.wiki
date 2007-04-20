@@ -1,4 +1,4 @@
-= Internationalization =
+#labels Doxygen 
 
 
 = Support for multiple languages =
@@ -138,4 +138,5 @@ Warning: Don't forget to compile Doxygen to discover, whether it is compilable. 
 When doing so, all the missing methods will be replaced by the English translation. This means that not-implemented methods will always return the English result. Such translators are marked using word `obsolete`. You should read it *really obsolete*. No guess about the last update can be done.
 
 Often, it is possible to construct better result from the obsolete methods. Because of that, the translator adapter classes should be used if possible. On the other hand, implementation of adapters for really obsolete translators brings too much maintenance and run-time overhead. 
+
 

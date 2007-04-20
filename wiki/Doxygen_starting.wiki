@@ -1,4 +1,4 @@
-= Getting started =
+#labels Doxygen 
 
 
 The executable `doxygen` is the main program that parses the sources and generates the documentation. See section [Doxygen_doxygen_usage Doxygen usage]  for more detailed usage information.
@@ -77,6 +77,7 @@ During parsing the following steps take place:
  * Links are created for words corresponding to documented classes (unless the word is preceded by a %; then the word will not be linked and the % sign is removed).
  * Links to members are created when certain patterns are found in the text. See section [Doxygen_autolink Automatic link generation]  for more information on how the automatic link generation works.
  * HTML tags that are in the documentation are interpreted and converted to $\mbox{\LaTeX}$ equivalents for the $\mbox{\LaTeX}$ output. See section [Doxygen_htmlcmds HTML Commands]  for an overview of all supported HTML tags.
+
 
 
 

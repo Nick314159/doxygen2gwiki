@@ -1,4 +1,4 @@
-= Special Commands =
+#labels Doxygen 
 
 = Introduction =
 
@@ -1664,4 +1664,5 @@ The following commands are supported to remain compatible to the Qt class browse
  * \l
  * \postheader
  
+
 

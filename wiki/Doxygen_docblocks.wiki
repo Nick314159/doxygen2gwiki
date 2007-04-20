@@ -1,4 +1,4 @@
-= Documenting the code =
+#labels Doxygen 
 
 = Special documentation blocks =
 
@@ -250,6 +250,7 @@ Here is the same example again but now using doxygen style comments:
 
 
 Since python looks more like Java than like C or C++, you should set OPTMIZE_OUTPUT_JAVA  to `YES` in the config file.
+
 
 
 

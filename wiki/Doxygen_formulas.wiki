@@ -1,4 +1,4 @@
-= Including formulas =
+#labels Doxygen 
 
 
 Doxygen allows you to put $\mbox{\LaTeX}$ formulas in the output (this works only for the HTML and $\mbox{\LaTeX}$ output, not for the RTF nor for the man page output). To be able to include formulas (as images) in the HTML documentation, you will also need to have the following tools installed 
@@ -46,4 +46,5 @@ Currently, doxygen is not very fault tolerant in recovering from typos in formul
 
 
  
+
 

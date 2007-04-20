@@ -1,4 +1,4 @@
-= Installation =
+#labels Doxygen 
 
 
 First go to the [http://www.doxygen.org/download.html download] page  to get the latest distribution, if you did not have it already.
@@ -303,6 +303,7 @@ Doxygen was developed and tested under Linux & MacOSX using the following open-s
  * Troll Tech's tmake version 1.3 (included in the distribution)
  * teTeX version 2.0.2
  * CVS 1.12.12
+
 
 
 

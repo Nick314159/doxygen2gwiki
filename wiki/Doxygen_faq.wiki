@@ -1,4 +1,4 @@
-= Frequently Asked Questions =
+#labels Doxygen 
 
 
  1. *How to get information on the index page in HTML?* 
@@ -175,6 +175,7 @@ At the time I was looking into lex and yacc, where a lot of things start with "y
  19. *What was the reason to develop doxygen?*
 
 I once wrote a GUI widget based on the Qt library (it is still available at [http://qdbttabular.sourceforge.net/ http://qdbttabular.sourceforge.net/] and maintained by Sven Meyer). Qt had nicely generated documentation (using an internal tool which they didn't want to release) and I wrote similar docs by hand. This was a nightmare to maintain, so I wanted a similar tool. I looked at Doc++ but that just wasn't good enough (it didn't support signals and slots and did not have the Qt look and feel I had grown to like), so I started to write my own tool...
+
 
 
 

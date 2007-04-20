@@ -1,4 +1,4 @@
-= Grouping =
+#labels Doxygen 
 
 
 Doxygen has three mechanisms to group things together. One mechanism works at a global level, creating a new page for each group. These groups are called [Doxygen_grouping 'modules']  in the documentation. The second mechanism works within a member list of some compound entity, and is refered to as a [Doxygen_grouping 'member groups'] . For [Doxygen_commands pages]  there is a third grouping mechanism referred to as [Doxygen_grouping subpaging] .
@@ -121,6 +121,7 @@ Information can be grouped into pages using the [Doxygen_commands \page]  and [D
 Instead of adding structure using the approach decribed in section [Doxygen_grouping modules]  it is often more natural and convienent to add additional structure to the pages using the [Doxygen_commands \subpage]  command.
 
 For a page A the \subpage command adds a link to another page B and at the same time makes page B a subpage of A. This has the effect of making two groups GA and GB, where GB is part of GA, page A is put in group GA, and page B is put in group GB.
+
 
 
 

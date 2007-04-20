@@ -1,4 +1,4 @@
-= Nodes in the documentation tree of the Perl Module output format =
+#labels Doxygen 
 
 
 = Nodes in the documentation tree of the Perl Module output format. =
@@ -200,5 +200,6 @@ The meaning of each node in the documentation tree is as follows:
  * kind => *FileTypedefKind* _(string)_. Kind of typedef (usually "typedef").
  * name => *FileTypedefName* _(string)_. Name of the typedef.
  * type => *FileTypedefType* _(string)_. Data type of the typedef.
+
 
 

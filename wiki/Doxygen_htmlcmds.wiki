@@ -1,4 +1,4 @@
-= HTML Commands =
+#labels Doxygen 
 
 
 Here is a list of all HTML commands that may be used inside the documentation. Note that although these HTML tags are translated to the proper commands for outer formats other than HTML, all attributes of a HTML tag are passed on to the HTML output only (the HREF and NAME attributes for the A tag are the only exception).
@@ -109,5 +109,6 @@ Finally, to put invisible comments inside comment blocks, HTML style comments ca
 {{{
 /*! <!-- This is a comment with a comment block --> Visible text */
 }}}
+
 
 

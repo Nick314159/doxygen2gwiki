@@ -1,4 +1,4 @@
-= Doxytag usage =
+#labels Doxygen 
 
 
 Doxytag is a small command line based utility. It can generate _tag files_. These tag files can be used with [doxygen_usage.html doxygen] to generate references to external documentation (i.e. documentation not contained in the input files that are used by doxygen).
@@ -46,6 +46,7 @@ To generate a tag file of the Qt documentation you can do the following:
 {{{
 doxytag -t qt.tag $QTDIR/doc/html
 }}}
+
 
 
 

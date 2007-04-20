@@ -1,4 +1,4 @@
-= Doxywizard usage =
+#labels Doxygen 
 
 
 Doxywizard is a GUI front-end for configuring and running doxygen.
@@ -50,4 +50,5 @@ Some options from the Expert dialog The get additional information about the mea
 The GUI front-end has a menu with a couple of useful items
 
 File menu 
+
 
