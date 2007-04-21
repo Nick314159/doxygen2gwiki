@@ -27,7 +27,7 @@ class DoxygenPage:
         lines = [""]
         for d in self.detailed:
             d.getLines(lines)
-        return [(self.pagename, Page(searchList={"summary": "", "labels": doxygen.labels, "page": "".join(lines)}))]
+        return [("wiki", self.pagename, Page(searchList={"summary": "", "labels": doxygen.labels, "page": "".join(lines)}))]
 
 from text_elements import convertLine
 from doxygen import doxygen

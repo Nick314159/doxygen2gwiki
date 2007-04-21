@@ -44,10 +44,13 @@ def main():
     oldfiles = getPreviousFiles()
     files = []
 
-    for file, code in doxygen.createFiles():
-        file = file + ".wiki"
-        files.append(file)
+    for type, file, code in doxygen.createFiles():
+        if type == "wiki":
+            file = file + ".wiki"
+            files.append(file)
 
-        open(options.output + file, "w").write(str(code))
+            open(options.output + file, "w").write(str(code))
+        else:
+            files.append(file)
 
     addRemovePages(oldfiles, files)

@@ -1,3 +1,4 @@
+import os.path
 from utils import getText
 
 def convertLine(node, parent):
@@ -360,6 +361,41 @@ class VariableList:
             text.append(" " + "".join(l).strip() + "\n")
         lines.extend(text)
 
+class Image:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        if xml.attributes["type"].value == "html":
+            image = self.findImage(xml.attributes["name"].value)
+            if image:
+                doxygen.copyFile("static", image, options.prefix + "_" + xml.attributes["name"].value)
+            if options.project is None:
+                print "Warning, to use images you *must* supply the project name using the -j option."
+                self.url = None
+            else:
+                self.url = "http://%s.googlecode.com/svn/wiki/%s" % (options.project, options.prefix + "_" + xml.attributes["name"].value)
+        else:
+            self.url = None
+
+    def findImage(self, name):
+        if os.path.exists(options.output + name):
+            return options.output + name
+        if options.html and os.path.exists(options.html + name):
+            return options.html + name
+        for i in options.images:
+            if os.path.exists(i + name):
+                return i + name
+        print "Couldn't find image %s." % (name, )
+        print "Looked in..."
+        for d in [options.output, options.html] + options.images:
+            if d is not None:
+                print d
+
+    def getLines(self, lines):
+        if self.url:
+            lines[-1] = lines[-1] + "[" + self.url + "] "
+        else:
+            pass
+
 elements = {
     "highlight": Highlight,
     "bold": Highlight,
@@ -390,6 +426,8 @@ elements = {
     "variablelist": VariableList,
     "varlistentry": Ignore,
     "term": PassThrough,
+    "image": Image,
 }
 
 from doxygen import doxygen
+from options import options
