@@ -28,7 +28,7 @@ The elements in the class diagrams in HTML and RTF have the following meaning:
  * A *dotted dark green* arrow indicates private inheritance.
 
 
-The elements in the class diagram in $\mbox{\LaTeX}$ have the following meaning: 
+The elements in the class diagram in [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  have the following meaning: 
  * A *white* box indicates a class. A *marker* in the lower right corner of the box indicates that the class has base classes that are hidden. If the box has a *dashed* border this indicates virtual inheritance.
  * A *solid* arrow indicates public inheritance.
  * A *dashed* arrow indicates protected inheritance.

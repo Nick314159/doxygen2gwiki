@@ -251,7 +251,7 @@ You can use INTERNAL_DOCS  in the config file to show or hide the internal docum
 = \mainpage [(title)] =
 
 
-If the \mainpage command is placed in a comment block the block is used to customize the index page (in HTML) or the first chapter (in $\mbox{\LaTeX}$).
+If the \mainpage command is placed in a comment block the block is used to customize the index page (in HTML) or the first chapter (in [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png] ).
 
 The title argument is optional and replaces the default title that doxygen normally generates. If you do not want any title you can specify `notitle` as the argument of \mainpage.
 
@@ -338,7 +338,7 @@ Indicates that a comment block contains documentation for a Java package with na
 
 = \page <name> (title) =
 
-Indicates that a comment block contains a piece of documentation that is not directly related to one specific class, file or member. The HTML generator creates a page containing the documentation. The $\mbox{\LaTeX}$ generator starts a new section in the chapter `Page documentation'.
+Indicates that a comment block contains a piece of documentation that is not directly related to one specific class, file or member. The HTML generator creates a page containing the documentation. The [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  generator starts a new section in the chapter `Page documentation'.
 
 = Example: =
 
@@ -831,7 +831,7 @@ Note the use of escaped quotes for the second and third argument of the \xrefite
 
 = \addindex (text) =
 
-This command adds (text) to the $\mbox{\LaTeX}$ index.
+This command adds (text) to the [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  index.
 
 
 
@@ -869,7 +869,7 @@ See section [Doxygen_autolink autolink]  for more information on automatically g
 
 = \ref <name> ["(text)"] =
 
-Creates a reference to a named section, subsection, page or anchor. For HTML documentation the reference command will generate a link to the section. For a sections or subsections the title of the section will be used as the text of the link. For anchor the optional text between quotes will be used or <name> if no text is specified. For $\mbox{\LaTeX}$ documentation the reference command will generate a section number for sections or the text followed by a page number if <name> refers to an anchor.
+Creates a reference to a named section, subsection, page or anchor. For HTML documentation the reference command will generate a link to the section. For a sections or subsections the title of the section will be used as the text of the link. For anchor the optional text between quotes will be used or <name> if no text is specified. For [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  documentation the reference command will generate a section number for sections or the text followed by a page number if <name> refers to an anchor.
 
 Section [Doxygen_commands \page]  for an example of the \ref command.
 
@@ -1429,7 +1429,7 @@ section [Doxygen_commands \f[]  and section [Doxygen_formulas formulas] .
 
 Starts a block of text that will be verbatim included in the generated HTML documentation only. The block ends with a endhtmlonly command.
 
-This command can be used to include HTML code that is too complex for doxygen (i.e. applets, java-scripts, and HTML tags that require attributes). You can use the \latexonly and \endlatexonly pair to provide a proper $\mbox{\LaTeX}$ alternative.
+This command can be used to include HTML code that is too complex for doxygen (i.e. applets, java-scripts, and HTML tags that require attributes). You can use the \latexonly and \endlatexonly pair to provide a proper [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  alternative.
 
 *Note:* environment variables (like $(HOME) ) are resolved inside a HTML-only block.
 
@@ -1448,7 +1448,7 @@ The second argument specifies the file name of the image. doxygen will look for 
 
 The third argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified on a single line and between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.
 
-The fourth argument is also optional and can be used to specify the width or height of the image. This is only useful for $\mbox{\LaTeX}$ output (i.e. format=`latex`). The `sizeindication` can be either `width` or `height`. The size should be a valid size specifier in $\mbox{\LaTeX}$ (for example `10cm` or `6in` or a symbolic width like `\textwidth`).
+The fourth argument is also optional and can be used to specify the width or height of the image. This is only useful for [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  output (i.e. format=`latex`). The `sizeindication` can be either `width` or `height`. The size should be a valid size specifier in [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  (for example `10cm` or `6in` or a symbolic width like `\textwidth`).
 
 Here is example of a comment block:
 
@@ -1467,7 +1467,7 @@ And this is an example of how the relevant part of the configuration file may lo
 }}}
 
 
-The image format for HTML is limited to what your browser supports. For $\mbox{\LaTeX}$, the image format must be Encapsulated PostScript (eps). 
+The image format for HTML is limited to what your browser supports. For [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png] , the image format must be Encapsulated PostScript (eps). 
 
 Doxygen does not check if the image is in the correct format. So _you_ have to make sure this is the case!
 
@@ -1476,11 +1476,11 @@ Doxygen does not check if the image is in the correct format. So _you_ have to m
 
 = \latexonly =
 
-Starts a block of text that will be verbatim included in the generated $\mbox{\LaTeX}$ documentation only. The block ends with a endlatexonly command.
+Starts a block of text that will be verbatim included in the generated [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  documentation only. The block ends with a endlatexonly command.
 
-This command can be used to include $\mbox{\LaTeX}$ code that is too complex for doxygen (i.e. images, formulas, special characters). You can use the \htmlonly and \endhtmlonly pair to provide a proper HTML alternative.
+This command can be used to include [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  code that is too complex for doxygen (i.e. images, formulas, special characters). You can use the \htmlonly and \endhtmlonly pair to provide a proper HTML alternative.
 
-*Note:* environment variables (like $(HOME) ) are resolved inside a $\mbox{\LaTeX}$-only block.
+*Note:* environment variables (like $(HOME) ) are resolved inside a [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png] -only block.
 
 section [Doxygen_commands \latexonly]  and section [Doxygen_commands \htmlonly] .
 
@@ -1491,7 +1491,7 @@ section [Doxygen_commands \latexonly]  and section [Doxygen_commands \htmlonly] 
 
 Starts a block of text that will be verbatim included in the generated MAN documentation only. The block ends with a endmanonly command.
 
-This command can be used to include groff code directly into MAN pages. You can use the \htmlonly and \latexonly and \endhtmlonly and \endlatexonly pairs to provide proper HTML and $\mbox{\LaTeX}$ alternatives.
+This command can be used to include groff code directly into MAN pages. You can use the \htmlonly and \latexonly and \endhtmlonly and \endlatexonly pairs to provide proper HTML and [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  alternatives.
 
 section [Doxygen_commands \htmlonly]  and section [Doxygen_commands \latexonly] .
 
@@ -1560,7 +1560,7 @@ Equivalent to [Doxygen_commands \c]
 
 = \verbatim =
 
-Starts a block of text that will be verbatim included in both the HTML and the $\mbox{\LaTeX}$ documentation. The block should end with a \endverbatim block. All commands are disabled in a verbatim block.
+Starts a block of text that will be verbatim included in both the HTML and the [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  documentation. The block should end with a \endverbatim block. All commands are disabled in a verbatim block.
 
 Make sure you include a \endverbatim command for each \verbatim command or the parser will get confused!
 
@@ -1584,13 +1584,13 @@ section [Doxygen_commands \htmlonly]  and section [Doxygen_commands \latexonly] 
 
 = \\ =
 
-This command writes a backslash character (\) to the HTML and $\mbox{\LaTeX}$ output. The backslash has to be escaped in some cases because doxygen uses it to detect commands.
+This command writes a backslash character (\) to the HTML and [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  output. The backslash has to be escaped in some cases because doxygen uses it to detect commands.
 
 
 
 = \@ =
 
-This command writes an at-sign (@) to the HTML and $\mbox{\LaTeX}$ output. The at-sign has to be escaped in some cases because doxygen uses it to detect JavaDoc commands.
+This command writes an at-sign (@) to the HTML and [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  output. The at-sign has to be escaped in some cases because doxygen uses it to detect JavaDoc commands.
 
 
 

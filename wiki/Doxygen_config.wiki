@@ -359,15 +359,15 @@ The HTML Help Workshop contains a compiler that can convert all HTML output gene
 
 
 `GENERATE_LATEX`
- If the `GENERATE_LATEX` tag is set to `YES` (the default) doxygen will generate $\mbox{\LaTeX}$ output.
+ If the `GENERATE_LATEX` tag is set to `YES` (the default) doxygen will generate [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  output.
 `LATEX_OUTPUT`
- The `LATEX_OUTPUT` tag is used to specify where the $\mbox{\LaTeX}$ docs will be put. If a relative path is entered the value of `OUTPUT_DIRECTORY` will be put in front of it. If left blank `latex' will be used as the default path.
+ The `LATEX_OUTPUT` tag is used to specify where the [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  docs will be put. If a relative path is entered the value of `OUTPUT_DIRECTORY` will be put in front of it. If left blank `latex' will be used as the default path.
 `LATEX_CMD_NAME`
  The `LATEX_CMD_NAME` tag can be used to specify the LaTeX command name to be invoked. If left blank `latex' will be used as the default command name.
 `MAKEINDEX_CMD_NAME`
  The MAKEINDEX_CMD_NAME tag can be used to specify the command name to generate index for LaTeX. If left blank `makeindex' will be used as the default command name.
 `COMPACT_LATEX`
- If the `COMPACT_LATEX` tag is set to `YES` doxygen generates more compact $\mbox{\LaTeX}$ documents. This may be useful for small projects and may help to save some trees in general.
+ If the `COMPACT_LATEX` tag is set to `YES` doxygen generates more compact [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  documents. This may be useful for small projects and may help to save some trees in general.
 `PAPER_TYPE`
  The `PAPER_TYPE` tag can be used to set the paper type that is used by the printer. Possible values are: 
  * `a4` (210 x 297 mm).
@@ -377,13 +377,13 @@ The HTML Help Workshop contains a compiler that can convert all HTML output gene
  * `executive` (7.25 x 10.5 inches)
 If left blank a4wide will be used.
 `EXTRA_PACKAGES`
- The `EXTRA_PACKAGES` tag can be used to specify one or more $\mbox{\LaTeX}$ package names that should be included in the $\mbox{\LaTeX}$ output. To get the times font for instance you can specify 
+ The `EXTRA_PACKAGES` tag can be used to specify one or more [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  package names that should be included in the [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  output. To get the times font for instance you can specify 
 {{{
 EXTRA_PACKAGES = times
 }}}
 If left blank no extra packages will be included.
 `LATEX_HEADER`
- The `LATEX_HEADER` tag can be used to specify a personal $\mbox{\LaTeX}$ header for the generated $\mbox{\LaTeX}$ document. The header should contain everything until the first chapter.
+ The `LATEX_HEADER` tag can be used to specify a personal [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  header for the generated [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  document. The header should contain everything until the first chapter.
 
 If it is left blank doxygen will generate a standard header. See section [Doxygen_doxygen_usage Doxygen usage]  for information on how to let doxygen write the default header to a separate file.
 
@@ -394,11 +394,11 @@ Only use a user-defined header if you know what you are doing!
 
 The following commands have a special meaning inside the header: `$title`, `$datetime`, `$date`, `$doxygenversion`, `$projectname`, `$projectnumber`. Doxygen will replace them by respectively the title of the page, the current date and time, only the current date, the version number of doxygen, the project name (see `PROJECT_NAME`), or the project number (see `PROJECT_NUMBER`).
 `PDF_HYPERLINKS`
- If the `PDF_HYPERLINKS` tag is set to `YES`, the $\mbox{\LaTeX}$ that is generated is prepared for conversion to PDF (using ps2pdf or pdflatex). The PDF file will contain links (just like the HTML output) instead of page references. This makes the output suitable for online browsing using a PDF viewer.
+ If the `PDF_HYPERLINKS` tag is set to `YES`, the [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  that is generated is prepared for conversion to PDF (using ps2pdf or pdflatex). The PDF file will contain links (just like the HTML output) instead of page references. This makes the output suitable for online browsing using a PDF viewer.
 `USE_PDFLATEX`
- If the `LATEX_PDFLATEX` tag is set to `YES`, doxygen will use pdflatex to generate the PDF file directly from the $\mbox{\LaTeX}$ files.
+ If the `LATEX_PDFLATEX` tag is set to `YES`, doxygen will use pdflatex to generate the PDF file directly from the [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  files.
 `LATEX_BATCHMODE`
- If the `LATEX_BATCHMODE` tag is set to `YES`, doxygen will add the \batchmode. command to the generated $\mbox{\LaTeX}$ files. This will instruct $\mbox{\LaTeX}$ to keep running if errors occur, instead of asking the user for help. This option is also used when generating formulas in HTML.
+ If the `LATEX_BATCHMODE` tag is set to `YES`, doxygen will add the \batchmode. command to the generated [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  files. This will instruct [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  to keep running if errors occur, instead of asking the user for help. This option is also used when generating formulas in HTML.
 `LATEX_HIDE_INDICES`
  If `LATEX_HIDE_INDICES` is set to `YES` then doxygen will not include the index chapters (such as File Index, Compound Index, etc.) in the output.
 
@@ -522,7 +522,7 @@ Each tag file must have a unique name (where the name does _not_ include the pat
 
 
 `CLASS_DIAGRAMS`
- If the `CLASS_DIAGRAMS` tag is set to `YES` (the default) doxygen will generate a class diagram (in HTML and $\mbox{\LaTeX}$) for classes with base or super classes. Setting the tag to `NO` turns the diagrams off. Note that this option is superseded by the HAVE_DOT option below. This is only a fallback. It is recommended to install and use dot, since it yields more powerful graphs.
+ If the `CLASS_DIAGRAMS` tag is set to `YES` (the default) doxygen will generate a class diagram (in HTML and [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png] ) for classes with base or super classes. Setting the tag to `NO` turns the diagrams off. Note that this option is superseded by the HAVE_DOT option below. This is only a fallback. It is recommended to install and use dot, since it yields more powerful graphs.
 `MSCGEN_PATH`
  You can define message sequence charts within doxygen comments using the [Doxygen_commands \msc]  command. Doxygen will then run the [http://www.mcternan.me.uk/mscgen/ msgen tool]) to produce the chart and insert it in the documentation. The `MSCGEN_PATH` tag allows you to specify the directory where the mscgen tool resides. If left empty the tool is assumed to be found in the default search path.
 `HAVE_DOT`
