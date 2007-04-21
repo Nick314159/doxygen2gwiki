@@ -1,4 +1,1 @@
-
-*int** simple_func(**int** a, **char*** b);*
-
 || [Example1 Main Page] || [Example1_files] ||

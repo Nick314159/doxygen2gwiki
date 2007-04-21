@@ -140,3 +140,4 @@ When doing so, all the missing methods will be replaced by the English translati
 Often, it is possible to construct better result from the obsolete methods. Because of that, the translator adapter classes should be used if possible. On the other hand, implementation of adapters for really obsolete translators brings too much maintenance and run-time overhead. 
 
 
+|| [Doxygen Main Page] || [Doxygen_files] ||

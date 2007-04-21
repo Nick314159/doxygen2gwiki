@@ -21,3 +21,4 @@ Optionally a list of HTML files may be given. These files are scanned and modifi
 The `installdox` script is unique for each generated class browser in the sense that it `knows' what tag files are used. It will generate an error if the *-l* option is missing for a tag file or if an invalid tag file is given. 
 
 
+|| [Doxygen Main Page] || [Doxygen_files] ||
