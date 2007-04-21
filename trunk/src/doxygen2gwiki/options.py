@@ -19,6 +19,8 @@ parser.add_option("-t", "--html", dest="html", default=None, action="store",
                   help="The location of the Doxygen generated HTML files.")
 parser.add_option("-i", "--image", dest="images", default=[], action="append",
                   help="The directory containing images used in the documentation.")
+parser.add_option("-v", "--verbose", dest="verbose", default=False, action="store_true",
+                  help="Make lots of noise.")
 
 (options, args) = parser.parse_args()
 
