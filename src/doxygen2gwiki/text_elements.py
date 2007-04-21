@@ -396,6 +396,39 @@ class Image:
         else:
             pass
 
+class Formula:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        id = xml.attributes["id"].value
+        image = self.findImage("form_" + id + ".png")
+        if image:
+            doxygen.copyFile("static", image, options.prefix + "_" + "form_" + id + ".png")
+        if options.project is None:
+            print "Warning, to use images you *must* supply the project name using the -j option."
+            self.url = None
+        else:
+            self.url = "http://%s.googlecode.com/svn/wiki/%s" % (options.project, options.prefix + "_" + "form_" + id + ".png")
+
+    def findImage(self, name):
+        if os.path.exists(options.output + name):
+            return options.output + name
+        if options.html and os.path.exists(options.html + name):
+            return options.html + name
+        for i in options.images:
+            if os.path.exists(i + name):
+                return i + name
+        print "Couldn't find image %s." % (name, )
+        print "Looked in..."
+        for d in [options.output, options.html] + options.images:
+            if d is not None:
+                print d
+
+    def getLines(self, lines):
+        if self.url:
+            lines[-1] = lines[-1] + "[" + self.url + "] "
+        else:
+            pass
+
 elements = {
     "highlight": Highlight,
     "bold": Highlight,
@@ -427,6 +460,7 @@ elements = {
     "varlistentry": Ignore,
     "term": PassThrough,
     "image": Image,
+    "formula": Formula,
 }
 
 from doxygen import doxygen

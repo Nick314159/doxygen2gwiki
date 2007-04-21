@@ -28,6 +28,8 @@ if not options.docs.endswith("/"):
     options.docs = options.docs + "/"
 if not options.output.endswith("/"):
     options.output = options.output + "/"
+if options.html is None:
+    options.html = options.docs + "../html/"
 if options.html and not options.html.endswith("/"):
     options.html = options.html + "/"
 for i in range(len(options.images)):
