@@ -14,6 +14,6 @@ class DoxygenFile:
     def createFiles(self):
         lines = [""]
         self.programlisting.getLines(lines)
-        return [(options.prefix + "_" + self.id, "".join(lines))]
+        return [("wiki", options.prefix + "_" + self.id, "".join(lines))]
 
 from text_elements import ProgramListing

@@ -1,3 +1,4 @@
+import os
 from xml.dom.minidom import parseString
 
 from options import options
@@ -8,6 +9,7 @@ from fix_xml import fixXML
 class Doxygen:
     def __init__(self):
         self.files = []
+        self.staticfiles = []
         self.links = {}
         if options.no_labels:
             self.labels = []
@@ -45,7 +47,10 @@ class Doxygen:
         files = []
         for f in self.files:
             files += f.createFiles()
-        return files
+        return files + self.staticfiles
+    def copyFile(self, type, _from, _to):
+        open(options.output + _to, "wb").write(open(_from, "rb").read())
+        self.staticfiles.append(("static", _to, None))
 
 doxygen = Doxygen()
 
