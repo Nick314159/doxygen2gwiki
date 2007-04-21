@@ -141,6 +141,20 @@ class Sect1:
     def getLines(self, lines):
         [x.getLines(lines) for x in self.text]
 
+class Sect2:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        while parent is not None and not hasattr(parent, "pagename"):
+            parent = parent.parent
+        if parent is not None:
+            doxygen.addLink(xml.attributes["id"].value, parent.pagename)
+        else:
+            doxygen.addLink(xml.attributes["id"].value, None)
+        self.text = convertLine(xml, self)
+
+    def getLines(self, lines):
+        [x.getLines(lines) for x in self.text]
+
 class Verbatim:
     def __init__(self, xml, parent):
         self.parent = parent
@@ -429,18 +443,179 @@ class Formula:
         else:
             pass
 
+class Copy:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + u"\xa9"
+
+class NonBreakableSpace:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + u"\xf0"
+
+class NDash:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + u"\u2013"
+
+class MDash:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + u"\u2014"
+
+class Acute:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "o":
+            self.letter = u"\xf3"
+        elif l == "O":
+            self.letter = u"\xd3"
+        elif l == "a":
+            self.letter = u"\xe1"
+        elif l == "A":
+            self.letter = u"\xc1"
+        else:
+            print "Warning, %c is an unrecognized letter for Acute." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
+class Umlaut:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "o":
+            self.letter = u"\xf6"
+        elif l == "O":
+            self.letter = u"\xd5"
+        elif l == "a":
+            self.letter = u"\xe4"
+        elif l == "A":
+            self.letter = u"\xc2"
+        else:
+            print "Warning, %c is an unrecognized letter for Umlaut." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
+class Grave:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "o":
+            self.letter = u"\xf2"
+        elif l == "O":
+            self.letter = u"\xd2"
+        elif l == "a":
+            self.letter = u"\xe0"
+        elif l == "A":
+            self.letter = u"\xc0"
+        else:
+            print "Warning, %c is an unrecognized letter for Grave." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
+class Circ:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "a":
+            self.letter = u"\xe2"
+        elif l == "A":
+            self.letter = u"\xc2"
+        else:
+            print "Warning, %c is an unrecognized letter for Circ." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
+class Tilde:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "a":
+            self.letter = u"\xe3"
+        elif l == "A":
+            self.letter = u"\xc3"
+        else:
+            print "Warning, %c is an unrecognized letter for Tilde." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
+class Szlig:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + u"\xdf"
+
+class Cedil:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "c":
+            self.letter = u"\xe7"
+        elif l == "C":
+            self.letter = u"\xc7"
+        else:
+            print "Warning, %c is an unrecognized letter for Cedil." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
+class Ring:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        l = xml.attributes["char"].value
+        if l == "a":
+            self.letter = u"\xe5"
+        elif l == "A":
+            self.letter = u"\xc5"
+        else:
+            print "Warning, %c is an unrecognized letter for Ring." % (l, )
+            print "Please report this as a bug to the Doxygen2GWiki project."
+            self.letter = ""
+
+    def getLines(self, lines):
+        lines[-1] = lines[-1] + self.letter
+
 elements = {
     "highlight": Highlight,
     "bold": Highlight,
     "emphasis": Emphasis,
     "para": Para,
     "sect1": Sect1,
+    "sect2": Sect2,
     "anchor": Ignore,
     "htmlonly": Ignore,
     "latexonly": Ignore,
     "hruler": Ignore,
     "indexentry": Ignore,
     "verbatim": Verbatim,
+    "preformatted": Verbatim,
     "computeroutput": ComputerOutput,
     "heading": Heading,
     "title": Heading,
@@ -461,6 +636,19 @@ elements = {
     "term": PassThrough,
     "image": Image,
     "formula": Formula,
+    "center": PassThrough,
+    "copy": Copy,
+    "umlaut": Umlaut,
+    "acute": Acute,
+    "grave": Grave,
+    "nonbreakablespace": NonBreakableSpace,
+    "ndash": NDash,
+    "mdash": MDash,
+    "circ": Circ,
+    "tilde": Tilde,
+    "szlig": Szlig,
+    "cedil": Cedil,
+    "ring": Ring
 }
 
 from doxygen import doxygen

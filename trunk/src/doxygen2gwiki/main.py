@@ -49,7 +49,7 @@ def main():
             file = file + ".wiki"
             files.append(file)
 
-            open(options.output + file, "w").write(str(code))
+            open(options.output + file, "w").write(unicode(code).encode("utf-8"))
         else:
             files.append(file)
 
