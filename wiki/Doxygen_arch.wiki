@@ -8,7 +8,7 @@
 
 The following picture shows how source files are processed by doxygen.
 
-Data flow overviewData flow overview
+[http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_archoverview.gif] 
 
 The following sections explain the steps above in more detail.
 

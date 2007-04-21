@@ -9,7 +9,7 @@ Optionally, the executable `doxywizard` can be used, which is a [Doxygen_doxywiz
 
 The following figure shows the relation between the tools and the flow of information between them (it looks complex but that's only because it tries to be complete):
 
-Doxygen information flow Doxygen information flow
+[http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_infoflow.gif]  
 
 = Step 1: Creating a configuration file =
 
