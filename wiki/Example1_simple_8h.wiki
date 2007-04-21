@@ -1,0 +1,3 @@
+
+*int** simple_func(**int** a, **char*** b);*
+
