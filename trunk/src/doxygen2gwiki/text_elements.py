@@ -20,6 +20,21 @@ def convertLine(node, parent):
         child = child.nextSibling
     return text
 
+class Ignore:
+    def __init__(self, xml, parent):
+        self.parent = parent
+
+    def getLines(self, lines):
+        pass
+
+class PassThrough:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        self.text = convertLine(xml, self)
+
+    def getLines(self, lines):
+        [x.getLines(lines) for x in self.text]
+
 class Text:
     def __init__(self, xml, parent):
         self.parent = parent
@@ -124,13 +139,6 @@ class Sect1:
 
     def getLines(self, lines):
         [x.getLines(lines) for x in self.text]
-
-class Ignore:
-    def __init__(self, xml, parent):
-        self.parent = parent
-
-    def getLines(self, lines):
-        pass
 
 class Verbatim:
     def __init__(self, xml, parent):
@@ -290,7 +298,7 @@ class TocItem:
         l = [""]
         [x.getLines(l) for x in self.text]
         if ref:
-            text = "[" + ref + " " + "".join(l) + "]"
+            text = "[" + ref + " " + "".join(l) + "] "
         else:
             text = "".join(l)
         if len(lines[-1]) > 0 and lines[-1][-1] == "\n":
@@ -321,12 +329,44 @@ class Space:
     def getLines(self, lines):
         lines[-1] = lines[-1] + " "
 
+class VariableList:
+    def __init__(self, xml, parent):
+        self.parent = parent
+        self.varitems = []
+        self.listitems = []
+        child = xml.firstChild
+        while child is not None:
+            if child.nodeType == child.TEXT_NODE:
+                pass
+            elif child.tagName == "listitem":
+                self.listitems.append(convertLine(child, self))
+            elif child.tagName == "varlistentry":
+                self.varitems.append(convertLine(child, self))
+            else:
+                print "Unknown node type in itemized list, " + child.tagName
+
+            child = child.nextSibling
+
+    def getLines(self, lines):
+        if not lines[-1] == "\n":
+            lines[-1] = lines[-1] + "\n"
+        text = []
+        for vartext, item in zip(self.varitems, self.listitems):
+            var = [""]
+            [i.getLines(var) for i in vartext]
+            l = [""]
+            [i.getLines(l) for i in item]
+            text.append("".join(var).strip() + "\n")
+            text.append(" " + "".join(l).strip() + "\n")
+        lines.extend(text)
+
 elements = {
     "highlight": Highlight,
     "bold": Highlight,
     "emphasis": Emphasis,
     "para": Para,
     "sect1": Sect1,
+    "anchor": Ignore,
     "htmlonly": Ignore,
     "latexonly": Ignore,
     "hruler": Ignore,
@@ -346,7 +386,10 @@ elements = {
     "programlisting": ProgramListing,
     "superscript": SuperScript,
     "subscript": SubScript,
-    "sp": Space
+    "sp": Space,
+    "variablelist": VariableList,
+    "varlistentry": Ignore,
+    "term": PassThrough,
 }
 
 from doxygen import doxygen
