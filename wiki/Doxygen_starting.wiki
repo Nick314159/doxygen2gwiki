@@ -59,6 +59,44 @@ Depending on your settings doxygen will create `html`, `rtf`, `latex`, `xml` and
 
 The default output directory is the directory in which `doxygen` is started. The root directory to which the output is written can be changed using the OUTPUT_DIRECTORY . The format specific directory within the output directory can be selected using the HTML_OUTPUT , RTF_OUTPUT , LATEX_OUTPUT , XML_OUTPUT , and MAN_OUTPUT  tags of the configuration file. If the output directory does not exist, `doxygen` will try to create it for you (but it will _not_ try to create a whole path recursively, like `mkdir -p` does).
 
+= HTML output =
+
+The generated HTML documentation can be viewed by pointing a HTML browser to the `index.html` file in the `html` directory. For the best results a browser that supports cascading style sheets (CSS) should be used (I'm using Mozilla, Safari, Konqueror, and sometimes IE6 to test the generated output).
+
+Some of the features the HTML section (such as GENERATE_TREEVIEW ) require a browser that supports DHTML and Javascript.
+
+If you plan to use the search engine (see SEARCHENGINE ), you should view the HTML output via a PHP-enabled web server (e.g. apache with the PHP module installed).
+
+= LaTeX output =
+
+The generated [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  documentation must first be compiled by a [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  compiler (I use a recent teTeX distribution). To simplify the process of compiling the generated documentation, `doxygen` writes a `Makefile` into the `latex` directory.
+
+The contents and targets in the `Makefile` depend on the setting of USE_PDFLATEX . If it is disabled (set to `NO`), then typing `make` in the `latex` directory a dvi file called `refman.dvi` will be generated. This file can then be viewed using `xdvi` or converted into a PostScript file `refman.ps` by typing `make ps` (this requires `dvips`).
+
+To put 2 pages on one physical page use `make ps_2on1` instead. The resulting PostScript file can be send to a PostScript printer. If you do not have a PostScript printer, you can try to use ghostscript to convert PostScript into something your printer understands.
+
+Conversion to PDF is also possible if you have installed the ghostscript interpreter; just type `make pdf` (or `make pdf_2on1`).
+
+To get the best results for PDF output you should set the PDF_HYPERLINKS  and USE_PDFLATEX  tags to `YES`. In this case the `Makefile` will only contain a target to build `refman.pdf` directly.
+
+= RTF output =
+
+Doxygen combines the RTF output to a single file called refman.rtf. This file is optimized for importing into the Microsoft Word. Certain information is encoded using field. To show the actual value you need to select all (Edit - select all) and then toggle fields (right click and select the option from the drop down menu).
+
+= XML output =
+
+The XML output consists of a structured "dump" of the information gathered by doxygen. Each compound (class/namespace/file/...) has its own XML file and there is also an index file called index.xml.
+
+A file called combine.xslt XSLT script is also generated and can be used to combine all XML files into a single file.
+
+Doxygen also generates two XML schema files index.xsd (for the index file) and compound.xsd (for the compound files). This schema file describes the possible elements, their attributes and how they are structured, i.e. it the describes the grammar of the XML files and can be used for validation or to steer XSLT scripts.
+
+In the addon/doxmlparser directory you can find a parser library for reading the XML output produced by doxygen in an incremental way (see addon/doxmlparser/include/doxmlintf.h for the interface of the library)
+
+= Man page output =
+
+The generated man pages can be viewed using the `man` program. You do need to make sure the man directory is in the man path (see the `MANPATH` environment variable). Note that there are some limitations to the capabilities of the man page format, so some information (like class diagrams, cross references and formulas) will be lost.
+
 = Step 3: Documenting the sources =
 
 Although documenting the sources is presented as step 3, in a new project this should of course be step 1. Here I assume you already have some code and you want doxygen to generate a nice document describing the API and maybe the internals as well.

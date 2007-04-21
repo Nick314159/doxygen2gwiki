@@ -1,7 +1,7 @@
 #labels Doxygen 
 
 
-
+ 
 
 = Introduction =
 
@@ -60,7 +60,7 @@ The third part provides information for developers:
 
 
 
-Copyright  1997-2007 by [mailto:dimitri@stack.nl Dimitri van Heesch].
+Copyright © 1997-2007 by [mailto:dimitri@stack.nl Dimitri van Heesch].
 
 Permission to use, copy, modify, and distribute this software and its documentation under the terms of the GNU General Public License is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the [http://www.gnu.org/copyleft/gpl.html GNU General Public License] for more details. 
 
