@@ -51,8 +51,9 @@ class Doxygen:
             files += f.createFiles()
         return files + self.staticfiles
     def copyFile(self, type, _from, _to):
-        open(options.output + _to, "wb").write(open(_from, "rb").read())
-        self.staticfiles.append(("static", _to, None))
+        if options.output + _to not in [x[1] for x in self.staticfiles]:
+            open(options.output + _to, "wb").write(open(_from, "rb").read())
+            self.staticfiles.append(("static", _to, None))
 
 doxygen = Doxygen()
 
