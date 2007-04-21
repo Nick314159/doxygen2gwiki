@@ -39,7 +39,7 @@ The development of Doxygen highly depends on your input!
 
 If you are trying Doxygen let me know what you think of it (do you miss certain features?). Even if you decide not to use it, please let me know why.
 
- = How to report a bug =
+= How to report a bug =
 
 
 Bugs are tracked in GNOME's [http://bugzilla.gnome.org bugzilla] database. Before submitting a [http://bugzilla.gnome.org/enter_bug.cgi?product=doxygen new bug], first [http://bugzilla.gnome.org/buglist.cgi?product=doxygen&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&bug_status=VERIFIED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&short_desc=&short_desc_type=substring&long_desc=&long_desc_type=substring&bug_file_loc=&bug_file_loc_type=substring&status_whiteboard=&status_whiteboard_type=substring&keywords=&keywords_type=anywords&op_sys_details=&op_sys_details_type=substring&version_details=&version_details_type=substring&cmdtype=doit&namedcmd=gnome-libs+past+20+days&newqueryname=&order=Reuse+same+sort+as+last+time&form_name=query check] if the same bug has already been submitted by others. If you believe you have found a new bug, please [http://bugzilla.gnome.org/enter_bug.cgi?product=doxygen file it].

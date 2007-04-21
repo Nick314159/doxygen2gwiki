@@ -5,7 +5,14 @@ Doxywizard is a GUI front-end for configuring and running doxygen.
 
 When you start doxywizard it will display the main window (the actual look depends on the OS used).
 
-Main window The windows shows the steps to take to configure and run doxygen. The first step is to choose one of the ways to configure doxygen. Note that you can select multiple buttons in a row, for instance to first configure doxygen using the Wizard and then fine tune the settings via the Expert.
+Main window The windows shows the steps to take to configure and run doxygen. The first step is to choose one of the ways to configure doxygen. 
+Wizard
+ Click this button to quickly configure the most important settings and leave the rest of the options to their defaults.
+Expert
+ Click this button to to gain access to the [Doxygen_config full range of configuration options] .
+Load
+ Click this button to load an existing configuration file from disk.
+Note that you can select multiple buttons in a row, for instance to first configure doxygen using the Wizard and then fine tune the settings via the Expert.
 
 After doxygen is configured you need to save the configuration as a file to disk. This second step allows doxygen to use the configuration and has the additional advantage that the configuration can be reused to run doxygen with the same settings at a later point in time.
 
@@ -50,5 +57,16 @@ Some options from the Expert dialog The get additional information about the mea
 The GUI front-end has a menu with a couple of useful items
 
 File menu 
+Open...
+ This is the same as the "Load" button in the main window and allows to open a configuration file from disk.
+Save as..
+ This is the same as the "Save" button in the main window and can be used to save the current configuration settings to disk.
+Recent configurations
+ Allow to quickly load a recently saved configuration.
+Set as default...
+ Stores the current configuration settings as the default to use next time the GUI is started. You will be asked to confirm the action.
+Reset...
+ Restores the factory defaults as the default settings to use. You will be asked to confirm the action.
+
 
 
