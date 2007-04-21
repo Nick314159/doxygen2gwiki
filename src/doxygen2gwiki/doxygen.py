@@ -22,11 +22,13 @@ class Doxygen:
         if xml.documentElement.tagName == "doxygenindex":
             pages = [node.attributes["refid"].value for node in xml.documentElement.getElementsByTagName("compound") if node.attributes["kind"].value == "page"]
             for f in pages:
-                print "Processing", f + ".xml"
+                if options.verbose:
+                    print "Processing", f + ".xml"
                 self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
             files = [node.attributes["refid"].value for node in xml.documentElement.getElementsByTagName("compound") if node.attributes["kind"].value == "file"]
             for f in files:
-                print "Processing", f + ".xml"
+                if options.verbose:
+                    print "Processing", f + ".xml"
                 self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
         elif xml.documentElement.tagName == "doxygen":
             compounds = xml.documentElement.getElementsByTagName("compounddef")
