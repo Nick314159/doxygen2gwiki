@@ -54,7 +54,7 @@ after the `if { ... }`. I.e., it must be placed after the code for creating the 
  * In the member `idLanguage()` change "english" into the name of your language (use lower case characters only). Depending on the language you may also wish to change the member functions latexLanguageSupportCommand(), idLanguageCharset() and others (you will recognize them when you start the work).
  * Edit all the strings that are returned by the member functions that start with tr. Try to match punctuation and capitals! To enter special characters (with accents) you can: 
  * Enter them directly if your keyboard supports that and you are using a Latin-1 font. Doxygen will translate the characters to proper [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  and leave the HTML and man output for what it is (which is fine, if idLanguageCharset() is set correctly).
- * Use html codes like &auml; for an a with an umlaut (i.e. ). See the HTML specification for the codes.
+ * Use html codes like &auml; for an a with an umlaut (i.e. ä). See the HTML specification for the codes.
  7. Run configure and make again from the root of the distribution, in order to regenerated the Makefiles.
  8. Now you can use `OUTPUT_LANGUAGE = your_language_name` in the config file to generate output in your language.
  9. Send `translator_xx.h` to me so I can add it to doxygen. Send also your name and e-mail address to be included in the `maintainers.txt` list.

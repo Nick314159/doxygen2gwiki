@@ -82,7 +82,7 @@ Although doxygen is used successfully by a lot of people already, there is alway
 
 
 Thanks go to: 
- * Malte Zckler and Roland Wunderling, authors of DOC++. The first version of doxygen borrowed some code of an old version of DOC++. Although I have rewritten practically all code since then, DOC++ has still given me a good start in writing doxygen.
+ * Malte Zöckler and Roland Wunderling, authors of DOC++. The first version of doxygen borrowed some code of an old version of DOC++. Although I have rewritten practically all code since then, DOC++ has still given me a good start in writing doxygen.
  * All people at Troll Tech, for creating a beautiful GUI Toolkit (which is very useful as a Windows/Unix platform abstraction layer :-)
  * My brother Frank for rendering the logos.
  * Harm van der Heijden for adding HTML help support.
