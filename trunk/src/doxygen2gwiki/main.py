@@ -49,8 +49,20 @@ def main():
             file = file + ".wiki"
             files.append(file)
 
-            open(options.output + file, "w").write(unicode(code).encode("utf-8"))
+            text = unicode(code)
+            text += doxygen.getFooter()
+
+            open(options.output + file, "w").write(text.encode("utf-8"))
         else:
             files.append(file)
+
+    # Create our own default index page
+    if options.prefix + ".wiki" not in files:
+        file = options.prefix + ".wiki"
+        files.append(file)
+
+        text = doxygen.getFooter()
+
+        open(options.output + file, "w").write(text.encode("utf-8"))
 
     addRemovePages(oldfiles, files)
