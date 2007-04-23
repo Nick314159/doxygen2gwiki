@@ -11,6 +11,7 @@ class Doxygen:
         self.files = []
         self.staticfiles = []
         self.links = {}
+        self.footer = {}
         if options.no_labels:
             self.labels = []
         elif options.labels == []:
@@ -30,13 +31,21 @@ class Doxygen:
                 if options.verbose:
                     print "Processing", f + ".xml"
                 self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
+            dirs = [node.attributes["refid"].value for node in xml.documentElement.getElementsByTagName("compound") if node.attributes["kind"].value == "dir"]
+            for f in dirs:
+                if options.verbose:
+                    print "Processing", f + ".xml"
+                self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
         elif xml.documentElement.tagName == "doxygen":
             compounds = xml.documentElement.getElementsByTagName("compounddef")
             for c in compounds:
                 if c.attributes["kind"].value == "file":
+                    self.footer["file"] = True
                     self.files.append(DoxygenFile(c))
                 elif c.attributes["kind"].value == "page":
                     self.files.append(DoxygenPage(c))
+                elif c.attributes["kind"].value == "dir":
+                    registerDir(c)
                 else:
                     raise SystemError, "Unrecognised compound type. (%s)" % (c.attributes["kind"].value, )
         else:
@@ -49,7 +58,17 @@ class Doxygen:
         files = []
         for f in self.files:
             files += f.createFiles()
+        if self.footer.has_key("file"):
+            files += DoxygenFilePage().createFiles()
         return files + self.staticfiles
+
+    def getFooter(self):
+        footer = "|| [%s Main Page]" % (options.prefix, )
+        if self.footer.has_key("file"):
+            footer += " || [%s_files]" % (options.prefix, )
+        footer += " ||\n"
+        return footer
+
     def copyFile(self, type, _from, _to):
         if options.output + _to not in [x[1] for x in self.staticfiles]:
             open(options.output + _to, "wb").write(open(_from, "rb").read())
@@ -59,3 +78,4 @@ doxygen = Doxygen()
 
 from page import DoxygenPage
 from file import DoxygenFile
+from filepage import registerDir, DoxygenFilePage
