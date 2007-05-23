@@ -16,8 +16,11 @@ class DoxygenFile:
         [x.getLines(l) for x in self.brief]
         registerFileBriefDescription(self.id, "".join(l).strip())
 
-        funcs = getDirectDescendents(xml, "sectiondef")[0]
-        self.functions = [DoxygenMemberFunction(x) for x in getDirectDescendents(funcs, "memberdef")]
+        funcs = getDirectDescendents(xml, "sectiondef")
+        if len(funcs) > 0:
+            self.functions = [DoxygenMemberFunction(x) for x in getDirectDescendents(funcs[0], "memberdef")]
+        else:
+            self.functions = []
 
         self.programlisting = ProgramListing(xml.getElementsByTagName("programlisting")[0], self)
 
