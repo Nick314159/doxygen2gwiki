@@ -14,6 +14,10 @@ class DoxygenMemberFunction:
         [x.getLines(l) for x in convertLine(xml.getElementsByTagName("briefdescription")[0], self)]
         self.brief = "".join(l).strip()
 
+        l = [""]
+        [x.getLines(l) for x in convertLine(xml.getElementsByTagName("detaileddescription")[0], self)]
+        self.detailed = "".join(l).strip()
+
         self.type = getText(xml.getElementsByTagName("type")[0].childNodes)
         self.params = []
         for p in xml.getElementsByTagName("param"):
@@ -27,7 +31,7 @@ class DoxygenMemberFunction:
     sig = property(__get_sig)
 
     def __get_doc(self):
-        return unicode(Function(searchPath={"f": self}))
+        return unicode(Function(searchList={"f": self}))
     doc = property(__get_doc)
 
 from text_elements import convertLine
