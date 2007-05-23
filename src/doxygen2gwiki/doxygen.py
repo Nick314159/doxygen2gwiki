@@ -2,7 +2,6 @@ import os
 from xml.dom.minidom import parseString
 
 from options import options
-from member_function import DoxygenMemberFunction
 from utils import getText
 from fix_xml import fixXML
 
@@ -36,6 +35,8 @@ class Doxygen:
                 if options.verbose:
                     print "Processing", f + ".xml"
                 self.processFile(parseString(fixXML(open(options.docs + f + ".xml", "r").read())))
+            for c in xml.documentElement.getElementsByTagName("compound"):
+                registerGlobals(c)
         elif xml.documentElement.tagName == "doxygen":
             compounds = xml.documentElement.getElementsByTagName("compounddef")
             for c in compounds:
@@ -59,13 +60,15 @@ class Doxygen:
         for f in self.files:
             files += f.createFiles()
         if self.footer.has_key("file"):
-            files += DoxygenFilePage().createFiles()
+            files += DoxygenFilesPage().createFiles()
+        if self.footer.has_key("globals"):
+            files += DoxygenGlobalsPage().createFiles()
         return files + self.staticfiles
 
     def getFooter(self):
-        footer = "|| [%s Main Page]" % (options.prefix, )
+        footer = "---\n|| [%s Main Page]" % (options.prefix, )
         if self.footer.has_key("file"):
-            footer += " || [%s_files]" % (options.prefix, )
+            footer += " || [%s_files Files]" % (options.prefix, )
         footer += " ||\n"
         return footer
 
@@ -78,4 +81,6 @@ doxygen = Doxygen()
 
 from page import DoxygenPage
 from file import DoxygenFile
-from filepage import registerDir, DoxygenFilePage
+from filespage import registerDir, DoxygenFilesPage
+from globalspage import registerGlobals, DoxygenGlobalsPage
+from member_function import DoxygenMemberFunction

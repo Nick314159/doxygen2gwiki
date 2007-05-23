@@ -2,7 +2,7 @@ from utils import getText
 
 from options import options
 
-from templates.FilePage import FilePage
+from templates.FilesPage import FilesPage
 
 descriptions = {}
 files = []
@@ -15,11 +15,11 @@ def registerDir(xml):
 def registerFileBriefDescription(file, desc):
     descriptions[file] = desc
 
-class DoxygenFilePage:
+class DoxygenFilesPage:
     def __init__(self):
         pass
 
     def createFiles(self):
-        return [("wiki", options.prefix + "_files", FilePage(searchList={"summary": "A List of files with brief descriptions.", "labels": options.labels, "prefix": options.prefix, "files": files, "descriptions": descriptions}))]
+        return [("wiki", options.prefix + "_files", FilesPage(searchList={"summary": "A List of files with brief descriptions.", "labels": options.labels, "prefix": options.prefix, "files": files, "descriptions": descriptions}))]
 
 from utils import getText

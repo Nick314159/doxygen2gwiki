@@ -1,13 +1,34 @@
 #if len($summary) > 0
 #summary $summary
-#endif
+#end if
 #if len($labels) > 0
 #labels #for $l in $labels #$l #end for #
-#endif
+#end if
 
-|| [${prefix}_files File List] || [${prefix}_globals Globals] ||
+= $filename =
 
-Here is a list of all files with brief descriptions:
-#for $dirname, $ref, $pagename in $files
-|| ${dirname}[${prefix}_$ref $pagename] || $descriptions.get($ref, "") ||
-#endfor
+$briefdescription
+
+#if len($functions) > 0
+== Functions ==
+
+#for $f in $functions
+$f.sig
+#if $f.brief is not None
+  *$f.brief*
+#end if
+#end for
+
+#end if
+== Detailed Description ==
+
+$briefdescription
+$detaileddescription
+
+#if len($functions) > 0
+== Function Documentation ==
+
+#for $f in $functions
+$f.doc
+#end for
+#end if
