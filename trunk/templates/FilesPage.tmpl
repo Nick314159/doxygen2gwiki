@@ -1,0 +1,13 @@
+#if len($summary) > 0
+#summary $summary
+#end if
+#if len($labels) > 0
+#labels #for $l in $labels #$l #end for #
+#end if
+
+|| [${prefix}_files File List] || [${prefix}_globals Globals] ||
+
+Here is a list of all files with brief descriptions:
+#for $dirname, $ref, $pagename in $files
+|| ${dirname}[${prefix}_$ref $pagename] || $descriptions.get($ref, "") ||
+#end for

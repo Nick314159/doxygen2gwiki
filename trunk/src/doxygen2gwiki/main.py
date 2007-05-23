@@ -49,6 +49,8 @@ def main():
             file = file + ".wiki"
             files.append(file)
 
+            if options.verbose:
+                print "Generating page for " + file
             text = unicode(code)
             text += doxygen.getFooter()
 

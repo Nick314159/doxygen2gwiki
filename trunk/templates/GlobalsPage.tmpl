@@ -1,0 +1,13 @@
+#if len($summary) > 0
+#summary $summary
+#end if
+#if len($labels) > 0
+#labels #for $l in $labels #$l #end for #
+#end if
+
+|| [${prefix}_files File List] || [${prefix}_globals Globals] ||
+
+Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:
+#for $ref, $pagename, ($fileref, $file) in $members
+|| [${prefix}_$fileref $pagename] || [${prefix}_$fileref $file] ||
+#end for
