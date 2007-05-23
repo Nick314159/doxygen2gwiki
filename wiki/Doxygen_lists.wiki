@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Doxygen provides a number of ways to create lists of items.
@@ -107,4 +107,5 @@ See [Doxygen_commands \arg]  and [Doxygen_commands \li]  for more info.
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

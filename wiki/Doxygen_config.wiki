@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 = Format =
 
@@ -689,4 +689,5 @@ EXPAND_AS_DEFINED     = Q_OBJECT_FAKE Q_OBJECT ACTIVATE_SIGNAL_WITH_PARAM \
 Here doxygen's preprocessor is used to substitute some macro names that are normally substituted by the C preprocessor, but without doing full macro expansion. 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

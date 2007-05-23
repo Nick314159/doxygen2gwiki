@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Doxygen is a command line based utility. Calling `doxygen` with the `--help` option at the command line will give you a brief description of the usage of the program.
@@ -47,4 +47,5 @@ doxygen -w rtf rtfstyle.cfg
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

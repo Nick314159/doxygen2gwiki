@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Doxytag is a small command line based utility. It can generate _tag files_. These tag files can be used with [doxygen_usage.html doxygen] to generate references to external documentation (i.e. documentation not contained in the input files that are used by doxygen).
@@ -52,4 +52,5 @@ doxytag -t qt.tag $QTDIR/doc/html
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

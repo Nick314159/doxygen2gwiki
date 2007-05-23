@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Most documentation systems have special `see also' sections where links to other pieces of documentation can be inserted. Although doxygen also has a command to start such a section (See section [Doxygen_commands \sa] ), it does allow you to put these kind of links anywhere in the documentation. For [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  documentation a reference to the page number is written instead of a link. Furthermore, the index at the end of the document can be used to quickly find the documentation of a member, class, namespace or file. For man pages no reference information is generated.
@@ -92,4 +92,5 @@ create an alias for StructName, so links will be generated to StructName, when e
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

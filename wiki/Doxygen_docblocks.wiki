@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 = Special documentation blocks =
 
@@ -254,4 +254,5 @@ Since python looks more like Java than like C or C++, you should set OPTMIZE_OUT
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

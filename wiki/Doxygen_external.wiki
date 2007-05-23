@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 If your project depends on external libraries or tools, there are several reasons to not include all sources for these with every run of doxygen:
@@ -91,4 +91,5 @@ The tool `doxytag` depends on the particular structure of the generated output a
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

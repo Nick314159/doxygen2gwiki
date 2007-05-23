@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Doxygen allows you to put [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  formulas in the output (this works only for the HTML and [http://doxygen2gwiki.googlecode.com/svn/wiki/Doxygen_form_0.png]  output, not for the RTF nor for the man page output). To be able to include formulas (as images) in the HTML documentation, you will also need to have the following tools installed 
@@ -48,4 +48,5 @@ Currently, doxygen is not very fault tolerant in recovering from typos in formul
  
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

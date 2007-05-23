@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Source files that are used as input to doxygen can be parsed by doxygen's built-in C-preprocessor.
@@ -213,4 +213,5 @@ This will instruct doxygen to dump the input sources to standard output after pr
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 Doxygen has built-in support to generate inheritance diagrams for C++ classes.
@@ -68,4 +68,5 @@ Here are a couple of header files that together show the various diagrams that d
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 = Nodes in the documentation tree of the Perl Module output format. =
@@ -203,4 +203,5 @@ The meaning of each node in the documentation tree is as follows:
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||

@@ -1,4 +1,38 @@
+#summary Documentation for the simple.h file
+#labels Examples Example1 
 
-*int** simple_func(**int** a, **char*** b);*
+= simple.h =
 
-|| [Example1 Main Page] || [Example1_files] ||
+This is an example header file.
+
+== Functions ==
+
+int simple_func(int a, char * b)
+  *This is an example function.*
+
+== Detailed Description ==
+
+This is an example header file.
+
+
+== Function Documentation ==
+
+{{{
+#int simple_func   (
+  int a,
+  char * b  )
+}}}
+  This is an example function.
+  With a detailed description. That goes on for more than one line.
+
+
+And a return value!
+
+*Parameters*:
+  a   And two parameters. 
+  b   Here's the second. 
+*Returns*:
+  And a return value!
+
+---
+|| [Example1 Main Page] || [Example1_files Files] ||

@@ -1,4 +1,4 @@
-#labels Doxygen 
+#labels Examples DoxygenManual 
 
 
 First go to the [http://www.doxygen.org/download.html download] page  to get the latest distribution, if you did not have it already.
@@ -308,4 +308,5 @@ Doxygen was developed and tested under Linux & MacOSX using the following open-s
 
 
 
-|| [Doxygen Main Page] || [Doxygen_files] ||
+---
+|| [Doxygen Main Page] || [Doxygen_files Files] ||
