@@ -34,4 +34,4 @@ class DoxygenFile:
         return [("wiki", options.prefix + "_" + self.id, FilePage(searchList={"summary": "Documentation for the %s file" % (self.name, ), "labels": options.labels, "prefix": options.prefix, "filename": self.name, "briefdescription": "".join(brief).strip(), "detaileddescription": "".join(detailed).strip(), "functions": self.functions}))]
 
 from text_elements import convertLine, ProgramListing
-from filepage import registerFileBriefDescription
+from filespage import registerFileBriefDescription
